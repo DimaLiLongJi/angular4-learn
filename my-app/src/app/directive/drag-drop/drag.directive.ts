@@ -29,8 +29,8 @@ export class DragDirective {
     }
   }
 
-  @HostListener('dragend', ['$event'])
-  onDragEnd(ev: Event) {
+  @HostListener('dragend', ['$event']) // 事件监听
+  onDragEnd(ev: Event) { // 对事件进行相应
     if(this.el.nativeElement === ev.target) {
       this.rd.removeClass(this.el.nativeElement, this.dragedClass);
     }
