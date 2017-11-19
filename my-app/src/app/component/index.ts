@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HeroService, HeroService2 } from '../services/hero.service';
 import { Location } from '@angular/common';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { trigger, state, transition, style } from '@angular/animations';
 
 import { Hero } from './hero';
 
@@ -10,10 +11,15 @@ import { Hero } from './hero';
   selector: 'app-root',  // 标签标示
   templateUrl: './index.html',
   styleUrls: ['./style.css'],
-  providers: [
+  providers: [ // 服务提供者，主要用来定义服务
     HeroService,
     HeroService2,
-  ], // 服务提供者，主要用来定义服务
+  ],
+  animations: [
+    trigger('square', [
+      state('green', style({'background-color': 'green'}))
+    ])
+  ],
 })
 
 export class IndexComponent implements OnInit { // 此项为导出的方法等 给双向绑定用 {;;} implements OnInit 通过ngOnInit()调用

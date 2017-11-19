@@ -18,8 +18,8 @@ import { Router } from '@angular/router';
 })
 
 export class HeroDetailComponent {
-  @Input() hero: Hero; // <hero-detail [hero]="selectedHero"></hero-detail>
-
+  @Input() hero: Hero; // <hero-detail [hero]="selectedHero"></hero-detail> Input 装饰器支持一个可选的参数，用来指定组件绑定属性的名称
+  @Input('hero') hero: Hero;
   constructor(
     private router: Router, ) {
       console.log(hero);
