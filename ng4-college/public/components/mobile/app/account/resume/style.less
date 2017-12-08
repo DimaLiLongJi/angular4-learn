@@ -1,0 +1,123 @@
+
+@import '../../../../../styles/mobile/utils';
+@import './resume-delete-modal/style';
+
+.resume-page {
+  background-color: @gray-bg;
+  min-height: 100vh;
+}
+// resumes aren't existed
+.pageFull {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.no-resume {
+    height: 100vh - 136/124rem;
+    background-image: url('/images/account/resume/mobile/bg-no-resume1.png');
+    background-size: 793/124rem auto;
+    background-position: center 242/124rem;
+    background-repeat: no-repeat;
+    p {
+      position: relative;
+      top: 1028/124rem;
+      margin: 0 auto;
+      background: @yellow;
+      border-radius:16/124rem;
+      width:793/124rem;
+      height:130/124rem;
+      line-height:130/124rem;
+      .font-lg-2;
+      text-align: center;
+      color: @white;
+    }
+}
+
+// resumes are existed
+.has-resume {
+  padding-bottom: 50/124rem;
+  .resume-notice {
+    width: 100vw;
+    height: 260/124rem;
+    background-image: url('/images/account/resume/mobile/resume-info.jpg');
+    background-size: 100vw auto;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .resume-wrap {
+    border-radius:20px;
+    -webkit-border-radius:20px;
+    background-color: @white;
+    margin: 50/124rem 48/124rem 0 45/124rem;
+    height: 370/124rem;
+
+    .resume-img {
+      float: left;
+      margin-left: 60/124rem;
+      margin-top: 70/124rem;
+      height: 200/124rem;
+      width: 200/124rem;
+      background-image: url('/images/account/resume/mobile/resume.jpg');
+      background-size: 200/124rem 200/124rem;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .resume-show {
+      float: left;
+      margin-left: 68/124rem;
+      margin-top: 57/124rem;
+      width: 594/124rem;
+    }
+
+    .resume-name {
+      width: 600/124rem;
+      height: 140/124rem;;
+      line-height: 70/124rem;
+      font-size:44/124rem;
+      color: @primary-text-color;
+      overflow: hidden;
+      word-wrap:break-word;
+      text-overflow:ellipsis;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .resume-info {
+      width: 600/124rem;
+      margin-top: 10/124rem;
+      .icon-dele {
+        float: left;
+        display: inline-block;
+        height: 56/124rem;
+        width: 50/124rem;
+        background-image: url('/images/account/resume/mobile/icon-delete.png');
+        background-size: 50/124rem 56/124rem;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .created-at {
+        display: inline-block;
+        float: right;
+      }
+    }
+
+    .resume-preview {
+      float: right;
+      height: 100%;
+      width: 220/124rem;
+      text-align: center;
+      .icon-preview {
+        display: block;
+        height: 100%;
+        background-image: url('/images/account/resume/mobile/icon-preview.png');
+        background-size: 30/124rem 50/124rem;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}

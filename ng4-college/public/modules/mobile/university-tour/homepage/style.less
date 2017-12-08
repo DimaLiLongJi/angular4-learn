@@ -1,0 +1,527 @@
+@import "../../../../styles/reset";
+
+.font-dpr(@font-size) {
+  font-size: @font-size;
+
+  [data-dpr="2"] & {
+    font-size: @font-size * 2;
+  }
+
+  [data-dpr="3"] & {
+    font-size: @font-size * 3;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.banner {
+
+  .banner-logo {
+    width: 100%;
+
+  }
+
+  .banner-intro {
+    padding: 30/124rem 0 52/124rem;
+    margin-top: 20/124rem;
+    background: url('/images/university-tour/banner-intro-content-bg.png') no-repeat;
+    background-size: cover;
+    display: flex;
+
+    .banner-intro-content {
+      padding: 0 0 0 56/124rem;
+      display: flex;
+      align-items: center;
+      width: 50%;
+
+      .banner-intro-pic {
+        margin-right: 35/124rem;
+        background-size: contain;
+        width: 95/124rem;
+        height: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+
+      &:first-of-type {
+        .banner-intro-pic {
+          background-image: url('/images/university-tour/banner-intro-left.png');
+        }
+      }
+
+      &:last-of-type {
+        .banner-intro-pic {
+          background-image: url('/images/university-tour/banner-intro-right.png');
+        }
+      }
+
+      ul {
+        flex: 1;
+        color: #0a2a66;
+        line-height: 1;
+
+        li {
+          &:first-of-type {
+            .font-dpr(14px);
+            font-weight: 600;
+            margin-bottom: 20/124rem;
+          }
+        }
+      }
+    }
+  }
+
+  .banner-brief {
+    background: #df3b35;
+    padding: 50/124rem 58/124rem;
+    .font-dpr(14px);
+    text-align: center;
+
+    .banner-brief-title {
+      line-height: 1.5;
+      position: relative;
+      display: inline-block;
+      color: #fff;
+      font-weight: 200;
+
+      &::after,
+      &::before {
+        content: ' ';
+        position: absolute;
+        width: 0.8em;
+        height: 100%;
+        top: 0;
+        background: url('/images/university-tour/title-decoration-mobile.png') no-repeat;
+        background-size: contain;
+        background-position: center center;
+      }
+
+      &::before {
+        left: -98/124rem;
+      }
+
+      &::after {
+        right: -98/124rem;
+      }
+    }
+
+    .banner-brief-entry-wrap {
+      margin-top: 48/124rem;
+      background: url('/images/university-tour/banner-brief-bg.png') no-repeat;
+      background-position: bottom;
+      background-size: contain;
+      background-color: #fff;
+      color: #7c7c7c;
+      line-height: 1.5;
+      padding: 36/124rem 0;
+
+      .banner-brief-entry {
+        padding: 36/124rem 60/124rem;
+        text-align: left;
+        display: flex;
+
+        label {
+          width: 1.4em;
+          flex-basis: 1.4em;
+          margin-right: 40/124rem;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+
+        div {
+          flex: 1;
+        }
+
+        &:nth-of-type(1) {
+          label {
+            background-image: url('/images/university-tour/1.png');
+          }
+        }
+
+        &:nth-of-type(2) {
+          label {
+            background-image: url('/images/university-tour/2.png');
+          }
+        }
+
+        &:nth-of-type(3) {
+          label {
+            background-image: url('/images/university-tour/3.png');
+          }
+        }
+      }
+    }
+  }
+}
+
+.navs {
+  height: 140/124rem;
+  line-height: 140/124rem;
+  border-top: 1px solid #042562;
+  border-bottom: 1px solid #042562;
+  display: flex;
+  text-align: center;
+  .font-dpr(14px);
+
+  &.fixed {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
+  }
+
+  .nav {
+    background: #fff;
+    width: 25%;
+
+    a {
+      color: #042562;
+      height: 100%;
+      display: block;
+    }
+
+    &.active {
+      background: #042562;
+
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.nav-content {
+  background: #f5f5f5;
+  padding: 40/124rem;
+
+  > div {
+    background: #fff;
+    padding: 70/124rem 88/124rem;
+
+    &+div {
+      margin-top: 40/124rem;
+    }
+  }
+
+  .nav-content-title {
+    .font-dpr(14px);
+    position: relative;
+    text-align: center;
+
+    &:after {
+      content: ' ';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      height: 1px;
+      width: 100%;
+      background: #7083a6;
+    }
+
+    span {
+      position: relative;
+      background: #fff;
+      z-index: 2;
+      padding: 0 125/124rem;
+      color: #042562;
+      font-weight: 600;
+    }
+  }
+
+  .companies {
+    .company-intro {
+      width: 796/124rem;
+      height: 155/124rem;
+      background: url('/images/university-tour/company-intro-mobile.png') no-repeat;
+      background-size: contain;
+      margin: 46/124rem auto 0;
+    }
+
+    .company-header {
+      padding: 27/124rem 52/124rem;
+      border-radius: 52/124rem;
+      border: 1px solid #042562;
+      color: #042562;
+      margin: 50/124rem auto 0;
+      text-align: center;
+    }
+
+    .company-list {
+      margin-top: 22/124rem;
+
+      .company {
+        padding: 38/124rem 0;
+        display: flex;
+        align-items: center;
+
+        &+.company {
+          border-top: 1px dashed #c2c2c2;
+        }
+
+        .avatar {
+          width: 200/124rem;
+          flex-basis: 200/124rem;
+          height: 200/124rem;
+          border: 1px solid #c2c2c2;
+          margin-right: 48/124rem;
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+        }
+
+        .company-info {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          background: url('/images/university-tour/arrow-right.png') no-repeat;
+          background-position: right center;
+          background-size: 60/124rem 60/124rem;
+
+          .company-name {
+             .font-dpr(14px);
+            color: #383838;
+          }
+
+          .company-desc {
+            margin-top: 24/124rem;
+            padding: 20/124rem 30/124rem;
+            background: #fbebea;
+            color: #df3b35;
+            border-radius: 8/124rem;
+          }
+        }
+      }
+    }
+  }
+
+  .schedule {
+    .schedule-wrap {
+      background: url('/images/university-tour/schedule-bg.jpg') no-repeat;
+      background-size: 100%;
+      background-position: center center;
+      margin-top: 106/124rem;
+      position: relative;
+      text-align: center;
+
+      .schedule-title {
+        position: absolute;
+        border: 1px solid #687ca1;
+        color: #12316b;
+        padding: 18/124rem 28/124rem;
+        line-height: 1.2;
+        width: 310/40em;
+        .font-dpr(14px);
+        top: 0;
+        left: 0;
+      }
+
+      img {
+        margin: 0 auto;
+        width: 100%;
+      }
+      .apply-now {
+        display: inline-block;
+        background: #F5A623;
+        // height: 54/124rem;
+        line-height: 2.5;
+        .font-dpr(14px);
+        border-radius: 9999px;
+        color: #fff;
+        margin-top: 80/124rem;
+        padding: 0 200/124rem;
+      }
+    }
+  }
+
+  .routine {
+    .routine-title {
+      margin-top: 62/124rem;
+
+      img {
+        height: 111/124rem;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+
+    .routine-content {
+      margin-top: 40/124rem;
+
+      li {
+        display: flex;
+        line-height: 1.5;
+        color: #666;
+        padding: 15/124rem 0;
+
+        &+li {
+          border-top: 1px dashed #999999;
+        }
+
+        span {
+          margin-right: 20/124rem;
+        }
+      }
+
+      .label {
+        font-family: Verdana-Italic;
+      }
+    }
+
+    .special-border {
+      padding-bottom: 0 !important;
+
+      div {
+        padding-bottom: 15/124rem;
+        border-bottom: 1px dashed #999999;
+      }
+    }
+
+    .mid-pic {
+      width: 100%;
+      margin-top: 40/124rem;
+    }
+
+    .routine-pic2 {
+      width: 100%;
+      display: block;
+      margin-top: 40/124rem;
+    }
+
+    .last-routine-content {
+      line-height: 2;
+      padding: 40/124rem 0;
+    }
+
+    .routine-tip {
+      color: #f5a623;
+      line-height: 2;
+    }
+  }
+
+  .acknowledgement {
+    text-align: center;
+    .ac-content-title {
+      color: #666666;
+      margin-bottom: 38/124rem;
+      text-align: center;
+      margin-top: 66/124rem;
+
+      span {
+        display: inline-block;
+        padding-bottom: 23/124rem;
+        border-bottom: 7/124rem solid #df3b35;
+      };
+    }
+    .ac-logo {
+      margin: 0 auto;
+      img {
+        width: 360/124rem;
+        height: 160/124rem;
+      }
+    }
+    .ac-company-name {
+      display: block;
+      margin-top: 40/124rem;
+    }
+
+    .ac-helpers {
+      display: flex;
+
+      > div {
+        width: 50%;
+      }
+    }
+
+    .ac-second-row {
+      .college-names {
+        line-height: 2;
+
+        span {
+          color: #c2c2c2;
+          margin: 0 40/124rem;
+        }
+      }
+    }
+
+    .college-logo {
+      width: 100%;
+      margin-top: 70/124rem;
+    }
+  }
+}
+
+.footer {
+  background: #39393d;
+  color: #fff;
+  padding: 70/124rem 48/124rem;
+
+  .footer-title {
+    padding-bottom: 40/124rem;
+    border-bottom: 1px solid #606063;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 48/124rem;
+
+    ul {
+      li {
+        line-height: 1.5;
+        padding: 18/124rem 0;
+        display: flex;
+
+        label {
+          white-space: nowrap;
+        }
+      }
+    }
+
+    img {
+      max-width: 460/124rem;
+      height: auto;
+    }
+  }
+}
+.navProp {
+  margin-top: 140/124rem;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 420/124rem;
+  right: 40/124rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .5s;
+  img {
+    width: 190/124rem;
+  }
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.apply-banner {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 150/124rem;
+  line-height: 150/124rem;
+  left: 0;
+  bottom: -150/124rem;
+  transition: all .4s;
+  text-align: center;
+  color: #fff;
+  background: #F5A623;
+  .font-dpr(16px);
+  z-index: 99;
+  &.show {
+    bottom: 0;
+  }
+
+}

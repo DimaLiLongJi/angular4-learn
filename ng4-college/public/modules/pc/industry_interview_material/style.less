@@ -1,0 +1,357 @@
+@import 'bootstrap/less/bootstrap.less';
+@import "../../../styles/reset";
+@import "../../../styles/global";
+@import "../../../gadgets/wechat-login-modal/style";
+@import "../../../gadgets/user-feedback-pc/style";
+@import "../../../gadgets/qrCode/style";
+@import "../../../gadgets/subscription-modal/style";
+@import '../../../gadgets/cf_carousel/style'; // @import "../../../gadgets/industry_search/style";
+// @import "../../../gadgets/swich/style";
+// @import "../../../gadgets/danMu/style";
+// @import "../../../gadgets/tip-modal/style";
+// @import "../../../gadgets/dan/style";
+
+body {
+  background: url("/images/interview-material/bg.jpg") repeat-y;
+}
+
+.multiline-nowrap {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.main-content {
+  min-height: ~"calc(100vh - 344px)";
+  padding-top: 1px;
+
+  .banner {
+    width: 100%;
+    min-width: 1020px;
+    height: 160px;
+    background: url("/images/interview-material/industry_banner/2.jpg") no-repeat center;
+
+    h1 {
+      line-height: 135px;
+      text-align: center;
+      font-size: 26px;
+      color: #ffffff;
+      font-weight: normal;
+      position: relative;
+
+      .border {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #ffffff;
+        border-radius: 8px;
+        width: 60px;
+        height: 4px;
+      }
+    }
+  }
+}
+
+.search-container {
+  background: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.10);
+  width: 858px;
+  height: 58px;
+  margin: 40px auto 20px;
+  display: flex;
+
+  .icon {
+    font-size: 20px;
+    color: #ccc;
+    margin: 17px 20px;
+  }
+
+  input {
+    border: none;
+    height: 100%;
+    line-height: 100%;
+    width: 637px;
+    font-size: 16px;
+
+    &::-webkit-input-placeholder {
+      /* WebKit browsers */
+      color: #999;
+    }
+
+    &:-moz-placeholder {
+      /* Mozilla Firefox 4 to 18 */
+      color: #999;
+    }
+
+    &::-moz-placeholder {
+      /* Mozilla Firefox 19+ */
+      color: #999;
+    }
+
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10+ */
+      color: #999;
+    }
+  }
+
+  a.search-btn {
+    background: @primary-color;
+    text-align: center;
+    font-size: 20px;
+    color: #ffffff;
+    width: 161px;
+    height: 58px;
+    line-height: 58px;
+  }
+}
+
+.section-title {
+  width: 1020px;
+  font-size: 16px;
+  color: #333333;
+  margin: 18px auto;
+  border-left: 6px solid #f5a623;
+  padding-left: 15px;
+}
+
+.hot-company {
+  background: #fff;
+  // margin-top: 52px;
+  padding-bottom: 1px;
+
+  .swip-hot-company {
+    height: 262px;
+    margin-bottom: 40px;
+    background: #3b4251;
+
+    .carousel-indicators {
+      display: none;
+    }
+  }
+}
+
+.industry-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 1024px;
+  margin: 0 auto;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .industry-tag {
+    width: 220px;
+    height: 260px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.10);
+    margin-bottom: 50px;
+
+    h1 {
+      font-size: 18px;
+      text-align: center;
+      line-height: 42px;
+      margin-top: 15px;
+    }
+
+    h2 {
+      font-size: 13px;
+      color: @primary-color;
+      text-align: center;
+    }
+  }
+}
+
+.placeholder {
+  display: block;
+  width: 230px;
+  margin: 100px auto;
+}
+
+h2.search-list-title {
+  text-align: center;
+  line-height: 117px;
+  font-size: 24px;
+  color: #333333;
+
+  svg {
+    color: @primary-color;
+    font-size: 36px;
+    position: relative;
+    top: 6px;
+  }
+}
+
+.search-list {
+  width: 1020px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.kit-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-top: 0;
+  padding-bottom: 30px;
+
+  .kit {
+    background: #ffffff;
+    border: 1px solid #dbdbdb;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.04);
+    border-radius: 4px;
+    width: 320px;
+    height: 200px;
+    padding: 0 20px;
+    position: relative;
+    margin: 30px 0;
+
+    .cover {
+      position: absolute;
+      top: -27px;
+      width: 120px;
+      height: 162px;
+      box-shadow: 0 2px 10px 0 rgba(0,0,0,0.10);
+      // background: url("/images/interview-material/kit_cover/internet/baidu.jpg") no-repeat center;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .info {
+      padding: 20px 10px 22px 140px;
+      height: 157px;
+
+      dt {
+        font-weight: normal;
+        word-break: break-all;
+        font-size: 14px;
+        color: #333333;
+        line-height: 22px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      dd {
+        font-size: 12px;
+        color: #75808d;
+        line-height: 24px;
+      }
+    }
+
+    .tool {
+      display: flex;
+      border-top: 1px solid #e6e6e6;
+
+      a,
+      span {
+        line-height: 40px;
+        font-size: 12px;
+        color: #999999;
+
+        &:hover {
+          color: #666666;
+          cursor: pointer;
+
+          svg {
+            color: @primary-color;
+          }
+        }
+      }
+
+      .line {
+        line-height: 40px;
+        font-style: normal;
+        padding: 0 10px;
+        color: #ebebeb;
+      }
+    }
+  }
+
+  .kit:nth-child(3n-2) {
+    margin-right: 30px;
+  }
+
+  .kit:nth-child(3n-1) {
+    margin-right: 30px;
+  }
+}
+
+.material-list {
+  background: #ffffff;
+  border: 1px solid #dbdbdb;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.04);
+  border-radius: 4px;
+  width: 1020px;
+  margin-bottom: 80px;
+  padding: 8px 30px;
+
+  li {
+    line-height: 42px;
+    display: flex;
+    font-size: 14px;
+    border-bottom: 1px dashed #dbdbdb;
+
+    // &:hover {
+    //   cursor: pointer;
+    //   color: @primary-color;
+    // }
+
+    .name {
+      width: 652px;
+      color: #333;
+      padding-right: 150px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      strong {
+        font-weight: normal;
+        display: block;
+        width: fit-content;
+
+        &:hover {
+          cursor: pointer;
+          color: @primary-color;
+        }
+      }
+    }
+
+    .update {
+      font-size: 12px;
+      color: #c2c2c2;
+      width: 175px;
+    }
+
+    .action {
+      font-size: 12px;
+      color: #999999;
+
+      &:hover {
+        color: #666666;
+        cursor: pointer;
+
+        svg {
+          color: @primary-color;
+        }
+      }
+    }
+
+    .line {
+      padding: 0 10px;
+      color: #ebebeb;
+      font-style: normal;
+    }
+  }
+
+  li:last-child {
+    border: none;
+  }
+}

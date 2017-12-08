@@ -1,0 +1,11 @@
+<div class="file-preview-page">
+
+  <div class="file-bar clearfix">
+    <span class="file-type-icon" ng-class="vm.file.extName"></span>
+    <h3 class="file-name">{{vm.file.name}}</h3>
+    <a ng-if="!vm.hideDownloadBtn" class="download-btn" href="{{vm.file.download}}"><span></span>下载</a>
+  </div>
+  <div class="body">
+    <file-preview-core is-modal="true" file-info="vm.fileInfo"></file-preview-core>
+  </div>
+</div>

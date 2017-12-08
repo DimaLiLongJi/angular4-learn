@@ -1,0 +1,198 @@
+.customize-modal {
+  .modal-dialog {
+    position: absolute;
+    width: 800px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)!important;
+  }
+}
+.customize-modal-conainer {
+  .page-title {
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+
+    h1 {
+      font-size: 26px;
+      color: @primary-color;
+      line-height: 60px;
+      font-weight: normal;
+    }
+
+    p {
+      font-size: 16px;
+      color: #808080;
+    }
+    .close-btn {
+      position: absolute;
+      right: 20px;
+      top: 0;
+      color: #dbdbdb;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .step-container {
+    width: 100%;
+
+    .customize-steps-bar-wrap {
+      position: relative;
+      height: 135px;
+      width: 570px;
+      margin: 0 auto;
+
+      .line {
+        border: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 0;
+        width: 100%;
+        flex-shrink: 0;
+        height: 2px;
+        background: #d3dae3;
+      }
+    }
+    .customize-steps-bar {
+      position: absolute;
+      top: 38px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100.1%;
+
+      li {
+        width: 57px;
+        height: 57px;
+        line-height: 57px;
+        border-radius: 50%;
+        border: 1px solid #d3dae3;
+        background: #fff;
+
+        a {
+          font-size: 20px;
+          color: #999999;
+          display: block;
+          text-align: center;
+        }
+      }
+      li.active {
+        background:@primary-color;
+        width:56px;
+        height:56px;
+        border-radius:100%;
+        border-color: @primary-color;
+        a {
+          color: #fff;
+        }
+      }
+
+    }
+
+    .customize-steps {
+      display: flex;
+      width: 570px;
+      margin: 0 auto;
+      overflow: hidden;
+      .step {
+        width: 100%;
+        flex-shrink: 0;
+        height: 298px;
+        dl {
+          display: flex;
+          flex-wrap: wrap;
+
+          dt {
+            font-size: 16px;
+            color: #333333;
+            line-height: 58px;
+            font-weight: normal;
+            width: 100%;
+            flex-shrink: 0;
+            span {
+              font-family: Arial-ItalicMT;
+              font-size: 18px;
+              margin-right: 17px;
+            }
+          }
+          dd {
+            padding: 0 15px;
+            line-height: 26px;
+            height: 26px;
+            background:#ffffff;
+            border:1px solid #dbdbdb;
+            border-radius:2px;
+            margin: 10px 15px 10px 0;
+          }
+          dd:hover {
+            cursor: pointer;
+          }
+          dd.active {
+            background:@primary-color;
+            color: #fff;
+            border:1px solid @primary-color;
+          }
+        }
+      }
+      .step-2 {
+        transform: translateX(-100%);
+        // animation: slideOutLeft 200ms 1;
+      }
+      .step-3 {
+        transform: translateX(-200%);
+        dl {
+          width: 248px;
+          dt {
+            width: 450px;
+          }
+        }
+      }
+      .step-4 {
+        transform: translateX(-300%);
+        dl {
+          width: 300px;
+          dt {
+            width: 450px;
+          }
+        }
+      }
+
+      @keyframes slideOutLeft {
+        from {
+          transform: translate3d(0, 0, 0);
+        }
+
+        to {
+          visibility: hidden;
+          transform: translate3d(-100%, 0, 0);
+        }
+      }
+    }
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    height: 82px;
+    border-top: 1px solid #e6e6e6;
+    .step-btn {
+      align-items: center;
+      background:@primary-color;
+      border-radius:4px;
+      width:148px;
+      height:44px;
+      line-height:44px;
+      text-align: center;
+      color: #fff;
+      margin-top: 20px;
+    }
+    .disabled {
+      background:#d4d5d6;
+    }
+  }
+}

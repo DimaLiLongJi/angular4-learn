@@ -1,0 +1,42 @@
+<div class="industry-baike-container clearfix">
+  <div class="main-content clearfix">
+    <ul class="tab-list">
+      <li>
+        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-ziliao"></use></svg>
+        <a href="javascript:;" ng-click="vm.switchInfo('introduction')" ng-class="{'active': vm.infoCategory === 'introduction'}">行业概述</a>
+      </li>
+      <li>
+        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-gangwei"></use></svg>
+        <a href="javascript:;" ng-click="vm.switchInfo('position')" ng-class="{'active': vm.infoCategory === 'position'}">具体岗位</a>
+      </li>
+    </ul>
+    <div class=""  ng-if="vm.infoCategory === 'introduction'">
+      <img ng-src="{{vm.industry.banner}}" alt="">
+    </div>
+    <div class="introduction" ng-if="vm.infoCategory === 'introduction'" ng-bind-html="vm.intro">
+    </div>
+    <div class="position" ng-if="vm.infoCategory === 'position'" ng-repeat="p in vm.positionArray">
+      <h3 class="position-name"><span></span>{{p.name}}</h3>
+      <div class="position-desc" ng-bind-html="p.desc">
+      </div>
+    </div>
+  </div>
+  <div class="recommended-company-list">
+    <h3>主要公司</h3>
+    <div class="recommended-company-detail clearfix" ng-repeat="c in vm.mainCompany">
+      <a ng-href="/company/{{c.company.id}}" class="img-link" target="_blank">
+      <img ng-src="{{c.company.imageUrl}}" alt="">
+      </a>
+      <dl class="">
+        <dt>
+          <a ng-href="/company/{{c.company.id}}" ng-bind="c.company.name" target="_blank"></a>
+        </dt>
+        <dd class="clearfix">
+          <span>行业：</span><strong ng-bind="c.industry.name || '暂无'"></strong>
+          <span>地区：</span><strong ng-bind="c.company.city.name || '暂无'"></strong>
+        </dd>
+      </dl>
+    </div>
+  </div>
+
+</div>

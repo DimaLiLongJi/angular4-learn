@@ -1,0 +1,39 @@
+<div class="opportunities-container">
+  <section class="location-industry-search">
+    <location-selector [location]="params.location" (change)="locationChange($event)"></location-selector>
+    <industry-selector [industry]="params.industry" (change)="industryChange($event)"></industry-selector>
+  </section>
+  <section class="count-result">
+    <p *ngIf="params.keyword || params.industry.name !== '不限' || params.location.name !== '不限'">共计 <span>{{totalItems}}</span> 个结果</p>
+  </section>
+  <section class="position-list clearfix">
+    <div class="placeholder-wrap" *ngIf="oppArray.length === 0">
+      <img class="placeholder" src="/images/no-recommended-opp.png" alt="">
+      <p>暂无搜索结果</p>
+    </div>
+    <a href="/opportunity/{{opp.id}}" class="position-detail" *ngFor="let opp of oppArray" (click)="saveStatus()">
+      <p class="tag" *ngIf="opp.company.companyLabel">{{opp.company.companyLabel}}</p>
+      <figure>
+        <img [src]="opp.company.imageUrl" [alt]="opp.company.name">
+        <figcaption>
+          <h3>{{opp.position}}</h3>
+          <p class="company">
+            <strong>{{opp.company.name}}</strong>
+            <span class="category">{{opp.category.name}}</span>
+          </p>
+          <p class="location">
+            <span>
+              <svg class="icon" aria-hidden="true"><use xlink:href="#icon-zuobiao"></use></svg>
+              <span *ngFor="let l of opp.locations">{{l.name}}&nbsp;</span>
+            </span>
+            <time>{{opp.publishDate | date: 'yyyy-MM-dd'}}</time>
+          </p>
+        </figcaption>
+      </figure>
+    </a>
+
+  </section>
+  <div class="pagination-wrap" *ngIf="totalPages > 1">
+    <!-- <uib-pagination id="pagination" class="pagination-sm clearfix" previous-text="上一页" next-text="下一页" total-items="vm.totalItems" items-per-page="vm.params.itemsPerPage" [(ngModel)]="params.pageNum" max-size="6" (change)="pageChanged()" force-ellipses="true"></uib-pagination> -->
+  </div>
+</div>

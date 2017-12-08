@@ -1,0 +1,56 @@
+<div class="recruit-calendar-container" ng-class="{'no-scroll' : vm.dropdownStatus.applyStatus || vm.dropdownStatus.startTime || vm.dropdownStatus.industry}">
+  <form class="search-bar" ng-class="{hairline: vm.hairline}" method="post" id="form" action="" onsubmit="return false;">
+    <div class="input-wrapper">
+      <i class="iconfont search-icon icon-sousuo" aria-hidden="true"></i>
+      <input type="search" name="" value="" ng-model="vm.keyword" placeholder="请输入你要搜索的公司" id="searchOpprecruitCalendar" ng-keypress="vm.enterSearch($event)">
+    </div>
+    <button type="button" name="button" ng-click="vm.searchRecruitByKeyword()">搜索</button>
+  </form>
+  <div class="search-recruit-calendar-container clearfix" ng-show="!vm.keyword" >
+    <div class="selector-wrapper">
+      <mobile-dropdown-selector select-source="vm.applyStatusList" placeholder="'校招状态'" on-select="vm.filterStatus" selected-item="vm.applyStatus" show-list="vm.dropdownStatus.applyStatus" on-toggle="vm.hideAllPanel"
+      ></mobile-dropdown-selector>
+    </div>
+    <div class="selector-wrapper">
+      <mobile-month-selector select-source="vm.monthList" placeholder="'开始时间'" on-select="vm.filterDate" show-list="vm.dropdownStatus.startTime" on-toggle="vm.hideAllPanel" month-statistics="vm.monthStatistics" on-change-year="vm.getMonthStatistics" year-range="vm.monthSelectorYearRange" selected-item="vm.monthSelectedItem"></mobile-month-selector>
+    </div>
+    <div class="selector-wrapper">
+      <mobile-dropdown-selector select-source="vm.industryArray" placeholder="'行业'" on-select="vm.filterIndustry" mode="'button'" show-list="vm.dropdownStatus.industry" on-toggle="vm.hideAllPanel"
+        selected-item="vm.selectedIndustry"
+      ></mobile-dropdown-selector>
+    </div>
+  </div>
+  <div class="list-count" ng-show="vm.recruitArray && vm.recruitArray.length >0">
+    <span>符合筛选结果的有{{vm.recruitCount}}条</span>
+    <span class="tab-btn btn-sm primary" ui-sref="recruit-calendar.deadline">查看一周内截止网申</span>
+  </div>
+  <section class="recruit-list" ng-cloak  scroll-load="vm.loadMoreCompanies()" keep-scroll-pos-container>
+    <div class="recruit-detail page-padding" ng-class="{hairline : vm.hairline}" ng-repeat="recruit in vm.recruitArray" ng-click="vm.openDetail(recruit)">
+      <div class="img-wrapper">
+        <img ng-src="{{recruit.imageUrl || '/images/default-company-logo.png'}}" alt="">
+      </div>
+      <ul class="info">
+        <li class="recruit-name">
+          {{recruit.name}}
+        </li>
+        <li class="industry">
+          {{recruit.industry.name || '暂无'}}
+        </li>
+        <li class="begin-time">
+          <span>{{recruit.status.id === 1 ? '预计时间' : '校招时间' }}：{{recruit.opportunity.applyStart | date: 'yyyy/MM/dd'}}～{{recruit.endTime? (recruit.opportunity.applyEnd | date: 'yyyy/MM/dd') : '待定'}}</span>
+        </li>
+        <li class="current-status tag-md" ng-class="recruit.status.id === 1 ? 'red' : (recruit.status.id === 2 ? 'yellow' : 'grey')">{{recruit.status.name || '未开始'}}</li>
+      </ul>
+
+    </div>
+    <p class="load-tips" ng-if="!vm.allRecruitIsLoad">
+      正在加载中……
+    </p>
+    <div class="no-filter-data" ng-if="(vm.recruitArray && vm.recruitArray.length <=0)"></div>
+  </section>
+  <div class="push-tip" ng-if="vm.pushTipStatus" ng-cloak ng-click="vm.follow()">
+    <div class="close-btn-wrap">
+      <i class="iconfont icon-icon-delete" aria-hidden="true" ng-click="vm.closeTip()"></i>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+@import "./mixin.less";
+@import "../variable.less";
+@import "./layout.less";
+@import "./components.less";
+@charset "UTF-8";
+
+.ng-cloak,
+.ng-hide:not(.ng-hide-animate),
+.x-ng-cloak,
+[data-ng-cloak],
+[ng-cloak],
+[ng\:cloak],
+[x-ng-cloak] {
+  display: none !important;
+}
+
+ng\:form {
+  display: block;
+}
+
+body {
+  font-family: '苹方', Verdana, Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+}
+
+a:focus {
+  outline: none!important;
+}
+//
+
+.icon {
+  // width: 1.2em;
+  // height: 1.2em;
+  // vertical-align: -0.2em;
+  fill: currentColor;
+  overflow: hidden;
+  // margin-right: 8px;
+}

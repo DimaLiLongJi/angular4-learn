@@ -1,0 +1,30 @@
+<div class="favorite-question-container">
+  <div class="placeholder" ng-if="!vm.totalItems" ng-cloak>
+    <p>你还没有收藏任何问答，</p>
+    <p>快去Mark几个吧！</p>
+    <a href="/question">去看弹幕问答</a>
+  </div>
+  <div class="" ng-if="vm.totalItems">
+    <section class="question-detail" ng-repeat="q in vm.questionArray">
+      <h3>
+          <svg ng-cloak class="icon title" aria-hidden="true"><use xlink:href="#icon-wenti"></use></svg>
+          <span ng-bind="q.title"></span>
+          <a ng-cloak href="javascript:;" ng-click="vm.cancelFavorite(q, $event)" class="favorite-btn" ng-class="{'is-favorite': vm.opp.isFavorite}">
+            取消收藏
+          </a>
+        </h3>
+      <p>
+        <label ng-cloak ng-if="q.industry" ng-bind="q.industry"></label>
+        <label ng-cloak ng-if="q.stage" ng-bind="q.stage"></label>
+      </p>
+      <div ng-repeat="a in q.answers">
+        <h4>求职学堂专业回复：</h4>
+        <pre class="" ng-bind="a.content">
+      </div>
+      </pre>
+    </section>
+    <div class="pagination-wrap" ng-if="vm.totalPages > 1">
+      <uib-pagination id="pagination" class="pagination-sm clearfix" previous-text="上一页" next-text="下一页" total-items="vm.totalItems" items-per-page="vm.params.itemsPerPage" ng-model="vm.params.pageNum" max-size="6" ng-change="vm.pageChanged()" force-ellipses="true"></uib-pagination>
+    </div>
+  </div>
+</div>

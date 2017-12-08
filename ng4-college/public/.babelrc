@@ -1,0 +1,15 @@
+{
+  "presets": ["es2015"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./public"
+        ]
+      }
+    ],
+    //"dual-import",
+    "syntax-dynamic-import"
+  ]
+}

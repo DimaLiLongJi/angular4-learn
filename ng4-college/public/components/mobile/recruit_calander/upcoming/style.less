@@ -1,0 +1,165 @@
+@import "../../../../styles/reset";
+@import "../../../../styles/mobile/global";
+
+body,
+html {
+  height: 100%;
+  color: #333;
+}
+
+.page-title {
+  text-align: center;
+  height: 136/124rem;
+  line-height: 136/124rem;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #e6e6e6;
+  position: relative;
+
+  .icon {
+    position: absolute;
+    left: 70/124rem;
+    top: 50%;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    /* IE 9 */
+    -moz-transform: translateY(-50%);
+    /* Firefox */
+    -webkit-transform: translateY(-50%);
+    /* Safari 和 Chrome */
+    -o-transform: translateY(-50%);
+    color: #c2c2cc;
+  }
+}
+
+.bg {
+  height: 490/124rem;
+  background: url('/images/working.png') no-repeat center;
+  margin-bottom: 70/124rem;
+  margin-top: 110/124rem;
+  background-size: contain;
+}
+
+.tips {
+  text-align: center;
+  line-height: 23/32rem;
+  font-size: 14px;
+  color: @primary-color;
+}
+
+.main-content {
+  padding: 0 60/124rem 80/124rem;
+
+  .title {
+    padding: 134/124rem 0 56/124rem;
+    font-size: 14px;
+  }
+}
+
+.recruit-detail {
+  display: flex;
+  justify-content: flex-start;
+  padding: 60/124rem 0;
+  border-top: 1px solid #ccc;
+
+  img {
+    width: 200/124rem;
+    flex-basis: 200/124rem;
+    height: 200/124rem;
+    //padding: 22/124rem;
+    border: 1px solid #dbdbdb;
+  }
+
+  .info {
+    margin-left: 50/124rem;
+    width: 920/124rem;
+    position: relative;
+    padding-right: 50/32rem;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      line-height: 1;
+    }
+
+    .recruit-name {
+      font-size: 14px;
+      // color: @primary-color;
+
+    }
+
+    .industry {
+      height: 1rem;
+      line-height: 1rem;
+      color: #c2c2c2;
+    }
+
+    .begin-time {
+      color: #666;
+    }
+
+    .currentStatus {
+      position: absolute;
+      right: 0;
+      top: 0;
+      border-radius: 10/124rem;
+      padding: 10/124rem 20/124rem;
+      color: #fff;
+
+      &.red {
+        background: #fd6244;
+      }
+
+      &.yellow {
+        background: #ffc244;
+      }
+
+      &.grey {
+        background: #cad2db;
+      }
+    }
+  }
+}
+
+[data-dpr="2"] body {
+  .page-title {
+    font-size: 28px;
+  }
+
+  .main-content {
+    .title {
+      font-size: 28px;
+    }
+  }
+
+  .recruit-detail {
+    .recruit-name {
+      font-size: 28px;
+    }
+  }
+
+  .tips {
+    font-size: 28px;
+  }
+}
+
+[data-dpr="3"] body {
+  .page-title {
+    font-size: 42px;
+  }
+
+  .main-content {
+    .title {
+      font-size: 42px;
+    }
+  }
+
+  .recruit-detail {
+    .recruit-name {
+      font-size: 42px;
+    }
+  }
+  .tips {
+    font-size: 42px;
+  }
+}

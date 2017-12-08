@@ -1,0 +1,38 @@
+.open-qrcode-btn {
+  position: fixed;
+  left: 50%;
+  margin-left: 540px;
+  bottom: 4px;
+  right: 40px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  width: 66px;
+  height: 66px;
+  z-index: 9;
+
+  .btn {
+    display: block;
+    width: 66px;
+    height: 66px;
+    padding: 0;
+    border: 0;
+    background: url('/images/toolbar-qrcode.png') no-repeat center;
+  }
+
+  &:hover {
+    .qr-code-wrap {
+      display: block;
+    }
+  }
+
+  .qr-code-wrap {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    position: absolute;
+    bottom: -1px;
+    right: 76px;
+    width: 134px;
+    text-align: center;
+    padding: 15px;
+  }
+}

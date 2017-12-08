@@ -1,0 +1,18 @@
+<div class="qa-question-container">
+  <page-title title="{{vm.questionSuccess ? '提问成功' : '我要提问'}}" customized-go-back="vm.goBack"></page-title>
+  <div class="question page-padding">
+    <div class="question-label">你的问题</div>
+    <div class="question-content">
+      <textarea rows="5" ng-change="vm.saveToBrowser()" msd-elastic ng-model="vm.question" ng-required="true" ng-maxlength="150" maxlength="150" placeholder="请在此输入你的问题限150字以内，答案在服务号（求职学堂小助手）单独回复你！"></textarea>
+      <div class="word-count"><span>{{vm.question ? vm.question.length : 0}}</span> / 150</div>
+    </div>
+    <div class="commit-question btn-lg primary" ng-click="vm.commitQuestion()" ng-class="{disabled: !vm.question}">确认发布</div>
+    <div class="question-success" ng-cloak ng-show="vm.questionSuccess">
+      <div class="little-sister"></div>
+      <div>48小时内专业解答将通过服务号<br/>「求职学堂小助手」推送给你</div>
+      <div class="back-to-qa" ui-sref="discovery.qa">返回回答弹幕</div>
+    </div>
+
+  </div>
+
+</div>

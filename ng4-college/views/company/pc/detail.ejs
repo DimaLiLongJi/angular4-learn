@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html ng-app="App">
+
+<head>
+  <meta charset="utf-8">
+  <title>公司信息_求职学堂_职业蛙</title>
+  <meta name="description" content="这里收录了10000+热门公司信息,包括了详细的公司介绍和在招职位,帮助学生选择合适的公司和职位,走准职业第一步。">
+  <meta name="keywords" content="公司信息,咨询,金融,互联网,500强,实习,应届生,企业,名企,公司简介,公司详情,官网,在招职位,类似公司。">
+  <!-- <script src="/scripts/company-detail-pc-style.js"></script> -->
+  <link rel="stylesheet" href="/scripts/company-detail-pc-main.css">
+
+</head>
+
+<body ng-controller="companyDetailCtrl as vm" ng-cloak>
+  <header class="clearfix page-header">
+    <div class="wrap">
+      <h1 class="logo"></h1>
+      <div class="account-wrap">
+        <account-nav user="vm.user"></account-nav>
+      </div>
+      <ul class="clearfix nav">
+        <li><a href="/" class="active">名企实习</a></li>
+        <li>
+          <a href="/recruit_calendar">校招日历</a>
+
+        </li>
+        <li><a href="/discovery">求职探索</a></li>
+        <li class="kit">
+          <a href="/interview_material" class="kit">面试锦集</a>
+          <img src="/images/interview-material/kit.png" />
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="background-wrap" id="background-wrap">
+    <div class="company-wrap clearfix">
+      <div class="company-main-info clearfix">
+        <a href="" class="img-link">
+          <% if (company.imageUrl) {%>
+            <img src="<%- company.imageUrl %>" alt="">
+            <% } else {%>
+
+              <% } %>
+        </a>
+        <dl class="">
+          <dt>
+                <%- company.name %>
+              </dt>
+          <dd class="clearfix">
+            <strong><%- company.industry.name %></strong>
+            |
+            <strong><%- company.city.name %></strong>
+            |
+            <% if(company.size) {%>
+              <strong><%- company.size.name %></strong>
+              <% } %>
+          </dd>
+          <dd>
+            <strong>
+              平均薪资：<%- company.averageSalary%>元
+            </strong>
+          </dd>
+        </dl>
+      </div>
+
+    </div>
+    <section class="company-container clearfix">
+      <div class="tab-bar-wrap" ng-class="{'fix': vm.barFixed }">
+        <div class="clearfix tab-bar">
+          <a class="tab" du-smooth-scroll="section-1" du-scrollspy>公司详情</a>
+          <a class="tab" id="df" du-smooth-scroll="section-2" du-scrollspy ng-show="vm.totalItems">在招职位（{{vm.totalItems}}）</a>
+        </div>
+      </div>
+      <div class="position-list clearfix">
+        <div class="synopsis" ng-class="{'synopsis-top': vm.barFixed}">
+          <div class="section-title clearfix" id="section-1">
+            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-intro"></use></svg>公司简介
+          </div>
+          <div class="introduction">
+            <%- company.introduction %>
+              <p>
+                公司官网：
+                <a href="http://<%- company.officialUrl %>" class="official-url" target="_blank">
+                  <%- company.officialUrl %>
+                </a>
+              </p>
+          </div>
+        </div>
+
+        <div class="" id="section-2">
+          <div class="section-title clearfix" ng-if="vm.oppArray.length + vm.recruitRecommendArray.length">
+            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-position"></use></svg>在招职位（{{vm.oppArray.length + vm.recruitRecommendArray.length}}）
+          </div>
+
+          <h3 class="opp-category">校招网申</h3>
+          <div class="no-campus-recruit" ng-if="!vm.recruitRecommendArray.length">
+          </div>
+          <div class="opp-detail clearfix" ng-repeat="opp in vm.recruitRecommendArray">
+            <dl class="">
+              <dt class="clearfix">
+                          <a ng-click="vm.gotoOpp(opp)">
+                            {{opp.position}}
+                          </a>
+                          <strong class="category">{{opp.category.name}}</strong>
+                        </dt>
+              <dd class="clearfix">
+                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-zuobiao"></use></svg>
+                {{opp.locations[0].name}}
+                <strong>{{opp.applyStart | date: 'yyyy-MM-dd'}}（开始）</strong>
+              </dd>
+            </dl>
+          </div>
+          <h3 class="opp-category" ng-if="vm.oppArray.length">日常招聘</h3>
+          <div class="opp-detail clearfix" ng-repeat="opp in vm.oppArray" ng-if="vm.oppArray.length">
+            <dl class="">
+              <dt class="clearfix">
+                          <a ng-href="/opportunity/{{opp.id}}">
+                            {{opp.position}}
+                          </a>
+                          <strong class="category">{{opp.category.name}}</strong>
+                        </dt>
+              <dd class="clearfix">
+                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-zuobiao"></use></svg>
+                {{opp.locations[0].name}}
+                <strong>{{opp.publishDate | date: 'yyyy-MM-dd'}}</strong>
+              </dd>
+            </dl>
+          </div>
+          <div class="pagination-wrap" ng-if="(vm.totalItems / vm.params.itemsPerPage) > 1">
+            <uib-pagination id="pagination" class="pagination-sm clearfix" previous-text="上一页" next-text="下一页" total-items="vm.totalItems" items-per-page="vm.params.itemsPerPage" ng-model="vm.params.pageNum" max-size="6" ng-change="vm.getOpportunityList(vm.params)"
+              force-ellipses="true"></uib-pagination>
+          </div>
+
+        </div>
+      </div>
+  </div>
+  <!-- <scroll-to-top></scroll-to-top> -->
+  <%- include('../../templates/footer'); %>
+
+    <!-- svg -->
+    <script src="//at.alicdn.com/t/font_302276_v3bjsrdmxxmholxr.js"></script>
+    <script src="/scripts/company-detail-pc-main.js"></script>
+    <script>
+      angular.module('App')
+        .constant('$USER', <%- JSON.stringify(user) %>)
+        .constant('company', <%- JSON.stringify(company) %>)
+        .constant('BASE_URL', '<%= BASE_URL %>')
+        .constant('API_BASE_URL', '<%= API_BASE_URL %>');
+    </script>
+
+</body>
+
+</html>

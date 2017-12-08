@@ -1,0 +1,273 @@
+.pdf-viwer-images {
+  height: 100%;
+  overflow: scroll;
+  .img-container {
+    background-color: rgb(82, 86, 89);
+    text-align: center;
+    img {
+      width: 100vw;
+      // height: 100vh;
+      height: auto;
+    }
+  }
+  p {
+    padding: 24/124rem 0;
+    color: @white;
+  }
+}
+
+.clear-float::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.clear-float {
+    zoom: 1;
+}
+
+a,
+a:active,
+a:hover,
+a:link,
+a:visited {
+    text-decoration: none;
+}
+/** **/
+.show-info {
+    span {
+        color: @text-color;
+    }
+}
+.file-viewer {
+  height: 100%;
+  .pdf-viewer {
+    height: 100%;
+    overflow: hidden;
+    #pdfobject {
+      height: ~"calc(100% + 48/124rem)";
+      border: 0;
+      transform: translateY(-48/124rem);
+    }
+  }
+}
+
+.file-preview-container {
+    min-width: 720/124rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 4/124rem;
+    #image-preview {
+        height: 100%;
+        padding: 20/124rem;
+        padding-top: 100/124rem;
+        position: absolute;
+        margin: 0 auto;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        max-width: none;
+        z-index: 1;
+        width: auto;
+    }
+
+    #tool-bar {
+        position: fixed;
+        left: 50%;
+        bottom: 10%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 4/124rem;
+        z-index: 2;
+        padding: 0;
+        width: 174/124rem;
+
+        li {
+            float: left;
+            list-style: none;
+            font-size: 12/124rem;
+
+            a {
+                display: block;
+                color: @white;
+                width: 20/124rem;
+                height: 20/124rem;
+                line-height: 20/124rem;
+                text-align: center;
+                margin: 10/124rem;
+            }
+        }
+
+        li:nth-child(1) {
+            a {
+                background: url('/images/icons/icons-materials.png') no-repeat -115/124rem -23/124rem;
+
+                &:hover {
+                    background: url('/images/icons/icons-materials.png') no-repeat -115/124rem -0/124rem;
+                }
+            }
+        }
+
+        li:nth-child(2) {
+            a {
+                min-width: 32/124rem;
+            }
+        }
+
+        li:nth-child(3) {
+            a {
+                background: url('/images/icons/icons-materials.png') no-repeat -88/124rem -24/124rem;
+
+                &:hover {
+                    background: url('/images/icons/icons-materials.png') no-repeat -88/124rem -1/124rem;
+                }
+            }
+        }
+
+        li:nth-child(4) {
+            a {
+                background: url('/images/icons/icons-materials.png') no-repeat -143/124rem -23/124rem;
+
+                &:hover {
+                    background: url('/images/icons/icons-materials.png') no-repeat -143/124rem -0/124rem;
+                }
+            }
+        }
+    }
+}
+
+.file-bar {
+    line-height: 40/124rem;
+    background: @white;
+    color: rgb( 51, 51, 51 );
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    box-shadow: 0/124rem 1/124rem 1/124rem 0/124rem rgba(0,0,0,0.9);
+
+    .file-type-icon {
+        float: left;
+        width: 24/124rem;
+        height: 28/124rem;
+        margin: 5/124rem 0 16/124rem 15/124rem;
+        background: url('/images/icons/icons-materials.png') no-repeat 0 -102/124rem;
+        &.pdf {
+            background: url('/images/icons/icons-materials.png') no-repeat 0 0;
+        }
+
+        &.doc, &.docx {
+            background: url('/images/icons/icons-materials.png') no-repeat 0 -34/124rem;
+        }
+
+        &.ppt, &.pptx {
+            background: url('/images/icons/icons-materials.png') no-repeat 0 -68/124rem;
+        }
+        &.jpg, &.png, &.jpeg {
+          background: url('/images/icons/icons-materials.png') no-repeat 0 -132/124rem;
+        }
+    }
+
+    .file-name {
+        float: left;
+        margin: 0/124rem 10/124rem;
+        font-size: 14/124rem;
+        font-weight: normal;
+    }
+
+    .download-btn {
+        float: left;
+        text-decoration: none;
+        width: 73/124rem;
+        height: 28/124rem;
+        border: 1/124rem solid rgb( 99, 198, 85 );
+        border-radius: 2/124rem;
+        margin-top: 6/124rem;
+        line-height: 28/124rem;
+        color: rgb( 99, 198, 85 );
+        font-size: 12/124rem;
+
+        span {
+            float: left;
+            margin: 6/124rem 6/124rem 6/124rem 14/124rem;
+            width: 20/124rem;
+            height: 16/124rem;
+            background: url('/images/icons-materials.png') no-repeat -63/124rem 0;
+        }
+    }
+}
+.cant-preview-tip {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/** loading style and animation **/
+.spinner {
+    position: fixed;
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    width: 50/124rem;
+    height: 60/124rem;
+    text-align: center;
+    font-size: 10/124rem;
+    transform: translate(-50%, -50%);
+}
+
+.spinner > div {
+    background-color: @border-light-color;
+    height: 100%;
+    width: 6/124rem;
+    display: inline-block;
+    -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+    animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+}
+@-webkit-keyframes stretchdelay {
+    0%,
+    100%,
+    40% {
+        -webkit-transform: scaleY(0.4);
+    }
+
+    20% {
+        -webkit-transform: scaleY(1.0);
+    }
+}
+@keyframes stretchdelay {
+    0%,
+    100%,
+    40% {
+        transform: scaleY(0.4);
+        -webkit-transform: scaleY(0.4);
+    }
+
+    20% {
+        transform: scaleY(1.0);
+        -webkit-transform: scaleY(1.0);
+    }
+}

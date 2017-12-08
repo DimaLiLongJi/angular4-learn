@@ -1,0 +1,276 @@
+@import "../../../../styles/reset";
+@import "../../../../styles/global";
+@import "../../../../gadgets/location_filter/style";
+@import "../../../../gadgets/prefix-selector-for-pc/style";
+@import "../../../../gadgets/location_filter/location-popover-filter/style";
+@import "../../../../gadgets/wechat-login-modal/style";
+@import "../../../../components/pc/opportunity/apply-modal/style";
+@import "../../../../components/pc/opportunity/success-modal/style";
+
+body {
+  background: #fafafa;
+  height: 100%;
+}
+
+.minWidth {
+  min-width: 1020px;
+  margin: 0 auto;
+}
+
+.page-header {
+  padding: 0;
+
+  li a {
+    padding: 0;
+    line-height: 72px;
+
+    &:hover {
+      background: #fff;
+    }
+  }
+
+  .active {
+    color: @primary-color!important;
+  }
+}
+
+.opportunity-wrap {
+  width: 100%;
+  min-width: 1020px;
+  background: url('/images/banner-opportunity.jpg') no-repeat center 0;
+}
+
+.opportunity {
+  width: 1020px;
+  margin: 0 auto;
+  min-height: ~"calc(100% - 282px)";
+  position: relative;
+
+  .nav {
+    line-height: 52px;
+    color: #fff;
+
+    a,
+    a:hover,
+    a:link,
+    a:visited {
+      color: #fff;
+    }
+  }
+
+  .content {
+    background: #fafafa;
+    margin-bottom: 30px;
+    min-height: ~"calc(100% - 52px)";
+    padding: 40px 50px 0;
+    background: #fff;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.10);
+
+    .main-info {
+      display: flex;
+      border-bottom: 1px solid #e6e6e6;
+      padding-bottom: 20px;
+
+      .info-list {
+        width: 711px;
+        font-size: 14px;
+
+        li {
+          display: flex;
+          line-height: 46px;
+
+          h1 {
+            font-size: 24px;
+            font-weight: normal;
+            color: @primary-color;
+            width: 511px;
+            line-height: 46px;
+          }
+
+          time {
+            color: #999;
+          }
+
+          .location {
+            color: #b3b3b3;
+            margin-right: 20px;
+
+            svg {
+              color: #d3dae3;
+              margin: 0;
+            }
+          }
+
+          .industry {
+            color: #666;
+            width: 440px;
+          }
+
+          .category {
+            background: rgba(255,128,0,0.10);
+            border-radius: 2px;
+            padding: 0 10px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            font-size: 13px;
+            color: #ff8000;
+            margin-top: 10px;
+          }
+
+          .lable-wrap {
+            width: 512px;
+          }
+        }
+      }
+
+      .apply-btn {
+        background: @primary-color;
+        width: 143px;
+        height: 44px;
+        line-height: 44px;
+        color: #fff;
+        text-align: center;
+        font-size: 20px;
+      }
+
+      .favorite-btn {
+        box-sizing: content-box;
+        font-size: 16px;
+        border: 1px solid @primary-color;
+        border-radius: 2px;
+        width: 110px;
+        text-align: center;
+        height: 42px;
+        line-height: 42px;
+        margin-right: 20px;
+      }
+
+      .is-favorite {
+        background: rgba(74,144,226,0.10);
+        border: 1px solid @primary-color;
+
+        svg {
+          color: @primary-color;
+        }
+      }
+
+      .disable-apply-btn {
+        background: #ccc;
+        cursor: default;
+      }
+    }
+
+    .introduction {
+      background: #fff;
+      padding: 25px 300px 25px 0;
+      position: relative;
+      min-height: 645px;
+      word-break: break-all;
+      font-size: 14px;
+      line-height: 26px;
+
+      p {
+        padding: 5px 0;
+      }
+
+      .company-info {
+        box-sizing: content-box;
+
+        * {
+          box-sizing: content-box!important;
+        }
+        position: absolute;
+        top: 25px;
+        right: 0;
+        width: 200px;
+        min-height: 338px;
+        border: 1px solid #cccccc;
+        padding: 0 30px;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        img {
+          display: block;
+          width: 100px;
+          height: 100px;
+          margin: 43px auto 0;
+        }
+
+        h2 {
+          text-align: center;
+          font-weight: normal;
+          color: #333;
+          font-size: 18px;
+          line-height: 56px;
+          border-bottom: 1px solid #e6e6e6;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .industry {
+          line-height: 26px;
+          padding: 0 10px;
+          background: #f5f5f5;
+          border-radius: 100px;
+          color: #666;
+          width: 126px;
+          text-align: center;
+          margin: 20px auto 10px;
+        }
+
+        .salary,
+        .size {
+          line-height: 30px;
+          text-align: center;
+          color: #333;
+
+          label {
+            color: #999;
+          }
+        }
+
+        .tag {
+          position: absolute;
+          top: -1px;
+          right: -1px;
+          background: #c1ac87;
+          line-height: 34px;
+          color: #fff;
+          padding: 0 14px;
+          border-radius: 0 0 4px 4px;
+        }
+      }
+      .qr-code {
+        box-sizing: content-box;
+        position: absolute;
+        top: 385px;
+        right: 0;
+        width: 200px;
+        height: 240px;
+        border: 1px solid #cccccc;
+        padding: 0 30px;
+
+        .qr-image {
+          margin: 15px auto;
+          width: 150px;
+          height: 150px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-image: url('/images/qr-code.jpg');
+        }
+
+        p {
+          font-size:16px;
+          color:#333333;
+          text-align:center;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}

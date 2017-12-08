@@ -1,0 +1,72 @@
+@import "./interview_material/style";
+@import "./industry_interview_material/style";
+@import "./industry_interview_material/tip/style";
+@import "./industry_interview_material/more_company_material/style";
+@import "./industry_interview_material/hot_company_material/style";
+@import "./qa/style";
+@import '../../../../styles/mobile/utils';
+
+.discovery {
+  //display: flex;
+  //flex-direction: column;
+  height: 100vh;
+  .discovery-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: @white;
+    z-index: 2;
+  }
+  header {
+    height: 140/124rem;
+    min-height: 140/124rem;
+    background: @white url('/images/logo@2x.png') no-repeat center center;
+    background-size: auto 70%;
+  }
+  .qa-header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    background-image: url('/images/preferences/qa-go-pref.jpg');
+    background-size: 100%;
+    &.is-preferenced {
+      background-image: url('/images/preferences/qa-modify-pref.png');
+    }
+    .qa-to-pref-btn {
+      position: absolute;
+      right: 53/124rem;
+      top: 26/124rem;
+      width: 272/124rem;
+      height: 91/124rem;
+    }
+  }
+  .navs {
+    display: flex;
+    min-height: 140/124rem;
+    .font-md-3;
+    li {
+      width: 50%;
+      text-align: center;
+      height: 140/124rem;
+      line-height: 140/124rem;
+      color: @text-color;
+      .font-md-3;
+      &.active {
+        .tab-selected;
+      }
+    }
+  }
+
+  .add-border {
+    border-top: 1px solid @border-light-color;
+    border-bottom: 1px solid @border-light-color;
+  }
+  .nav-content {
+    flex: 1;
+    overflow: auto;
+    padding-bottom: 170/124rem;
+  }
+}

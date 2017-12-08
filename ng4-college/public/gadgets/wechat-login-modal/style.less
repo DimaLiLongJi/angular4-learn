@@ -1,0 +1,65 @@
+.login-modal {
+  .modal-dialog {
+    // width: 800px;
+    border-radius: 8px!important;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)!important;
+  }
+}
+
+.login-modal {
+  padding-bottom: 40px;
+  // position: relative;
+  h1 {
+    line-height: 54px;
+    text-align: center;
+    background: #f1f7fd;
+    font-size: 18px;
+    color: @primary-color;
+    position: relative;
+
+    .close-btn {
+      box-sizing: content-box;
+      position: absolute;
+      padding: 20px;
+      cursor: pointer;
+      font-size: 12px;
+      margin: 0;
+      right: 0;
+    }
+  }
+
+  .code-container {
+    background-image: linear-gradient(-45deg, #5da3ff 0%, #6eeaf9 100%);
+    width: 220px;
+    height: 220px;
+    padding: 10px;
+    margin: 50px auto 20px;
+    box-sizing: content-box;
+    img {
+      display: block;
+      width: 220px;
+      height: 220px;
+    }
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 16px;
+    color: #333333;
+    line-height: 30px;
+  }
+
+  p {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #999999;
+    text-align: center;
+  }
+  .error-message {
+    color: #f00;
+  }
+}

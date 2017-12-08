@@ -1,0 +1,26 @@
+<section class="resume-page">
+  <div class="resume-head">
+    <div class="title-tip clearfix">
+      <h1>我的简历</h1>
+      <button type="submit" name="button" class="btn" ngf-select="vm.uploadResume($files)">一键上传简历</button>
+    </div>
+    <p class="warn-tip">
+      <svg class="icon" aria-hidden="true"><use xlink:href="#icon-weixiao-"></use></svg>
+      温馨提示：仅支持word/pdf格式，文件需小于4m，简历名称格式建议：姓名+学校+专业+毕业时间
+    </p>
+  </div>
+  <div class="resume-content no-resume" ng-if="!vm.resumeExist"></div>
+  <div class="resume-content has-resume" ng-if="vm.resumeExist">
+    <div class="resume-wrap clearfix" ng-repeat="i in vm.resumeArray">
+      <div class="resume-img"></div>
+      <div class="resume-show">
+        <p class="resume-name" ng-bind="i.originalName"></p>
+        <div class="btn-wrap">
+          <a href="javascript:;" ng-click="vm.gotoPreview(i)" class="preview-btn">预览</a>
+          |
+          <a href="javascript:;" ng-click="vm.openResumeModal('delete', i)" class="delete-btn">删除</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

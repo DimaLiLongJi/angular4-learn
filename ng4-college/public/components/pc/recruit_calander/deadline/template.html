@@ -1,0 +1,59 @@
+<section class="deadline-recruit-main-content clearfix">
+  <div class="tool-side-bar" ng-if="!vm.params.keyword">
+    <dl class="industry-list" ng-cloak>
+      <dt>
+        <h3>行业</h3>
+      </dt>
+      <dd ng-repeat="category in vm.industryList" ng-click="vm.selectIndustry(category)" ng-class="{allTags: $index === 0, active: category.id === vm.params.industryId, hideTag: ($index > vm.limit && vm.expandIndustryList)}">
+        <a>{{category.name}}</a>
+      </dd>
+
+      <dd class="show-more-tag-btn" ng-show="vm.expandIndustryList" ng-click="vm.showAllTags()">
+        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-more"></use></svg>展开更多
+      </dd>
+    </dl>
+
+  </div>
+  <div class="main-list clearfix" ng-class="{'result-is-null': !vm.totalItems, 'search-status': vm.params.keyword}">
+    <p class="list-count">
+      符合筛选结果的有<span ng-bind="vm.totalItems"></span>家
+    </p>
+
+    <div class="campus-recruit-detail" ng-repeat="rc in vm.recruitArray" ng-click="vm.gotoCompany(rc)" ng-cloak>
+      <div class="company-info">
+        <img ng-src="{{rc.companies[0].imageUrl}}" alt="" ng-if="rc.companies[0].imageUrl">
+        <img src="/images/default-logo.png" alt="" ng-if="!rc.companies[0].imageUrl">
+        <ul class="info">
+          <li class="name" ng-bind="rc.companies[0].name"></li>
+          <li ng-if="rc.companies[0].industry">行业：<span ng-bind="rc.companies[0].industry.name"></span></li>
+          <li ng-if="rc.companies[0].size">规模：<span ng-bind="rc.companies[0].size.name"></span></li>
+        </ul>
+      </div>
+      <h3 class="countdown">倒计时 <span>{{rc.countdown}}</span> 天</h3>
+      <p class="date-info" ng-if="c.applyStatus ==='waiting'">
+        <span>预计时间：{{rc.applyStart}} ~ {{rc.applyEnd}}</span>
+        <span class="subscription-btn subscriptioned-btn" ng-click="vm.subscribe($event, c)" ng-if="!c.subscriptionStatus">
+          <svg class="icon close-btn" aria-hidden="true"><use xlink:href="#icon-naoling-"></use></svg>
+          订阅提醒
+        </span>
+        <span class="subscription-btn " ng-if="c.subscriptionStatus">
+          <svg class="icon close-btn" aria-hidden="true"><use xlink:href="#icon-naoling-"></use></svg>
+          已订阅
+        </span>
+      </p>
+      <p class="date-info" ng-if="rc.applyStatus ==='ongoing'">
+        <span>校招时间：{{rc.applyStart}} ~ {{rc.applyEnd}}</span>
+      </p>
+      <p class="date-info" ng-if="rc.applyStatus ==='finished'">
+        <span>校招时间：{{rc.applyStart}} ~ {{rc.applyEnd}}</span>
+      </p>
+      <!-- <span class="status plan" ng-if="rc.applyStatus ==='waiting'">未开始</span>
+      <span class="status proceed" ng-if="rc.applyStatus ==='ongoing'">进行中</span>
+      <span class="status finished" ng-if="rc.applyStatus ==='finished'">已结束</span> -->
+    </div>
+    <div class="pagination-wrap" ng-if="vm.totalPages > 1">
+      <uib-pagination id="pagination" class="pagination-sm clearfix" previous-text="上一页" next-text="下一页" total-items="vm.totalItems" items-per-page="vm.params.itemsPerPage" ng-model="vm.params.pageNum" max-size="6" ng-change="vm.pageChanged()" force-ellipses="true"></uib-pagination>
+    </div>
+  </div>
+
+</section>
