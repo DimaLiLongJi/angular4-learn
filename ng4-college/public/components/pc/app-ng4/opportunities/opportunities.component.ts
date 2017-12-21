@@ -206,6 +206,13 @@ export class OpportunitiesComponent implements OnInit {
   }
 
   industryChange(event: any) {
+    // event 其实是子组件里发射的东西this.change.emit(industry);
+    // @Input()
+    // set industry(industry: Industry) {
+    //   this.change.emit(industry);
+    // };
+    //
+    // @Output() change = new EventEmitter();
     console.log(event);
     this.params.industry = event;
     this.getList(this.buildCondition());
