@@ -114,6 +114,7 @@
     "uuid": "^3.0.1",
     "velocity": "^0.7.2",
     "velocity-animate": "^1.5.0",
+    "webpack": "^3.10.0",
     "xml": "^1.0.1",
     "xml2json": "^0.11.0",
     "zepto": "^1.2.0",
