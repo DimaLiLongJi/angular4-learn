@@ -1,0 +1,40 @@
+<div class="opportunities-container">
+  <section class="location-industry-search">
+    <location-selector selected-location="vm.params.location"></location-selector>
+    <industry-selector selected-industry="vm.params.industry"></industry-selector>
+  </section>
+  <section class="count-result" ng-cloak>
+    <p ng-if="vm.params.keyword || vm.params.industry.name !== '不限' || vm.params.location.name !== '不限'">共计 <span>{{vm.totalItems}}</span> 个结果</p>
+  </section>
+  <section class="position-list clearfix" ng-cloak>
+    <div class="placeholder-wrap" ng-if="vm.oppArray.length === 0">
+      <img class="placeholder" src="http://static.careerfrog.com.cn/cf-college/images/no-recommended-opp.cb6d3808.png" alt="" >
+      <p>暂无搜索结果</p>
+    </div>
+    <a ng-href="/opportunity/{{opp.id}}" class="position-detail" ng-repeat="opp in vm.oppArray" ng-click="vm.saveStatus()">
+      <p class="tag" ng-if="opp.company.companyLabel" ng-bind="opp.company.companyLabel">
+      </p>
+      <figure>
+        <img ng-src="{{opp.company.imageUrl}}" alt="{{opp.company.name}}">
+        <figcaption>
+          <h3 ng-bind="opp.position"></h3>
+          <p class="company">
+            <strong ng-bind="opp.company.name"></strong>
+            <span class="category" ng-bind="opp.category.name"></span>
+          </p>
+          <p class="location">
+            <span>
+              <svg class="icon" aria-hidden="true"><use xlink:href="#icon-zuobiao"></use></svg>
+              <span ng-repeat="l in opp.locations">{{l.name}}&nbsp;</span>
+            </span>
+            <time ng-bind="opp.publishDate | date: 'yyyy-MM-dd'">2017-09-09</time>
+          </p>
+        </figcaption>
+      </figure>
+    </a>
+
+  </section>
+  <div class="pagination-wrap" ng-if="vm.totalPages > 1">
+    <uib-pagination id="pagination" class="pagination-sm clearfix" previous-text="上一页" next-text="下一页" total-items="vm.totalItems" items-per-page="vm.params.itemsPerPage" ng-model="vm.params.pageNum" max-size="6" ng-change="vm.pageChanged()" force-ellipses="true"></uib-pagination>
+  </div>
+</div>

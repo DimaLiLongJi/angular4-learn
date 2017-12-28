@@ -1,0 +1,45 @@
+<div class="location-selector-container">
+  <dl class="hot-location-list clearfix">
+    <dt>工作地点：</dt>
+    <dd ng-repeat="l in vm.locationList" ng-click="vm.selectLocation(l)"
+    ng-class="{'selected': l.name === vm.selectedLocation.name}">
+      <a href="javascript:;" ng-bind="l.name"></a>
+    </dd>
+    <dd class="more-btn" ng-click="vm.toggleMoreLocation()">
+      <a href="javascript:;">
+        更多
+        <svg class="icon" aria-hidden="true" ng-if="!vm.moreLocation"><use xlink:href="#icon-yuanxingsanjiaoxia-"></use></svg>
+        <svg class="icon" aria-hidden="true" ng-if="vm.moreLocation"><use xlink:href="#icon-yuanxingsanjiaoshang-"></use></svg>
+      </a>
+    </dd>
+  </dl>
+  <div class="more-location-wrap" ng-show="vm.moreLocation">
+    <dl class="country-list clearfix">
+      <dt>地区选择：</dt>
+      <dd ng-click="vm.selectCountry(c, $event)"
+        ng-class="{'selected': c.id === vm.selectedCountry.id}"
+       ng-repeat="c in vm.allLocationTag">
+        <a href="javascript:;" ng-bind="c.name"></a>
+      </dd>
+    </dl>
+    <div class="province-wrap" ng-repeat="g in vm.provinceList.cityGroup">
+      <dl class="province-list clearfix">
+        <dt>{{g}}</dt>
+        <dd ng-repeat="p in vm.provinceList.cityByGroup[$index]" ng-if="$index <= 12"
+        ng-click="vm.selectProvince(p)">
+          <a href="javascript:;">{{p.name}}</a>
+        </dd>
+      </dl>
+      <dl class="province-list clearfix" ng-if="vm.provinceList.cityByGroup[$index].length > 13">
+        <dt>&nbsp;</dt>
+        <dd ng-repeat="p in vm.provinceList.cityByGroup[$index]" ng-if="$index > 12"
+          ng-click="vm.selectProvince(p)"
+          >
+          <a href="javascript:;">{{p.name}}</a>
+        </dd>
+      </dl>
+
+    </div>
+
+  </div>
+</div>

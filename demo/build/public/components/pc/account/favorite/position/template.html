@@ -1,0 +1,38 @@
+<div class="favorite-position-container">
+  <div class="placeholder" ng-if="!vm.totalItems" ng-cloak>
+    <p>你还没有收藏任何职位，</p>
+    <p>快去看看名企职位吧！</p>
+    <a href="/">去看名企职位</a>
+  </div>
+  <div class="" ng-if="vm.totalItems">
+    <ul>
+      <li class="oppDetail" ng-repeat="opp in vm.oppArray">
+        <img ng-src="{{opp.companyImage}}" alt="opp.company">
+        <dl class="info" ng-click="vm.viewDetail(opp, $event)" ng-class="{'opp-expire': opp.status === 3}">
+          <dt class="main-info">
+            <strong ng-bind="opp.position"></strong>
+            <span>发布于 &nbsp;&nbsp;{{opp.publishDate | date: 'yyyy-MM-dd'}}</span>
+          </dt>
+          <dd class="other-info">
+            <span ng-bind="opp.location"></span>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <span ng-bind="opp.company"></span>
+          </dd>
+          <dd class="action">
+            <span class="tag" ng-bind="opp.companyLabel" ng-if="opp.companyLabel">
+            </span>
+            <span ng-if="!opp.companyLabel">
+            </span>
+            <a href="javascript:;" ng-click="vm.cancelFavorite(opp, $event)">取消收藏</a>
+          </dd>
+          <dd class="expire" ng-cloak ng-if="opp.status === 3">
+            <img src="/images/expire.png" alt="">
+          </dd>
+        </dl>
+      </li>
+    </ul>
+    <div class="pagination-wrap" ng-if="vm.totalPages > 1">
+      <uib-pagination id="pagination" class="pagination-sm clearfix" previous-text="上一页" next-text="下一页" total-items="vm.totalItems" items-per-page="vm.params.itemsPerPage" ng-model="vm.params.pageNum" max-size="6" ng-change="vm.pageChanged()" force-ellipses="true"></uib-pagination>
+    </div>
+  </div>
+</div>

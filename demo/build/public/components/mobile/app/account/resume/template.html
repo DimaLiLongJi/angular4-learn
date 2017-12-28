@@ -1,0 +1,23 @@
+<div class="resume-page" ng-class="{pageFull: !vm.resumeExist}">
+  <page-title title="我的简历" customized-go-back="vm.gotoAccount"></page-title>
+  <div class="no-resume" ng-if="!vm.resumeExist">
+    <p>college.careerfrog.com.cn</p>
+  </div>
+  <div class="has-resume" ng-if="vm.resumeExist">
+    <div class="resume-notice"></div>
+    <div class="resume-wrap clearfix" ng-repeat="i in vm.resumeArray">
+      <div class="resume-img"></div>
+      <div class="resume-show">
+        <p class="resume-name" ng-bind="i.originalName"></p>
+        <div class="resume-info clearfix">
+          <span class="icon-dele" ng-click="vm.openResumeDeleteModal(i)"></span>
+          <p class="created-at">{{i.createdAt | date : 'yyyy-MM-dd'}}上传</p>
+        </div>
+      </div>
+      <div class="resume-preview" ng-click="vm.openFilePreviewModal(i)">
+        <span class="icon-preview"></span>
+      </div>
+    </div>
+  </div>
+  <resume-delete-modal show-modal="vm.showDeleteModal" resume="vm.deleteReume"></resume-delete-modal>
+</div>

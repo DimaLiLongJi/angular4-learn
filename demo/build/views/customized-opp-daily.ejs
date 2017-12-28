@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="App">
+<head>
+  <meta charset="utf-8">
+  <title>每日实习推送</title>
+  <meta name="description" content="">
+
+  <script src="/scripts/customized-opp-daily-style.js"></script>
+  <link rel="stylesheet" href="/scripts/customized-opp-daily-style.css">
+
+</head>
+
+<body>
+  <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <p class="tip">
+    <svg class="icon-dengpao" aria-hidden="true"><use xlink:href="#icon-xiaodengpao-"></use></svg>
+    每天推送的实习职位根据你填写的定制信息给出
+  </p>
+  <div class="info-wrap">
+    <p class="date"><%- opportunities.pushDate %>&nbsp;&nbsp;<span><%- weekDay %></span></p>
+    <p class="info-tip">
+      <svg class="icon-flag" aria-hidden="true"><use xlink:href="#icon-icon-qizi-"></use></svg>今日实习推荐：
+    </p>
+    <% for (const opp of opportunities.opportunities) { %>
+    <div class="opp-wrap" onclick='window.location.href="/opportunity/<%- opp.id %>"'>
+      <p class="opp-title"><%- opp.position %></p>
+      <p class="opp-company">【<span class="opp-position"><%- opp.locations %></span>】&nbsp;<%- opp.companyName %></p>
+      <span class="opp-sub"><%- opp.companyLabel %></span>
+      <a class="to-opp">
+        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right"></use></svg>
+      </a>
+    </div>
+    <% } %>
+  </div>
+
+
+  <script src="//at.alicdn.com/t/font_302276_v3bjsrdmxxmholxr.js"></script>
+</body>
+
+</html>

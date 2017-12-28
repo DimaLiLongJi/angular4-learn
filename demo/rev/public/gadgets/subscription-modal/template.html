@@ -1,0 +1,36 @@
+<div class="subscription-modal">
+  <h1 ng-if="vm.scene === 'recruit'">
+    {{ vm.user ? '扫码关注并订阅' : '扫码登录'}}
+    <svg ng-click="vm.closeModal()" class="icon close-btn" aria-hidden="true"><use xlink:href="#icon-icon-delete"></use></svg>
+  </h1>
+  <h1 ng-if="vm.scene === 'qa'">
+    {{ vm.user ? '扫码关注公众号' : '扫码登录'}}
+    <svg ng-click="vm.closeModal()" class="icon close-btn" aria-hidden="true"><use xlink:href="#icon-icon-delete"></use></svg>
+  </h1>
+  <div class="" ng-if="vm.subscribe">
+      <h2>
+        <svg class="icon close-btn" aria-hidden="true"><use xlink:href="#icon-gougou-"></use></svg>
+        订阅成功
+      </h2>
+      <p>该公司网申时间将在服务号通知你！</p>
+      <p>同时，我们为你订阅了同行业的所有公司。</p>
+      <p class="cancel-subscription">若你想修改订阅内容，请在服务号操作。</p>
+  </div>
+  <div class="" ng-if="!vm.subscribe && vm.scene === 'recruit'">
+    <p style="margin-top: 20px;">关注服务号求职学堂小助手，一键订阅校招日历</p>
+    <p class="cancel-subscription">若你想修改订阅内容，请在服务号操作。</p>
+    <div class="code-container">
+      <!-- <div class="img"></div> -->
+      <img ng-src="{{vm.qrCode}}" alt="">
+    </div>
+  </div>
+  <div class="" ng-if="!vm.subscribe && vm.scene === 'qa'">
+    <div class="code-container">
+      <!-- <div class="img"></div> -->
+      <img ng-src="{{vm.qrCode}}" alt="">
+    </div>
+    <p style="margin-top: 20px;">答案将在 求职学堂小助手 服务号</p>
+    <p style="margin-top: 5px;">回复你！即刻扫码关注</p>
+    <p class="cancel-subscription" style="font-size:10px;color:lightgrey;">若扫码无反应，请尝试清除浏览器缓存或使用其他浏览器</p>
+  </div>
+</div>

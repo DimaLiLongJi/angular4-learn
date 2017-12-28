@@ -1,0 +1,17 @@
+<div class="prefix-selector-pc-container">
+  <span  class="prefix clearfix">
+    <strong class="selected-prefix-value">
+      <s>+</s>{{vm.prefix.value}}
+    </strong>
+    <svg class="icon arrow" aria-hidden="true"><use xlink:href="#icon-yuanxingsanjiaoxia-"></use></svg>
+  </span>
+  <div class="wrap" ng-if="vm.listStatus">
+    <div class="triangle">&nbsp;</div>
+    <ul class="prefix-list">
+      <li class="prefix-detail" ng-repeat="p in vm.prefixArray" ng-click="vm.selectPrefix(p)">
+        <span ng-bind="p.name" class="country-name"></span>
+        <span class="prefix-value">+{{p.value}}</span>
+      </li>
+    </ul>
+  </div>
+</div>

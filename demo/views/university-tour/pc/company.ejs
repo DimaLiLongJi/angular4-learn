@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html ng-app="App">
+
+<head>
+  <meta charset="utf-8">
+  <title>公司信息_求职学堂_职业蛙</title>
+  <meta name="description" content="这里收录了10000+热门公司信息,包括了详细的公司介绍和在招职位,帮助学生选择合适的公司和职位,走准职业第一步。">
+  <meta name="keywords" content="公司信息,咨询,金融,互联网,500强,实习,应届生,企业,名企,公司简介,公司详情,官网,在招职位,类似公司。">
+
+  <!-- <script src="/scripts/uk-company-detail-pc-style.js"></script> -->
+  <link rel="stylesheet" href="/scripts/uk-company-detail-pc-main.css">
+</head>
+
+<body ng-controller="companyDetailCtrl as vm" ng-cloak>
+  <div class="background-wrap" id="background-wrap">
+    <div class="company-wrap clearfix">
+      <div class="company-main-info clearfix">
+        <a href="/university_tour" class="index-link"></a>
+        <a href="" class="img-link">
+          <% if (company.imageUrl) {%>
+            <img src="<%- company.imageUrl %>" alt="">
+            <% } else {%>
+
+              <% } %>
+        </a>
+        <dl class="">
+          <dt>
+                <%- company.name %>
+              </dt>
+          <dd class="clearfix">
+            <strong><%- company.industry.name %></strong> |
+            <strong><%- company.city.name %></strong> |
+            <% if(company.size) {%>
+              <strong><%- company.size.name %></strong>
+              <% } %>
+          </dd>
+          <!-- <dd>
+            <strong>
+              平均薪资：<%- company.averageSalary%>元
+            </strong>
+          </dd> -->
+        </dl>
+      </div>
+
+    </div>
+    <section class="company-container clearfix">
+      <div class="tab-bar-wrap" ng-class="{'fix': vm.barFixed }">
+        <div class="clearfix tab-bar">
+          <a class="tab" du-smooth-scroll="section-1" du-scrollspy>公司详情</a>
+          <a class="tab" id="df" du-smooth-scroll="section-2" du-scrollspy>环英职位（{{vm.totalItems}}）</a>
+        </div>
+      </div>
+      <div class="position-list clearfix">
+        <div class="synopsis" ng-class="{'synopsis-top': vm.barFixed}">
+          <div class="section-title clearfix" id="section-1">
+            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-intro"></use></svg>公司简介
+          </div>
+          <div class="introduction">
+            <%- company.introduction %>
+              <p>
+                公司官网：
+                <a href="http://<%- company.officialUrl %>" class="official-url" target="_blank">
+                  <%- company.officialUrl %>
+                </a>
+              </p>
+          </div>
+        </div>
+
+        <div class="" id="section-2">
+          <div class="section-title clearfix">
+            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-position"></use></svg>环英职位（{{vm.oppArray.length}}）
+          </div>
+          <section class="list-is-null" ng-if="!vm.oppArray.length">
+            <img src="/images/no-position.png" alt="">
+          </section>
+          <div class="opp-detail clearfix" ng-repeat="opp in vm.oppArray" ng-click="vm.gotoOpp(opp.id)">
+            <dl>
+
+              <dt class="clearfix ">
+                <a>
+                  {{opp.position}}
+                </a>
+                <strong class="category ">环英专属职位</strong>
+                <!-- <strong class="category ">{{opp.category.name}}</strong> -->
+              </dt>
+              <dd class="clearfix ">
+                <svg class="icon " aria-hidden="true "><use xlink:href="#icon-zuobiao "></use></svg> {{opp.locations[0].name}}
+                <strong ng-if="opp.applyStart">{{opp.applyStart | date: 'yyyy-MM-dd'}} 开启网申</strong>
+              </dd>
+            </dl>
+          </div>
+
+        </div>
+      </div>
+  </div>
+
+  </div>
+  <footer class="uk-campus-recruiting-tour-footer">
+    <dl class="">
+      <dt>联系我们</dt>
+      <dd>咨询热线：07731556094</dd>
+      <dd>公司地址：4 Christopher Street, London, EC2A 2BS</dd>
+      <dd>网站备案编号：沪ICP备12026287号-1</dd>
+      <dd class="logo">
+        <img src="/images/university-tour/logo.png" alt="">
+      </dd>
+    </dl>
+  </footer>
+  <!-- svg -->
+  <script src="//at.alicdn.com/t/font_302276_v3bjsrdmxxmholxr.js"></script>
+  <script src="/scripts/uk-company-detail-pc-main.js"></script>
+  <script>
+    angular.module('App')
+    .constant('company', <%- JSON.stringify(company) %>)
+    .constant('API_BASE_URL', '<%= API_BASE_URL %>');
+  </script>
+
+</body>
+
+</html>

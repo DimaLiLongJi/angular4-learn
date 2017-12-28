@@ -1,0 +1,71 @@
+{
+  "domain": "colloge.careerfrog.com.cn",
+  "redis": {
+    "host": "10.25.21.69",
+    "password": "tongji2017cf"
+  },
+  "jwt": {
+    "secret": "careerfrog",
+    "expiresIn": "10d"
+  },
+  "qiniu": {
+    "access_key": "H2ah9yKqBkebJBuymwkAs1u32GZ_6Wu0o5dq3IjI",
+    "secret_key": "y16RctL1BpVhebTIwUXjl6zPPmn-ujHPxt_HAg8n",
+    "bucket": "media",
+    "uploadCallbackUrl": "http://admin.careerfrog.com.cn/api/qiniu/upload-callback",
+    "mediaBaseUrl": "http://media.careerfrog.com.cn/"
+  },
+  "baseUrls": {
+    "BASE_URL": "http://college.careerfrog.com.cn",
+    "API_BASE_URL": "http://college.careerfrog.com.cn/api",
+    "CF_ADMIN_BASE_URL": "http://admin.careerfrog.com.cn/",
+    "CF_VISITOR_BASE_URL": "http://careerfrog.com.cn",
+    "CF_COMMUNICATION_BASE_URL": "http://communication.careerfrog.com.cn/api",
+    "CF_SCHEDULETASK_BASE_URL": "http://scheduletask.careerfrog.com.cn",
+    "CF_FILE_BASE_URL": "http://file.careerfrog.com.cn/api/files",
+    "CF_CLIENT_BASE_URL": "http://client.careerfrog.com.cn",
+    "CF_CALLCENTER_BASE_URL": "http://callcenter.careerfrog.com.cn",
+    "CF_CEPING_BASE_URL": "http://ceping.careerfrog.com.cn"
+  },
+  "cfAdmin": {
+    "hostname": "admin.careerfrog.com.cn",
+    "email": "cf-college@careerfrog.com.cn",
+    "password": "sjtu2016"
+  },
+  "log4js": {
+    "appenders": {
+      "redis": {
+        "host": "10.46.30.19",
+        "pass": "tongji2017cf",
+        "type": "redis",
+        "channel": "logs",
+        "layout": {
+          "type": "json_logstash"
+        }
+      }
+    },
+    "categories": {
+      "default": {
+        "appenders": ["redis"],
+        "level": "debug"
+      },
+      "access": {
+        "appenders": ["redis"],
+        "level": "info"
+      }
+    }
+  },
+  "wechat" : {
+    "mobileBlocker": true
+  },
+  "wechatCollegeAssistant": {
+    "API_BASE_URL": "https://api.weixin.qq.com/cgi-bin/",
+    "grant_type" : "client_credential",
+    "appID": "wxa0b3b330cee9cc9d",
+    "appsecret": "9b57d161b3e065b7ef316065f4d6e21b",
+    "encodingAESKey": "veGVW5hzPl0c3wVuI3taz1B7iNMSY1lH3Dm2TI7v99z",
+    "token": "careerfrog2017",
+    "templateID": "O6fcBjZ3b3-_p7FbCPMObA46KvucQAbrKMRpqzD6dH4",
+    "answerTemplateID": "IFAPwF8KeUZ2C23Osft0BVr4USk5Q6PVunaqLwJ4Lyw"
+  }
+}

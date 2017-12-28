@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>求职学堂</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <script src="http://static.careerfrog.com.cn/cf-college/scripts/vendor-flexible.f238aaa2.js"></script>
+    <!-- <script src="http://static.careerfrog.com.cn/cf-college/scripts/go-wechat-style.f4a47667.js"></script> -->
+    <link rel="stylesheet" href="http://static.careerfrog.com.cn/cf-college/scripts/go-wechat-style.d2b9033e.css">
+  </head>
+  <body>
+    <h1>温馨提示</h1>
+    <% if (follow) { %>
+      <p style="text-align: center;">
+        扫码关注服务号（求职学堂小助手）订阅校招日历，
+      </p>
+      <p class="push-tips">
+        网申通知实时推送
+      </p>
+    <% } else { %>
+      <p>
+        请在
+        <span>微信打开该链接</span>
+        或
+        <span>关注我们的服务号（求职学堂小助手）</span>
+        ，在底部菜单栏进入求职学堂
+      </p>
+    <% } %>
+    <img src="https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQEy8TwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAydno2YWdQSFZmMmgxMDAwMDAwN1oAAgTtXZZZAwQAAAAA" alt="">
+    <h2>求职学堂小助手</h2>
+
+  </body>
+</html>

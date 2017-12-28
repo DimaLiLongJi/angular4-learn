@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html ng-app="App">
+
+<head>
+  <meta name="baidu-site-verification" content="vENBYR0MC7">
+  <title>求职学堂,教你如何拿offer|职业蛙</title>
+  <meta charset="utf-8">
+  <meta name="description" content="求职学堂,职业蛙精心打造的机会信息共享平台。这里有精选的名企职位、最新校招时间、实用的求职资料并提供一站式求职解决方案,切实帮助大学生走好求职每一步。">
+  <meta name="keywords" content="求职学堂,职业蛙,名企职位,网申,四大,咨询,快消,银行,金融,互联网,名企,500强,校招,社招,海归求职,留学生求职,实习,全职">
+  <!-- <script src="/scripts/account-style.js"></script> -->
+  <link rel="stylesheet" href="/scripts/account-main.css">
+</head>
+
+<body ng-controller="accountCtrl as vm">
+  <header class="clearfix page-header">
+    <div class="wrap">
+      <h1 class="logo"></h1>
+      <div class="account-wrap">
+        <account-nav user="vm.user" url="account"></account-nav>
+      </div>
+      <ul class="clearfix nav">
+        <li><a href="/">名企实习</a></li>
+        <li>
+          <a href="/recruit_calendar">校招日历</a>
+
+        </li>
+        <li><a href="/discovery">求职探索</a></li>
+        <li class="kit">
+          <a href="/interview_material" class="kit">面试锦集</a>
+          <img src="http://static.careerfrog.com.cn/cf-college/images/interview-material/kit.e2f8d7af.png">
+        </li>
+        <li class="swich-wrap">
+          <swich swich-status="vm.swichStatus" swich-lable="vm.swichLable" call-back="vm.toggleDanmu()"></swich>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <div class="account-page">
+    <div class="banner"></div>
+    <section class="account clearfix">
+      <aside class="left-side-bar">
+        <ul>
+          <li ng-class="{active: vm.state.includes('account.resume')}">
+            <a ui-sref="account.resume">
+              <svg class="icon" aria-hidden="true"><use xlink:href="#icon-icon-jianlicaozuo1"></use></svg>
+              我的简历
+            </a>
+          </li>
+          <li ng-class="{active: vm.state.includes('account.application')}">
+            <a ui-sref="account.application" style="position: relative">
+              <svg class="icon" aria-hidden="true"><use xlink:href="#icon-icon-toudijincheng-"></use></svg>
+              投递进程
+              <span ng-class="{redCircle: vm.user.applicationCheckedNotice}" ng-show="vm.user.applicationCheckedNotice"></span>
+            </a>
+          </li>
+          <li ng-class="{active: vm.state.includes('account.favorite')}">
+            <a ui-sref="account.favorite">
+              <svg class="icon" aria-hidden="true"><use xlink:href="#icon-icon-shoucang-"></use></svg>
+              我的收藏
+            </a>
+          </li>
+          <li ng-class="{active: vm.state.includes('account.question')}">
+            <a ui-sref="account.question" style="position: relative">
+              <svg class="icon" aria-hidden="true"><use xlink:href="#icon-icon-tiwen-"></use></svg>
+              我的问答
+              <!-- <span ng-cloak ng-class="{redCircle: vm.user.questionCheckedNotice}" ng-if="vm.user.questionCheckedNotice"></span> -->
+              <span ng-cloak class="redCircle" ng-if="!vm.user.questionCheckedNotice"></span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <main ui-view></main>
+    </section>
+  </div>
+
+  <user-feedback></user-feedback>
+
+  <%- include('../../templates/footer'); %>
+    <script type="text/javascript">var user= <%- JSON.stringify(user) %></script>
+
+    <script src="//at.alicdn.com/t/font_302276_v3bjsrdmxxmholxr.js"></script>
+    <script src="http://static.careerfrog.com.cn/cf-college/scripts/account-main.58dce0df.js"></script>
+    <script>angular.module("App").constant("$USER", <%- JSON.stringify(user) %>).constant("API_BASE_URL","<%= API_BASE_URL %>").constant("CF_FILE_BASE_URL","<%= CF_FILE_BASE_URL %>")</script>
+
+</body>
+
+</html>

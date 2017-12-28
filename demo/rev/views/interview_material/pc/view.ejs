@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html ng-app="App">
+
+<head>
+  <meta charset="utf-8">
+  <title>面经锦囊_求职学堂</title>
+  <meta name="description" content="八大行业面经锦囊,助你从容应对面试难关">
+  <meta name="keywords" content="面经锦囊,面试锦囊,面试经验,求职礼包,面试准备,面试解析,咨询,投行券商,四大,快消,银行,互联网,房地产">
+  <!-- <script src="/scripts/interview_material-style.js"></script> -->
+  <link rel="stylesheet" href="/scripts/interview_material-main.css">
+</head>
+
+<body ng-controller="interviewMaterialCtrl as vm" ng-cloak>
+  <header class="clearfix page-header">
+    <div class="wrap">
+      <h1 class="logo"></h1>
+      <div class="account-wrap">
+        <account-nav user="vm.user" url="interview_material"></account-nav>
+      </div>
+      <ul class="clearfix nav">
+        <li><a href="/">名企实习</a></li>
+        <li>
+          <a href="/recruit_calendar">校招日历</a>
+        </li>
+        <li><a href="/discovery">求职探索</a></li>
+        <li class="kit">
+          <a href="javascript:;" class="kit active">面试锦集</a>
+          <img src="http://static.careerfrog.com.cn/cf-college/images/interview-material/kit.e2f8d7af.png">
+        </li>
+        <li class="swich-wrap">
+        </li>
+      </ul>
+    </div>
+  </header>
+  <div class="main-content">
+
+    <div class="search-container">
+      <svg class="icon" aria-hidden="true"><use xlink:href="#icon-sousuo"></use></svg>
+      <input ng-model="vm.params.keyword" ng-change="vm.search('research')" type="text" growing-track="true" placeholder="请输入公司">
+      <a href="javascript:;" class="search-btn">搜索</a>
+    </div>
+
+    <ul class="industry-list" ng-if="!vm.params.keyword">
+      <li class="industry-tag" ng-click="vm.viewIndustry(industry)" ng-repeat="industry in vm.industryArray">
+        <img ng-src="{{industry.banner}}" alt="{{industry.name}}">
+        <h1 ng-bind="industry.name"></h1>
+        <h2>- {{industry.name_en}} -</h2>
+      </li>
+    </ul>
+    <div class="" ng-if="vm.params.keyword">
+      <img ng-if="!vm.totalTips && !vm.totalMaterials" src="http://static.careerfrog.com.cn/cf-college/images/nothing.f42fc80a.png" alt="" class="placeholder">
+      <div class="" ng-if="vm.totalTips">
+        <h2 class="search-list-title">
+          <svg class="icon" aria-hidden="true"><use xlink:href="#icon-icon-jinnang-"></use></svg>
+          面试锦囊
+        </h2>
+        <div class="search-list kit-list">
+          <div class="kit" ng-repeat="tip in vm.tipsArray">
+          <!-- <div class="cover">
+
+          </div> -->
+          <img class="cover" ng-src="{{tip.cover}}" alt="" ng-click="vm.gotoPreview(tip)">
+          <dl class="info">
+            <dt class="multiline-nowrap" ng-click="vm.gotoPreview(tip)">{{tip.fileName}}</dt>
+            <dd>作者：求职学堂团队</dd>
+            <dd>更新：{{tip.updatedAt | date: 'yyyy-MM-dd'}}</dd>
+          </dl>
+          <div class="tool">
+            <span ng-click="vm.gotoPreview(tip)">
+              <svg class="icon" aria-hidden="true"><use xlink:href="#icon-icon-yulan-"></use></svg>
+              预览 {{tip.viewCount}}
+            </span>
+            <i class="line">|</i>
+            <!-- <a ng-href="{{tip.download}}" ng-click="vm.download(tip, $event)"> -->
+            <a ng-click="vm.download(tip, $event)">
+              <svg class="icon" aria-hidden="true"><use xlink:href="#icon-icon-xiazai-"></use></svg>
+              下载 {{tip.downloadCount}}
+            </a>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="material-list-wrap" ng-if="vm.totalMaterials">
+        <h2 class="search-list-title">
+          <svg class="icon" aria-hidden="true"><use xlink:href="#icon-icon-jingyan-"></use></svg>
+          面试经验
+        </h2>
+        <ul class="search-list material-list">
+          <li ng-repeat="material in vm.materialsArray">
+            <span class="name">
+              <strong ng-click="vm.gotoPreview(material)">{{material.fileName}}</strong>
+            </span>
+            <span class="update">更新于 {{material.updatedAt | date: 'yyyy-MM-dd'}}</span>
+            <span class="action" ng-click="vm.gotoPreview(material)">
+              <svg class="icon" aria-hidden="true"><use xlink:href="#icon-icon-yulan-"></use></svg>
+              预览
+            </span>
+            <i class="line">|</i>
+            <!-- <a class="action" ng-href="{{material.download}}" ng-click="vm.download(material, $event)"> -->
+            <a class="action" ng-click="vm.download(material, $event)">
+              <svg class="icon" aria-hidden="true"><use xlink:href="#icon-icon-xiazai-"></use></svg>
+              下载
+            </a>
+          </li>
+          <div class="pagination-wrap" ng-if="vm.materialTotalPages > 1">
+            <uib-pagination id="pagination" class="pagination-sm clearfix" previous-text="上一页" next-text="下一页" total-items="vm.totalMaterials" items-per-page="vm.params.itemsPerPage" ng-model="vm.params.pageNum" max-size="6" ng-change="vm.pageChanged()" force-ellipses="true"></uib-pagination>
+          </div>
+        </ul>
+      </div>
+
+    </div>
+
+
+
+
+  </div>
+
+  <%- include('../../templates/footer'); %>
+    <script src="//at.alicdn.com/t/font_302276_v3bjsrdmxxmholxr.js"></script>
+    <script src="http://static.careerfrog.com.cn/cf-college/scripts/interview_material-main.519976c2.js"></script>
+    <script>angular.module("App").constant("$USER", <%- JSON.stringify(user) %>).constant("API_BASE_URL","<%= API_BASE_URL %>").constant("CF_FILE_BASE_URL","<%= CF_FILE_BASE_URL %>")</script>
+</body>
+
+</html>

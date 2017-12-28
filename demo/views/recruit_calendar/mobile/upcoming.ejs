@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>校招信息</title>
+  <script src="/scripts/vendor-flexible.js"></script>
+  <script src="/scripts/recruit-calander-upcoming-style.js"></script>
+</head>
+
+<body>
+  <div class="main-content">
+    <div class="bg">
+    </div>
+    <p class="tips">该公司校招暂未开启</p>
+    <p class="tips"><%- oppDetail.applyStatus === 'waiting' ? '预计时间' : '校招时间'%>：
+      <%- oppDetail.applyStart %>~
+        <%- oppDetail.applyEnd  || '待定'%>
+    </p>
+    <p class="tips">校招日历将实时更新校招信息</p>
+    <% if (recruitRecommend.length) {%>
+      <h3 class="title">校招推荐</h3>
+      <% for(let i = 0; i< recruitRecommend.length; i++){%>
+        <div class="recruit-detail" data-url="<%- recruitRecommend[i].opportunity.applyLink %>">
+          <img src="<%- recruitRecommend[i].imageUrl%>" alt="">
+          <ul class="info">
+            <li class="recruit-name"><%- recruitRecommend[i].name%></li>
+              <li class="industry"><% if (recruitRecommend[i].industry) {%>
+            <%- recruitRecommend[i].industry.name || '暂无'%>
+            <% } %></li>
+            <li class="beginTime">
+              <%- recruitRecommend[i].opportunity.applyStatus === 'waiting' ? '预计时间' : '校招时间'%>：<%- recruitRecommend[i].opportunity.applyStart %> ~ <%- recruitRecommend[i].opportunity.applyEnd || '待定'%></li>
+
+            <% if (recruitRecommend[i].opportunity.applyStatus === 'waiting') {%>
+              <li class="currentStatus red">未开始</li>
+            <% } %>
+            <% if (recruitRecommend[i].opportunity.applyStatus === 'ongoing') {%>
+              <li class="currentStatus yellow">进行中</li>
+            <% } %>
+            <% if (recruitRecommend[i].opportunity.applyStatus === 'finished') {%>
+              <li class="currentStatus grey">已结束</li>
+            <% } %>
+          </ul>
+        </div>
+      <%}%>
+    <% }%>
+</body>
+
+<script>
+  [].forEach.call(document.getElementsByClassName('recruit-detail'), function(el) {
+    el.addEventListener('click', function() {
+      var url = this.getAttribute('data-url');
+      window.location.href = url;
+    });
+  })
+</script>
+
+</html>

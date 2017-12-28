@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html ng-app="App">
+
+<head>
+  <meta name="baidu-site-verification" content="vENBYR0MC7" />
+  <title>求职学堂,教你如何拿offer|职业蛙</title>
+  <meta charset="utf-8">
+  <meta name="description" content="求职学堂,职业蛙精心打造的机会信息共享平台。这里有精选的名企职位、最新校招时间、实用的求职资料并提供一站式求职解决方案,切实帮助大学生走好求职每一步。">
+  <meta name="keywords" content="求职学堂,职业蛙,名企职位,网申,四大,咨询,快消,银行,金融,互联网,名企,500强,校招,社招,海归求职,留学生求职,实习,全职">
+  <base href="/">
+  <!-- <script src="/scripts/app-pc-style.js"></script> -->
+  <link rel="stylesheet" href="/scripts/app-pc-main.css">
+
+</head>
+<body>
+
+  <header class="clearfix page-header">
+    <div class="wrap">
+      <h1 class="logo"></h1>
+      <div class="account-wrap">
+        <account-nav user="vm.user"></account-nav>
+      </div>
+        <ul class="clearfix nav">
+          <li><a href="javascript:;" class="active">名企实习</a></li>
+          <li>
+            <a href="/recruit_calendar">校招日历</a>
+
+          </li>
+          <li><a href="/discovery">求职探索</a></li>
+          <li class="kit">
+            <a href="/interview_material" class="kit">面试锦集</a>
+            <img src="/images/interview-material/kit.png" />
+          </li>
+          <li class="swich-wrap">
+            <swich swich-status="vm.swichStatus" swich-lable="vm.swichLable" call-back="vm.toggleDanmu()"></swich>
+          </li>
+        </ul>
+    </div>
+  </header>
+  <!-- <div class="danmu-wrap">
+    <div class="progress-bar-wrap" ng-if="customizedStatus === 'loading'">
+      <progress-bar animation-duration="animationDuration" tips="页面定制中……"></progress-bar>
+    </div>
+
+    <dan-mu ng-if="customizedStatus !== 'loading'" dan-mu-status="vm.swichStatus" img-src="vm.imgSrc"></dan-mu>
+  </div> -->
+  <!-- <section class="search-bar">
+    <h3 class="">
+      <span ng-bind="vm.oppCount"></span>
+      个名企职位
+    </h3>
+    <svg class="icon" aria-hidden="true"><use xlink:href="#icon-sousuo"></use></svg>
+    <input type="text" name="" value="" ng-model="$root.keyword" ng-change="vm.inputKeyword()" placeholder="搜索职位/公司/城市">
+    <a href="javascript:;" ng-click="vm.search()">搜索</a>
+  </section> -->
+  <!-- <nav class="nav-bar">
+    <a ui-sref="opportunity-recommended" ng-class="{active: state.includes('opportunity-recommended')}">
+      <div class="border">
+      </div>
+      <div class="customized">
+        定制
+      </div>
+      <span>推荐职位</span>
+    </a>
+    <a ui-sref="opportunities" ng-class="{active: state.includes('opportunities')}">
+      <div class="border">
+      </div>
+      <span>全部职位</span>
+    </a>
+  </nav> -->
+  <div class="main-container">
+    <!-- <ui-view class="main-container"></ui-view> -->
+    <my-app></my-app>
+  </div>
+
+  <!-- <user-feedback></user-feedback>
+  <scroll-to-top></scroll-to-top>
+  <qr-code></qr-code> -->
+
+  <%- include('../../templates/footer'); %>
+  <!-- <script type="text/javascript">
+    var user = <%- JSON.stringify(user) %>;
+  </script> -->
+
+  <script src="//at.alicdn.com/t/font_302276_v3bjsrdmxxmholxr.js"></script>
+  <!-- <script src="/scripts/app-pc-main.js"></script> -->
+  <script>
+    // angular.module('App')
+    //   .constant('$USER', <%- JSON.stringify(user) %>)
+    //   .constant('API_BASE_URL', '<%= API_BASE_URL %>')
+      // .constant('CF_FILE_BASE_URL', '<%= CF_FILE_BASE_URL %>');
+      window.$USER = <%- JSON.stringify(user) %>;
+      window.API_BASE_URL = '<%= API_BASE_URL %>';
+      window.CF_FILE_BASE_URL = '<%= CF_FILE_BASE_URL %>';
+      // (function(app) {
+      //     app.Service = require('ng').core.Class({
+      //         constructor: function(){},
+      //         $USER: function() {
+      //             return <%- JSON.stringify(user) %>;
+      //         },
+      //         API_BASE_URL: function() {
+      //             return '<%= API_BASE_URL %>';
+      //         },
+      //         CF_FILE_BASE_URL: function() {
+      //             return '<%= CF_FILE_BASE_URL %>';
+      //         },
+      //     });
+      // })(window.app || (window.app = {}));
+// });
+  </script>
+  <script src="/scripts/app-pc-main-ts.js"></script>
+
+</body>
+
+</html>

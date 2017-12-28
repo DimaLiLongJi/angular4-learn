@@ -1,0 +1,31 @@
+<div class="user-question-wrap">
+  <page-title title="我的问答" customized-go-back="vm.gotoAccount"></page-title>
+  <div class="tab-wrap" scroll-load="vm.loadMore()">
+    <div class="question-msg page-padding" ng-if="vm.questionList && vm.questionList.length > 0 ">求职学堂专家将在48小时内回复你的提问</div>
+    <div class="question-entry" ng-repeat="qs in vm.questionList" ui-sref="discovery.question-detail({ id: qs.id,userQuestion: true })">
+      <div class="question-content">
+        <div class="question-label">Q:</div>
+        <div class="question-text">{{qs.title}}
+          <div class="red-dot" ng-if="!qs.checked"></div>
+        </div>
+      </div>
+      <div class="question-info">
+        <div class="question-status" ng-class="{answered : qs.status}">{{ qs.status ? '已回答' : '未回答'}}
+        </div>
+        <div class="question-time">提问于 <span>{{qs.createdAt |date: 'yyyy-MM-dd'}}</span></div>
+      </div>
+      <div class="question-arrow">
+        <i class="iconfont icon-arrow-right" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="no-items" ng-if="vm.questionList && vm.questionList.length <= 0" ng-cloak>
+      <div class="">
+        <img src="/images/account/no-question.png" alt="">
+      </div>
+      <div class="no-item-desc">
+        <p>你还没有提过任何问题呢～</p>
+      </div>
+      <a type="button" name="button" class="blue-btn apply-btn" ui-sref="question">前去提问</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="account-wrap">
+  <div class="discovery-header">
+    <header></header>
+    <div class="portrait-wrap">
+      <div class="portrait">
+        <img ng-if="!vm.user.headImgUrl" src="/images/default-portrait.jpg" alt="">
+        <img ng-if="vm.user.headImgUrl" ng-src="{{vm.user.headImgUrl}}" alt="">
+      </div>
+      <div class="login-btn-wrap" ng-if="!vm.user.id">
+        <a type="button" name="button" class="login-btn" ng-click="vm.login()">注册/登录</a>
+      </div>
+      <div class="nickname" ng-bind="vm.user.nickname"></div>
+    </div>
+  </div>
+  <div class="content">
+    <ul>
+      <li>
+        <a ng-click="vm.gotoPage('/mobile/resume', 'resume')">
+          <i class="iconfont icon-icon-jianlicaozuo1" aria-hidden="true"></i>
+          我的简历
+          <i class="iconfont icon-arrow-right arrow-icon" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li>
+        <a ng-click="vm.gotoPage('/mobile/application', 'application')">
+          <i class="iconfont icon-icon-toudijincheng-" aria-hidden="true"></i>
+          投递进程
+          <span class="red-circle" ng-if="vm.user.applicationCheckedNotice"></span>
+          <i class="iconfont icon-arrow-right arrow-icon" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li>
+        <a ng-click="vm.gotoPage('/mobile/favorite', 'favorite')">
+          <i class="iconfont icon-icon-shoucang-" aria-hidden="true"></i>
+          我的收藏
+          <i class="iconfont icon-arrow-right arrow-icon" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li>
+        <a ng-click="vm.gotoPage('/mobile/user-question', 'user-question')">
+          <i class="iconfont icon-icon-tiwen-" aria-hidden="true"></i>
+          我的问答
+          <span class="red-circle" ng-if="!vm.userQuestionCheckedNotice"></span>
+          <i class="iconfont icon-arrow-right arrow-icon" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li>
+        <a ng-click="vm.gotoPage('/mobile/feedback', 'feedback')">
+          <i class="iconfont icon-icon-fankui-" aria-hidden="true"></i>
+          我要反馈
+          <i class="iconfont icon-arrow-right arrow-icon" aria-hidden="true"></i>
+        </a>
+      </li>
+    </ul>
+    <a ng-click="vm.logout()" ng-if="vm.user.id" class="log-out-wrap btn-lg primary">退出当前帐号</a>
+  </div>
+  <div class="page-prop"></div>
+   <logout-modal show-modal="vm.logoutModalStatus"></logout-modal>
+</div>

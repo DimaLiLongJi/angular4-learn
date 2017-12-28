@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app='App'>
+
+<head>
+    <meta charset="utf-8">
+    <title>资料预览</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- <script src="/scripts/resume-preview-style.js"></script> -->
+    <link rel="stylesheet" href="/scripts/resume-preview-main.css">
+    
+</head>
+
+<body ng-controller="materialPageCtrl as vm">
+
+  <file-preview-page file-info="vm.fileInfo"></file-preview-page>
+
+  <script src="/scripts/resume-preview-main.js"></script>
+  <script>
+    angular.module('App')
+      .constant('$RESUME', <%- JSON.stringify(material) %>)
+      .constant('API_BASE_URL', '<%= baseUrls.API_BASE_URL %>')
+      .constant('CF_FILE_BASE_URL', '<%= baseUrls.CF_FILE_BASE_URL %>')
+  </script>
+</body>
+
+</html>

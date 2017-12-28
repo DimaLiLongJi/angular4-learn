@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html ng-app="App">
+
+<head>
+  <meta charset="utf-8">
+  <% if (oppDetail.companyDetail) { %>
+    <title>
+      <%- oppDetail.companyDetail.name%>-<%- oppDetail.position%> 招聘信息_求职学堂_职业蛙
+    </title>
+    <meta name="description" content="<%- oppDetail.companyDetail.name%>-<%- oppDetail.position%>,招聘信息,职业蛙">
+    <meta name="keywords" content="求职学堂,职业蛙,招聘信息,<%- oppDetail.companyDetail.name%>-<%- oppDetail.position%>">
+    <% } else {%>
+      <title>
+        <%- oppDetail.position%> 招聘信息_求职学堂_职业蛙
+      </title>
+      <meta name="description" content="<%- oppDetail.position%>,招聘信息,职业蛙">
+      <meta name="keywords" content="求职学堂,职业蛙,招聘信息,<%- oppDetail.position%>">
+      <% } %>
+        <!-- <script src="/scripts/uk-opportunity-pc-style.js"></script> -->
+        <link rel="stylesheet" href="http://static.careerfrog.com.cn/cf-college/scripts/uk-opportunity-pc-main.28d50c49.css">
+</head>
+
+<body ng-controller="positionCtrl as vm">
+  <div class="opportunity-wrap">
+
+    <section class="opportunity clearfix">
+      <p class="nav">
+        <%- oppDetail.companyDetail.name %>
+        &nbsp;&nbsp;>&nbsp;&nbsp;
+        <%- oppDetail.position%>
+      </p>
+      <div class="content clearfix">
+        <a href="/university_tour" class="index-link"></a>
+        <div class="main-info">
+          <ul class="info-list">
+            <li>
+              <h1><%- oppDetail.position%></h1>
+              <time><%- oppDetail.applyStart%>&nbsp;开启网申</time>
+            </li>
+            <li>
+              <div class="lable-wrap">
+                <span class="location">
+                  <svg class="icon" aria-hidden="true"><use xlink:href="#icon-zuobiao"></use></svg>
+                  <%- oppDetail.locationText%>
+                </span>
+                <span class="industry"><%- oppDetail.industry.name%></span>
+              </div>
+              <!-- <span class="category"><%- oppDetail.category.name%></span> -->
+              <span class="category">环英专属职位</span>
+            </li>
+          </ul>
+          <a href="javascript:;" class="apply-btn" ng-class="{'disable-apply-btn': vm.applyed}" ng-click="vm.applyOpportunity()">立即投递</a>
+        </div>
+        <div class="introduction">
+          <pre><%- oppDetail.description %></pre>
+            <div class="company-info" id="<%- oppDetail.companyDetail.id %>">
+              <% if (/default/.test(oppDetail.companyDetail.imageUrl)) {%>
+                <img src="http://static.careerfrog.com.cn/cf-college/images/default-logo.cdd3f41a.jpg" alt="<%- oppDetail.companyDetail.name %>">
+                <% } else {%>
+                  <img src="<%- oppDetail.companyDetail.imageUrl%>" alt="<%- oppDetail.companyDetail.name %>">
+                  <% } %>
+                    <h2><%- oppDetail.companyDetail.name %></h2>
+                    <ul>
+                      <li class="industry">
+                        <%- oppDetail.companyDetail.industry.name %>
+                      </li>
+                      <li class="size"><label for="">规模：</label>
+                        <%- oppDetail.companyDetail.size.name %>
+                      </li>
+                      <!-- <li class="salary"><label for="">平均薪资：</label>
+                        <% if (oppDetail.companyDetail.averageSalary && !/暂无/.test(oppDetail.companyDetail.averageSalary)) {%>
+                          <%- oppDetail.companyDetail.averageSalary %>元
+                        <% } %>
+                        <% if (oppDetail.companyDetail.averageSalary && /暂无/.test(oppDetail.companyDetail.averageSalary)) {%>
+                          <%- oppDetail.companyDetail.averageSalary %>
+                        <% } %>
+                      </li> -->
+                    </ul>
+                    <% if (oppDetail.companyDetail.companyLabel) {%>
+                      <p class="tag">
+                        <%- oppDetail.companyDetail.companyLabel %>
+                      </p>
+                    <% } %>
+            </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+  <footer class="uk-campus-recruiting-tour-footer">
+    <dl class="">
+      <dt>联系我们</dt>
+      <dd>咨询热线：07731556094</dd>
+      <dd>公司地址：4 Christopher Street, London, EC2A 2BS</dd>
+      <dd>网站备案编号：沪ICP备12026287号-1</dd>
+      <dd class="logo">
+        <img src="http://static.careerfrog.com.cn/cf-college/images/university-tour/logo.768cd786.png" alt="">
+      </dd>
+    </dl>
+  </footer>
+
+    <script src="//at.alicdn.com/t/font_302276_v3bjsrdmxxmholxr.js"></script>
+    <script src="http://static.careerfrog.com.cn/cf-college/scripts/uk-opportunity-pc-main.7e82019f.js"></script>
+    <script>angular.module("App").constant("API_BASE_URL","<%= API_BASE_URL %>").constant("$USER", <%- JSON.stringify(user) %>).constant("$oppId", <%- JSON.stringify(oppId) %>).constant("CF_FILE_BASE_URL","<%= CF_FILE_BASE_URL %>").constant("BASE_URL","<%= BASE_URL %>")</script>
+
+</body>
+
+</html>

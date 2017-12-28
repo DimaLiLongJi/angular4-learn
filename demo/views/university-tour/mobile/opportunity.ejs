@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <% if(oppDetail.companyDetail) { %>
+    <title>
+      2018环英校招嘉年华
+    </title>
+    <meta name="description" content="<%- oppDetail.companyDetail.name%>-<%- oppDetail.position%>,招聘信息,职业蛙">
+    <meta name="keywords" content="环英,校招,名企，名校，留学生,500强,全英,校园招聘,毕业生,<%- oppDetail.companyDetail.name%>-<%- oppDetail.position%>">
+  <% } else {%>
+    <title>
+      <%- oppDetail.position%> 招聘信息_求职学堂_职业蛙
+    </title>
+    <meta name="description" content="<%- oppDetail.position%>,招聘信息,职业蛙">
+    <meta name="keywords" content="求职学堂,职业蛙,招聘信息,<%- oppDetail.position%>">
+  <% } %>
+  <script src="/scripts/vendor-flexible.js"></script>
+  <!-- <script src="/scripts/uk-opportunity-mobile-style.js"></script> -->
+  <link rel="stylesheet" href="/scripts/uk-opportunity-mobile-main.css">
+</head>
+<body>
+  <h1 class="page-title">
+    <svg id="back-btn" class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-"></use></svg>
+    职位详情
+  </h1>
+  <section class="main-info">
+    <div class="opp-info">
+    <% if(oppDetail.companyDetail) { %>
+      <h3><%- oppDetail.companyDetail.name%> - <%- oppDetail.position%></h3>
+    <% } else {%>
+      <h3><%- oppDetail.position%></h3>
+    <% } %>
+    <em><%- oppDetail.applyStart || oppDetail.publishDate%></em>
+    </div>
+    <div class="opp-info">
+      <strong>
+        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-zuobiao"></use></svg>
+        <span><%- oppDetail.locationText%></span>
+      </strong>
+      <!-- <span class="category-name"><%- oppDetail.category.name%></span> -->
+      <span class="category-name">环英专属职位</span>
+    </div>
+    <% if(oppDetail.companyDetail) { %>
+      <div class="company-info" id="go-back-btn" data-id="<%- oppDetail.companyDetail.id %>">
+        <% if (oppDetail.companyDetail.imageUrl) { %>
+          <img src="<%- oppDetail.companyDetail.imageUrl %>" alt="<%- oppDetail.companyDetail.name %>">
+        <% } %>
+        <dl class="info-list">
+          <dt><%- oppDetail.companyDetail.name %></dt>
+          <% if (oppDetail.companyDetail.industry) { %>
+            <dd><%- oppDetail.companyDetail.industry.name %></dd>
+          <% } %>
+          <dd class="other-info">
+            <% if (oppDetail.companyDetail.city) { %>
+              <%- oppDetail.companyDetail.city.name %>
+            <% } %>
+            <% if (oppDetail.companyDetail.size) { %>
+              &nbsp;&nbsp;&nbsp;<%- oppDetail.companyDetail.size.name %>
+            <% } %>
+          </dd>
+        </dl>
+      </div>
+      <% if (oppDetail.companyDetail.companyLabel) { %>
+      <div class="company-label"><%- oppDetail.companyDetail.companyLabel %></div>
+      <% } %>
+    <% } else {%>
+      <img class="collecting-img" src="/images/collecting-mobile.png" alt="该公司信息小编正在努力收集中">
+    <% } %>
+  </section>
+  <section class="position-decription">
+    <h3>
+      <svg class="icon" aria-hidden="true"><use xlink:href="#icon-ziliao"></use></svg>
+      岗位描述
+    </h3>
+    <div class="description"><%- oppDetail.description %></div>
+    <% if (oppDetail.description && emailArray.length) { %>
+      <button type="button" name="button" class="apply-link" id='apply-link'>立即投递</button>
+    <% } %>
+    <ul class="email-list" id="email-list">
+      <% if (emailArray.length) {
+        for(var i = 0; i < emailArray.length; i++ ){
+        %>
+        <li><%- emailArray[i] %></li>
+      <%} } %>
+    </ul>
+  </section>
+
+  <script>
+    window.USER = <%- JSON.stringify(user) %>;
+    window.baseUrls = <%- JSON.stringify(baseUrls) %>;
+    window.oppId = <%- oppId %>;
+    window.opp = <%- JSON.stringify(opp) %>;
+  </script>
+
+  <script src="//at.alicdn.com/t/font_302276_v3bjsrdmxxmholxr.js"></script>
+  <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script src="/scripts/uk-opportunity-mobile-main.js"></script>
+</body>
+
+</html>

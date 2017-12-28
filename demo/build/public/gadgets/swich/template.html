@@ -1,0 +1,8 @@
+<div class="swich-container">
+  <div class="swich" ng-class="{'on': vm.swichStatus}" ng-click="vm.swich()">
+    <div class="swich-btn">
+    </div>
+  </div>
+  <strong ng-if="vm.swichStatus" ng-bind="vm.swichLable.on"></strong>
+  <strong ng-if="!vm.swichStatus" ng-bind="vm.swichLable.off"></strong>
+</div>

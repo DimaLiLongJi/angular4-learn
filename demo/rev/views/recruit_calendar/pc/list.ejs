@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="App">
+
+<head>
+  <meta charset="utf-8">
+  <title>校招日历_求职学堂_职业蛙</title>
+  <meta name="description" content="提供最具参考力的校招时间信息,公司校招预测抢先看。">
+  <meta name="keywords" content="校招日历,校招时间,应届秋招,应届生,18届秋招,500强,名企,校招预测,秋招预测。">
+
+  <!-- <script src="/scripts/recruit_calander-style.js"></script> -->
+  <link rel="stylesheet" href="http://static.careerfrog.com.cn/cf-college/scripts/recruit_calander-main.28d50c49.css">
+</head>
+
+<body ng-controller="recruitCalendarCtrl as vm">
+  <header class="clearfix page-header">
+    <div class="wrap">
+      <h1 class="logo"></h1>
+      <div class="account-wrap">
+        <account-nav user="vm.user" url="recruit_calendar"></account-nav>
+      </div>
+      <ul class="clearfix nav">
+        <li><a href="/">名企实习</a></li>
+        <li>
+          <a href="javascript:;" class="active">校招日历</a>
+
+        </li>
+        <li><a href="/discovery">求职探索</a></li>
+        <li class="kit">
+          <a href="/interview_material" class="kit">面试锦集</a>
+          <img src="http://static.careerfrog.com.cn/cf-college/images/interview-material/kit.e2f8d7af.png">
+        </li>
+        <li class="swich-wrap">
+          <swich swich-status="vm.swichStatus" swich-lable="vm.swichLable" call-back="vm.toggleDanmu()"></swich>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <div class="danmu-wrap">
+
+    <dan-mu dan-mu-status="vm.swichStatus" img-src="vm.imgSrc"></dan-mu>
+  </div>
+  <div class="search clearfix">
+    <input type="text" name="" value="" ng-model="$root.keyword" ng-change="vm.inputKeyword()" placeholder="请输入你要搜索的公司">
+    <span>搜索</span>
+    <svg class="icon" aria-hidden="true"><use xlink:href="#icon-sousuo"></use></svg>
+  </div>
+  <nav class="nav-bar">
+    <a ui-sref="deadline" ng-class="{active: state.includes('deadline')}">
+      <span>
+        一周内截止
+        <svg class="icon close-btn" aria-hidden="true"><use xlink:href="#icon-icon-hot-"></use></svg>
+      </span>
+    </a>
+    <a ui-sref="all" ng-class="{active: state.includes('all')}">
+      <span>全部网申</span>
+    </a>
+  </nav>
+  <div class="body-content">
+    <ui-view>
+  </div>
+
+  <section class="bottom-tips" ng-if="vm.tipStatus" ng-cloak>
+    <div class="wrap">
+      <img class="girl" src="http://static.careerfrog.com.cn/cf-college/images/girl.b55d6474.png" alt="">
+      <p>扫码关注求职学堂服务号（求职学堂小助手），立刻订阅校招日历。</p>
+      <img class="code" src="http://static.careerfrog.com.cn/cf-college/images/wechat-code-qiuzhixuetang.6126e3f0.jpg" alt="">
+      <svg ng-click="vm.closeTip()" class="icon close-btn" aria-hidden="true"><use xlink:href="#icon-icon-delete"></use></svg>
+    </div>
+  </section>
+  <user-feedback></user-feedback>
+  <scroll-to-top></scroll-to-top>
+  <qr-code></qr-code>
+  <%- include('../../templates/footer'); %>
+    <!-- svg -->
+    <script src="//at.alicdn.com/t/font_302276_v3bjsrdmxxmholxr.js"></script>
+    <script src="http://static.careerfrog.com.cn/cf-college/scripts/recruit_calander-main.8392cbc1.js"></script>
+    <script>angular.module("App").constant("API_BASE_URL","<%= API_BASE_URL %>").constant("$USER", <%- JSON.stringify(user) %>).constant("BASE_URL","<%= BASE_URL %>").constant("CF_FILE_BASE_URL","<%= CF_FILE_BASE_URL %>")</script>
+</body>
+
+</html>

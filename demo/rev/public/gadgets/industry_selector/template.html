@@ -1,0 +1,31 @@
+<div class="industry-selector-container">
+  <dl class="hot-industry-list clearfix" ng-class="{'show-more-industry': vm.moreIndustry}">
+    <dt>行业领域：</dt>
+    <dd ng-repeat="industry in vm.industryArray"
+     ng-click="vm.selectIndustry(industry)"
+    ng-class="{'selected': industry.name === vm.selectedIndustry.name}" ng-if="$index < 9">
+      <a href="javascript:;" ng-bind="industry.name"></a>
+    </dd>
+    <dd class="more-btn" ng-click="vm.toggleMoreIndustry()">
+      <a href="javascript:;">
+        更多
+        <svg class="icon" aria-hidden="true" ng-if="!vm.moreIndustry"><use xlink:href="#icon-yuanxingsanjiaoxia-"></use></svg>
+        <svg class="icon" aria-hidden="true" ng-if="vm.moreIndustry"><use xlink:href="#icon-yuanxingsanjiaoshang-"></use></svg>
+      </a>
+    </dd>
+  </dl>
+  <ul class="more-industry clearfix" ng-if="vm.moreIndustry">
+    <li ng-repeat="industry in vm.industryArray"  ng-if="$index >= 9 && $index < 19"
+      ng-class="{'selected': industry.id === vm.selectedIndustry.id}"
+      ng-click="vm.selectIndustry(industry)">
+      <a href="javascript:;" ng-bind="industry.name"></a>
+    </li>
+  </ul>
+  <ul class="more-industry clearfix" ng-if="vm.moreIndustry">
+    <li ng-repeat="industry in vm.industryArray"  ng-if="$index >= 19 && $index < 29"
+      ng-class="{'selected': industry.id === vm.selectedIndustry.id}"
+      ng-click="vm.selectIndustry(industry)">
+      <a href="javascript:;" ng-bind="industry.name"></a>
+    </li>
+  </ul>
+</div>

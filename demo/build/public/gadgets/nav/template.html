@@ -1,0 +1,14 @@
+<div class="account-wrap">
+    <dl class="user" id="user" ng-if="vm.user && vm.user.id">
+      <dt>
+        <div ng-if="vm.user && vm.user.headImgUrl" style="background-image: url('{{vm.user.headImgUrl}}')" alt="" class="portrait"></div>
+        <svg ng-if="!vm.user || !vm.user.headImgUrl" class="icon" aria-hidden="true"><use xlink:href="#icon-weixiao-"></use></svg>Hi, {{vm.user.nickname}}
+      </dt>
+      <dd id="logout-btn">
+        <div class="triangle">&nbsp;</div>
+        <a href="/account" class="btn-wrap">个人中心</a>
+        <a href="/api/auth/logout" class="btn-wrap">登出</a>
+      </dd>
+    </dl>
+    <a ng-if="!vm.user || !vm.user.id" class="login-btn" href="javascript:;" id="login-btn" ng-click="vm.openLoginModal()">登录</a>
+</div>

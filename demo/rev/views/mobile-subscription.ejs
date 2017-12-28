@@ -1,0 +1,56 @@
+<!doctype html>
+<html ng-app="App">
+<head>
+  <meta charset="utf-8">
+  <title>校招日历</title>
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="http://static.careerfrog.com.cn/cf-college/scripts/mobile-subscription-main.c9a7f85b.css">
+
+</head>
+
+<body ng-controller="subscriptionCtrl as vm">
+  <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+  <!-- Add your site or application content here -->
+
+  <div class="subscription-container main-content">
+    <header>
+      <img src="http://static.careerfrog.com.cn/cf-college/images/icon-tips.7f585775.png" alt="tips">
+      <strong>选中需要的行业，即可成功订阅日历或退订</strong>
+    </header>
+    <div class="subscription-content">
+      <div class="rows">
+        <div class="left-column">
+          <span>行业</span>
+        </div>
+        <div class="right-column">
+          <span>订阅</span>
+        </div>
+      </div>
+      <div class="rows industry clearfix" ng-repeat="industry in vm.industryList">
+        <div class="left-column">
+          <span ng-bind="industry.index"></span>.
+          <span ng-bind="industry.name"></span>
+        </div>
+        <div class="right-column">
+          <label ng-if="vm.isShowSwitch">
+            <input type="checkbox" class="switch-btn green" ng-disabled="vm.disabled" ng-checked="vm.isSubscribed(industry)" ng-click="vm.selectSubscription(industry,$event)">
+            <div><div></div></div>
+          </label>
+        </div>
+      </div>
+      <div class="rows end" ng-if="vm.isShowSwitch">
+        <p>已经到底了</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="http://static.careerfrog.com.cn/cf-college/scripts/mobile-subscription-main.0d057ba7.js"></script>
+
+  <script>angular.module("App").constant("$USER", <%- JSON.stringify(user) %>).constant("API_BASE_URL","<%= API_BASE_URL %>")</script>
+</body>
+
+</html>

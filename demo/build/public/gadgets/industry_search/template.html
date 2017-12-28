@@ -1,0 +1,18 @@
+<div class="industry-keywrod-container clearfix">
+  <label class="">行业类别：</label>
+  <div class="list-wrap clearfix" ng-class="{'show-list': vm.limit === vm.maxLimit}">
+    <ul class="industry-list clearfix ">
+      <li ng-repeat="indu in vm.industryArray" ng-show="$index < vm.limit" ng-click="vm.selectIndutryTag(indu)" ng-class="{active: indu.id === vm.selectedIndustry.id}">
+        <a href="javascript:;" ng-bind="indu.name"></a>
+      </li>
+    </ul>
+    <div class="btn" ng-click="vm.toggle()" ng-show="vm.limit == vm.minLimit">
+      全部显示
+      <svg class="icon" aria-hidden="true"><use xlink:href="#icon-xiajiantou"></use></svg>
+    </div>
+    <div class="btn" ng-click="vm.toggle()" ng-show="vm.limit === vm.maxLimit">
+      收起
+      <svg class="icon" aria-hidden="true"><use xlink:href="#icon-shangjiantou-copy"></use></svg>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="search-bar-container">
+  <div class="search-opp-normal-status" ng-class="{'searchStatus': !vm.searchOppStatus}">
+    <svg class="icon arrow" style="color:#fff;" aria-hidden="true"><use xlink:href="#icon-arrow-left-"></use></svg>
+    <svg class="icon search" aria-hidden="true" ng-click="vm.toggleSearchBar()"><use xlink:href="#icon-sousuo"></use></svg>
+    <form method="post" id="form" action="" onsubmit="return false;">
+      <input type="search" autofocus="{{vm.searchOppStatus}}" placeholder="搜索职位" name="" value="" ng-model="vm.keyword" id="searchOpp" ng-keypress="vm.enterSearch($event)">
+    </form>
+    <span class="text" ng-click="vm.toggleSearchBar()">取消</span>
+  </div>
+</div>

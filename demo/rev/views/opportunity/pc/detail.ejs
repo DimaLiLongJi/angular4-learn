@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html ng-app="App">
+
+<head>
+  <meta charset="utf-8">
+  <% if (oppDetail.companyDetail) { %>
+    <title>
+      <%- oppDetail.companyDetail.name%>-
+        <%- oppDetail.position%> 招聘信息_求职学堂_职业蛙
+    </title>
+    <meta name="description" content="<%- oppDetail.companyDetail.name%>-<%- oppDetail.position%>,招聘信息,职业蛙">
+    <meta name="keywords" content="求职学堂,职业蛙,招聘信息,<%- oppDetail.companyDetail.name%>-<%- oppDetail.position%>">
+    <% } else {%>
+      <title>
+        <%- oppDetail.position%> 招聘信息_求职学堂_职业蛙
+      </title>
+      <meta name="description" content="<%- oppDetail.position%>,招聘信息,职业蛙">
+      <meta name="keywords" content="求职学堂,职业蛙,招聘信息,<%- oppDetail.position%>">
+      <% } %>
+   <!-- <script src="/scripts/opportunity-detail-pc-style.js"></script> -->
+   <link rel="stylesheet" href="http://static.careerfrog.com.cn/cf-college/scripts/opportunity-detail-pc-main.28d50c49.css">
+</head>
+
+<body ng-controller="positionCtrl as vm">
+  <header class="clearfix page-header">
+    <div class="wrap">
+      <h1 class="logo"></h1>
+      <div class="account-wrap">
+        <account-nav user="vm.user"></account-nav>
+      </div>
+      <ul class="clearfix nav">
+        <li><a href="/" class="active">名企实习</a></li>
+        <li>
+          <a href="/recruit_calendar">校招日历</a>
+
+        </li>
+        <li><a href="/discovery">求职探索</a></li>
+        <li class="kit">
+          <a href="/interview_material" class="kit">面试锦集</a>
+          <img src="http://static.careerfrog.com.cn/cf-college/images/interview-material/kit.e2f8d7af.png">
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="opportunity-wrap">
+    <section class="opportunity clearfix">
+      <div class="nav">
+        <a href="/">名企实习</a> &nbsp;&nbsp;&gt;
+        <a href="javascript:;" class="actived">
+          <% if (oppDetail.companyDetail) { %>
+            <%- oppDetail.companyDetail.name%>-
+              <%- oppDetail.position%>
+                <% } else {%>
+                  <%- oppDetail.position%>
+                    <% } %>
+        </a>
+      </div>
+      <div class="content clearfix">
+        <div class="main-info">
+          <ul class="info-list">
+            <li>
+              <h1><%- oppDetail.position%></h1>
+              <time><%- oppDetail.publishDate%></time>
+            </li>
+            <li>
+              <div class="lable-wrap">
+                <span class="location">
+                  <svg class="icon" aria-hidden="true"><use xlink:href="#icon-zuobiao"></use></svg>
+                  <%- oppDetail.locationText%>
+                </span>
+                <span class="industry"><%- oppDetail.industry.name%></span>
+              </div>
+              <span class="category"><%- oppDetail.category.name%></span>
+            </li>
+          </ul>
+          <a ng-cloak ng-if="!vm.opp.isFavorite" href="javascript:;" ng-click="vm.toggleFavorite()" class="favorite-btn" ng-class="{'is-favorite': vm.opp.isFavorite}">
+            <svg ng-cloak class="icon" aria-hidden="true"><use xlink:href="#icon-icon-shoucang-"></use></svg>
+            收藏
+          </a>
+          <a ng-cloak ng-if="vm.opp.isFavorite" href="javascript:;" ng-click="vm.toggleFavorite()" class="favorite-btn" ng-class="{'is-favorite': vm.opp.isFavorite}">
+            <svg ng-cloak class="icon" aria-hidden="true"><use xlink:href="#icon-icon-shoucangshixin-"></use></svg>
+            已收藏
+          </a>
+
+          <a href="javascript:;" class="apply-btn" ng-class="{'disable-apply-btn': vm.applyed}" ng-click="vm.applyOpportunity()">立即投递</a>
+        </div>
+        <div class="introduction">
+          <%- oppDetail.description %>
+            <div class="company-info" id="<%- oppDetail.companyDetail.id %>" ng-click="vm.goCompany($event)">
+              <% if (/default/.test(oppDetail.companyDetail.imageUrl)) {%>
+                <img src="http://static.careerfrog.com.cn/cf-college/images/default-logo.cdd3f41a.jpg" alt="<%- oppDetail.companyDetail.name %>">
+                <% } else {%>
+                  <img src="<%- oppDetail.companyDetail.imageUrl%>" alt="<%- oppDetail.companyDetail.name %>">
+                  <% } %>
+                    <h2><%- oppDetail.companyDetail.name %></h2>
+                    <ul>
+                      <li class="industry">
+                        <%- oppDetail.companyDetail.industry.name %>
+                      </li>
+                      <li class="size"><label for="">规模：</label>
+                        <%- oppDetail.companyDetail.size.name %>
+                      </li>
+                      <li class="salary"><label for="">平均薪资：</label>
+                        <% if (oppDetail.companyDetail.averageSalary && !/暂无/.test(oppDetail.companyDetail.averageSalary)) {%>
+                          <%- oppDetail.companyDetail.averageSalary %>元
+                            <% } %>
+                              <% if (oppDetail.companyDetail.averageSalary && /暂无/.test(oppDetail.companyDetail.averageSalary)) {%>
+                                <%- oppDetail.companyDetail.averageSalary %>
+                                  <% } %>
+                      </li>
+                    </ul>
+                    <% if (oppDetail.companyDetail.companyLabel) {%>
+                      <p class="tag">
+                        <%- oppDetail.companyDetail.companyLabel %>
+                      </p>
+                      <% } %>
+            </div>
+            <div class="qr-code">
+              <div class="qr-image"></div>
+              <p>关注服务号可每天<br>接收最新职位和网申信息</p>
+            </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+  <%- include('../../templates/footer'); %>
+    <script src="//at.alicdn.com/t/font_302276_v3bjsrdmxxmholxr.js"></script>
+    <script src="http://static.careerfrog.com.cn/cf-college/scripts/opportunity-detail-pc-main.2f3d784c.js"></script>
+    <script>angular.module("App").constant("API_BASE_URL","<%= API_BASE_URL %>").constant("$USER", <%- JSON.stringify(user) %>).constant("$oppId", <%- JSON.stringify(oppId) %>).constant("$opp", <%- JSON.stringify(oppDetail) %>).constant("CF_FILE_BASE_URL","<%= CF_FILE_BASE_URL %>").constant("BASE_URL","<%= BASE_URL %>")</script>
+</body>
+
+</html>

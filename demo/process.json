@@ -1,0 +1,17 @@
+{
+  "apps": [{
+    "name": "cf-college",
+    "script": "bin/www",
+    "watch": true,
+    "ignore_watch": ["public", "test", "doc", "logs", ".git", "./Untitled*"],
+    "env_test": {
+      "NODE_ENV": "test"
+    },
+    "env_production": {
+      "NODE_ENV": "production"
+    },
+    "env_local-test": {
+      "NODE_ENV": "local-test"
+    }
+  }]
+}
