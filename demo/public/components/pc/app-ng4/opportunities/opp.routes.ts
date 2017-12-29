@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
-import { OpportunitiesComponent } from '../../../components/pc/app-ng4/opportunities/opportunities.component.ts';
+// import { OpportunitiesComponent } from '../../../../components/pc/app-ng4/opportunities/all/opportunities.component.ts';
+import { OpportunitiesComponent } from './all/opportunities.component.ts';
 
 const routes: Routes = [
   {
@@ -10,11 +11,11 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'opportunities',
+        redirectTo: 'all',
         pathMatch: 'prefix'
       },
       {
-        path: 'opportunities',
+        path: 'all',
         component: OpportunitiesComponent
       },
     ]

@@ -4,12 +4,12 @@ import { RouterModule, Routes, ExtraOptions } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'opp',
+    redirectTo: 'opportunities',
     pathMatch: 'full'
   },
   {
-    path: 'opp',
-    loadChildren: '../../../components/pc/app-ng4/opp.module.ts#OppModule'
+    path: 'opportunities',
+    loadChildren: '../../../components/pc/app-ng4/opportunities/opp.module.ts#OppModule'
   },
   { path: '**', pathMatch: 'full', redirectTo: '' }
 ];

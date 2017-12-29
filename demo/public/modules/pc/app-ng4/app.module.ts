@@ -7,7 +7,7 @@ import { FormsModule }    from '@angular/forms';  // input
 
 // module
 import { AppRoutingModule } from './app.routes.ts';
-import { OppModule } from '../../../components/pc/app-ng4/opp.module.ts';
+import { OppModule } from '../../../components/pc/app-ng4/opportunities/opp.module.ts';
 import { GadgetsModule }  from "../../../gadgets/gadgets.module.ts";
 // component
 import { AppComponent } from './app.compontent.ts';

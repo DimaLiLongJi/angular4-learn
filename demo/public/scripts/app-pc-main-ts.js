@@ -51750,247 +51750,8 @@ exports._catch = _catch;
 //# sourceMappingURL=catch.js.map
 
 /***/ }),
-/* 347 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-// 依赖
-var core_1 = __webpack_require__(155);
-var http_1 = __webpack_require__(255);
-var common_1 = __webpack_require__(254);
-// module
-var opp_routes_ts_1 = __webpack_require__(558);
-var gadgets_module_ts_1 = __webpack_require__(349);
-// component
-var opportunities_component_ts_1 = __webpack_require__(348);
-// import { LocationSelectorComponent } from '../../../gadgets/location-selector-ng4/location-selector.component.ts';
-var OppModule = /** @class */ (function () {
-    function OppModule() {
-    }
-    OppModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                common_1.CommonModule,
-                opp_routes_ts_1.OppRoutesModule,
-                http_1.HttpModule,
-                gadgets_module_ts_1.GadgetsModule,
-            ],
-            declarations: [
-                opportunities_component_ts_1.OpportunitiesComponent,
-            ],
-            exports: []
-        })
-    ], OppModule);
-    return OppModule;
-}());
-exports.OppModule = OppModule;
-
-
-/***/ }),
-/* 348 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(155);
-var common_1 = __webpack_require__(254);
-var of_1 = __webpack_require__(344);
-__webpack_require__(559);
-__webpack_require__(567);
-__webpack_require__(568);
-__webpack_require__(571);
-// service
-var opportunity_ng4_ts_1 = __webpack_require__(312);
-var windowService_ts_1 = __webpack_require__(251);
-var OpportunitiesComponent = /** @class */ (function () {
-    function OpportunitiesComponent(document, opportunityService, windowRef) {
-        this.document = document;
-        this.opportunityService = opportunityService;
-        this.windowRef = windowRef;
-        this.oppArray = [];
-        this.window = this.windowRef.nativeWindow;
-    }
-    // listParams: Params;
-    // @Input()
-    // set params(value: Params) {
-    //   this.listParams = value;
-    //   this.getList(this.buildCondition());
-    //   console.log('params1', value);
-    // }
-    //
-    // get params(): Params {
-    //   console.log('params2', this.listParams);
-    //   // this.getList(this.buildCondition());
-    //   // console.log('params', this.params);
-    //   return this.listParams;
-    // }
-    // private listTerms = new Subject<string>();
-    OpportunitiesComponent.prototype.ngOnInit = function () {
-        this.totalItems = 0;
-        this.totalPages = 1;
-        this.params = {
-            location: {
-                name: '不限',
-            },
-            industry: {
-                name: '不限',
-                category: 'industry',
-                id: 0,
-            },
-            keyword: '',
-            pageNum: 1,
-            itemsPerPage: 20,
-        };
-        this.scrollTop = 0;
-        // setTimeout(() => {
-        //   this.params.keyword = 'xxx';
-        //   console.log(2, this.params);
-        // }, 2000);
-        this.paramsObv = of_1.of(this.params);
-        this.activate();
-        this.paramsObv.subscribe(function (data) {
-            // this.params = data.value;
-            // this.getList(this.buildCondition());
-        });
-    };
-    OpportunitiesComponent.prototype.activate = function () {
-        var paramsSession = sessionStorage.getItem('allOppParams');
-        if (sessionStorage.getItem('danmuSwich')) {
-            this.swichStatus = sessionStorage.getItem('danmuSwich') === 'true';
-        }
-        else {
-            this.swichStatus = true;
-        }
-        if (paramsSession) {
-            this.params = JSON.parse(paramsSession);
-            this.scrollTop = this.params.scrollTop;
-            delete this.params.scrollTop;
-            sessionStorage.removeItem('allOppParams');
-        }
-        if (this.params.keyword) {
-            // $rootScope.keyword = this.params.keyword;
-            console.log(this.params.keyword);
-        }
-        this.getList(this.buildCondition());
-    };
-    OpportunitiesComponent.prototype.saveStatus = function () {
-        var params = Object.assign({}, this.params);
-        params.scrollTop = this.document.documentElement.scrollTop ||
-            window.pageYOffset || this.document.body.scrollTop;
-        sessionStorage.setItem('allOppParams', JSON.stringify(params));
-    };
-    OpportunitiesComponent.prototype.search = function () {
-        this.getList(this.buildCondition());
-    };
-    OpportunitiesComponent.prototype.scrollTo = function () {
-        if (!this.scrollTop)
-            return;
-        // $document.scrollTopAnimated(this.scrollTop, 500)
-        // .then(() => {
-        //   this.scrollTop = null;
-        // });
-    };
-    OpportunitiesComponent.prototype.buildCondition = function () {
-        var key;
-        var params = Object.assign({}, this.params);
-        for (key in params) {
-            if (!params[key]) {
-                delete params[key];
-            }
-        }
-        if (params.industry && params.industry.id) {
-            params.industryId = params.industry.id;
-            delete params.industry;
-        }
-        if (params.location && params.location.id) {
-            params.locationId = params.location.id;
-            delete params.location;
-        }
-        return params;
-    };
-    OpportunitiesComponent.prototype.getList = function (params) {
-        var _this = this;
-        this.opportunityService.getOpportunityList(params)
-            .then(function (result) {
-            _this.oppArray = result.opps.map(function (opp) {
-                if (/default/.test(opp.company.imageUrl)) {
-                    opp.company.imageUrl = '/images/default-logo.jpg';
-                }
-                return opp;
-            });
-            _this.totalItems = result.totalItems;
-            _this.totalPages = Math.ceil(_this.totalItems / _this.params.itemsPerPage);
-            _this.scrollTo();
-        });
-    };
-    OpportunitiesComponent.prototype.openLoginModal = function (urlParams) {
-        console.log('urlParams', urlParams);
-        // const modalInstance = $uibModal.open({
-        //   windowClass: 'small-modal login-modal',
-        //   animation: true,
-        //   backdrop: 'static',
-        //   templateUrl: '/gadgets/wechat-login-modal/template.html',
-        //   controller: 'wechatLoginCtrl',
-        //   controllerAs: 'vm',
-        //   resolve: {
-        //     urlParams: () => urlParams,
-        //   },
-        // });
-        //
-        // modalInstance.result
-        //   .then(() => {
-        //   })
-        //   .catch(() => {
-        //   });
-    };
-    OpportunitiesComponent.prototype.ngOnDestroy = function () {
-        this.paramsOb.unsubscribe();
-    };
-    OpportunitiesComponent.prototype.locationChange = function (event) {
-        this.params.location = event;
-        this.getList(this.buildCondition());
-    };
-    OpportunitiesComponent.prototype.industryChange = function (event) {
-        this.params.industry = event;
-        this.getList(this.buildCondition());
-    };
-    OpportunitiesComponent = __decorate([
-        core_1.Component({
-            selector: 'pc-opportunities',
-            templateUrl: '/components/pc/app-ng4/opportunities/template.html',
-            styleUrls: ['/components/pc/app-ng4/opportunities/style.less']
-        }),
-        __param(0, core_1.Inject(common_1.DOCUMENT)),
-        __metadata("design:paramtypes", [Object, opportunity_ng4_ts_1.OpportunityService,
-            windowService_ts_1.WindowRef])
-    ], OpportunitiesComponent);
-    return OpportunitiesComponent;
-}());
-exports.OpportunitiesComponent = OpportunitiesComponent;
-
-
-/***/ }),
+/* 347 */,
+/* 348 */,
 /* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -92920,7 +92681,7 @@ var http_1 = __webpack_require__(255);
 var forms_1 = __webpack_require__(339); // input
 // module
 var app_routes_ts_1 = __webpack_require__(530);
-var opp_module_ts_1 = __webpack_require__(347);
+var opp_module_ts_1 = __webpack_require__(680);
 var gadgets_module_ts_1 = __webpack_require__(349);
 // component
 var app_compontent_ts_1 = __webpack_require__(576);
@@ -93295,12 +93056,12 @@ var router_1 = __webpack_require__(343);
 var routes = [
     {
         path: '',
-        redirectTo: 'opp',
+        redirectTo: 'opportunities',
         pathMatch: 'full'
     },
     {
-        path: 'opp',
-        loadChildren: function () { return new Promise(function (resolve, reject) { new Promise(function(resolve) { resolve(); }).then((function (require) { resolve(__webpack_require__(347)['OppModule']); }).bind(null, __webpack_require__)).catch(function () { reject({ loadChunkError: true }); }); }); }
+        path: 'opportunities',
+        loadChildren: function () { return new Promise(function (resolve, reject) { new Promise(function(resolve) { resolve(); }).then((function (require) { resolve(__webpack_require__(680)['OppModule']); }).bind(null, __webpack_require__)).catch(function () { reject({ loadChunkError: true }); }); }); }
     },
     { path: '**', pathMatch: 'full', redirectTo: '' }
 ];
@@ -95540,54 +95301,7 @@ var FilterSubscriber = (function (_super) {
 //# sourceMappingURL=filter.js.map
 
 /***/ }),
-/* 558 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(155);
-var router_1 = __webpack_require__(343);
-var opportunities_component_ts_1 = __webpack_require__(348);
-var routes = [
-    {
-        path: '',
-        children: [
-            {
-                path: '',
-                redirectTo: 'opportunities',
-                pathMatch: 'prefix'
-            },
-            {
-                path: 'opportunities',
-                component: opportunities_component_ts_1.OpportunitiesComponent
-            },
-        ]
-    }
-];
-var OppRoutesModule = /** @class */ (function () {
-    function OppRoutesModule() {
-    }
-    OppRoutesModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                router_1.RouterModule.forChild(routes)
-            ],
-            exports: [router_1.RouterModule],
-        })
-    ], OppRoutesModule);
-    return OppRoutesModule;
-}());
-exports.OppRoutesModule = OppRoutesModule;
-
-
-/***/ }),
+/* 558 */,
 /* 559 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -96781,6 +96495,399 @@ var AppComponent = /** @class */ (function () {
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
+
+
+/***/ }),
+/* 577 */,
+/* 578 */,
+/* 579 */,
+/* 580 */,
+/* 581 */,
+/* 582 */,
+/* 583 */,
+/* 584 */,
+/* 585 */,
+/* 586 */,
+/* 587 */,
+/* 588 */,
+/* 589 */,
+/* 590 */,
+/* 591 */,
+/* 592 */,
+/* 593 */,
+/* 594 */,
+/* 595 */,
+/* 596 */,
+/* 597 */,
+/* 598 */,
+/* 599 */,
+/* 600 */,
+/* 601 */,
+/* 602 */,
+/* 603 */,
+/* 604 */,
+/* 605 */,
+/* 606 */,
+/* 607 */,
+/* 608 */,
+/* 609 */,
+/* 610 */,
+/* 611 */,
+/* 612 */,
+/* 613 */,
+/* 614 */,
+/* 615 */,
+/* 616 */,
+/* 617 */,
+/* 618 */,
+/* 619 */,
+/* 620 */,
+/* 621 */,
+/* 622 */,
+/* 623 */,
+/* 624 */,
+/* 625 */,
+/* 626 */,
+/* 627 */,
+/* 628 */,
+/* 629 */,
+/* 630 */,
+/* 631 */,
+/* 632 */,
+/* 633 */,
+/* 634 */,
+/* 635 */,
+/* 636 */,
+/* 637 */,
+/* 638 */,
+/* 639 */,
+/* 640 */,
+/* 641 */,
+/* 642 */,
+/* 643 */,
+/* 644 */,
+/* 645 */,
+/* 646 */,
+/* 647 */,
+/* 648 */,
+/* 649 */,
+/* 650 */,
+/* 651 */,
+/* 652 */,
+/* 653 */,
+/* 654 */,
+/* 655 */,
+/* 656 */,
+/* 657 */,
+/* 658 */,
+/* 659 */,
+/* 660 */,
+/* 661 */,
+/* 662 */,
+/* 663 */,
+/* 664 */,
+/* 665 */,
+/* 666 */,
+/* 667 */,
+/* 668 */,
+/* 669 */,
+/* 670 */,
+/* 671 */,
+/* 672 */,
+/* 673 */,
+/* 674 */,
+/* 675 */,
+/* 676 */,
+/* 677 */,
+/* 678 */,
+/* 679 */,
+/* 680 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// 依赖
+var core_1 = __webpack_require__(155);
+var http_1 = __webpack_require__(255);
+var common_1 = __webpack_require__(254);
+// module
+var opp_routes_ts_1 = __webpack_require__(681);
+var gadgets_module_ts_1 = __webpack_require__(349);
+// component
+var opportunities_component_ts_1 = __webpack_require__(682);
+// import { LocationSelectorComponent } from '../../../gadgets/location-selector-ng4/location-selector.component.ts';
+var OppModule = /** @class */ (function () {
+    function OppModule() {
+    }
+    OppModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                common_1.CommonModule,
+                opp_routes_ts_1.OppRoutesModule,
+                http_1.HttpModule,
+                gadgets_module_ts_1.GadgetsModule,
+            ],
+            declarations: [
+                opportunities_component_ts_1.OpportunitiesComponent,
+            ],
+            exports: []
+        })
+    ], OppModule);
+    return OppModule;
+}());
+exports.OppModule = OppModule;
+
+
+/***/ }),
+/* 681 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(155);
+var router_1 = __webpack_require__(343);
+// import { OpportunitiesComponent } from '../../../../components/pc/app-ng4/opportunities/all/opportunities.component.ts';
+var opportunities_component_ts_1 = __webpack_require__(682);
+var routes = [
+    {
+        path: '',
+        children: [
+            {
+                path: '',
+                redirectTo: 'all',
+                pathMatch: 'prefix'
+            },
+            {
+                path: 'all',
+                component: opportunities_component_ts_1.OpportunitiesComponent
+            },
+        ]
+    }
+];
+var OppRoutesModule = /** @class */ (function () {
+    function OppRoutesModule() {
+    }
+    OppRoutesModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                router_1.RouterModule.forChild(routes)
+            ],
+            exports: [router_1.RouterModule],
+        })
+    ], OppRoutesModule);
+    return OppRoutesModule;
+}());
+exports.OppRoutesModule = OppRoutesModule;
+
+
+/***/ }),
+/* 682 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(155);
+var common_1 = __webpack_require__(254);
+var of_1 = __webpack_require__(344);
+__webpack_require__(559);
+__webpack_require__(567);
+__webpack_require__(568);
+__webpack_require__(571);
+// service
+var opportunity_ng4_ts_1 = __webpack_require__(312);
+var windowService_ts_1 = __webpack_require__(251);
+var OpportunitiesComponent = /** @class */ (function () {
+    function OpportunitiesComponent(document, opportunityService, windowRef) {
+        this.document = document;
+        this.opportunityService = opportunityService;
+        this.windowRef = windowRef;
+        this.oppArray = [];
+        this.window = this.windowRef.nativeWindow;
+    }
+    // listParams: Params;
+    // @Input()
+    // set params(value: Params) {
+    //   this.listParams = value;
+    //   this.getList(this.buildCondition());
+    //   console.log('params1', value);
+    // }
+    //
+    // get params(): Params {
+    //   console.log('params2', this.listParams);
+    //   // this.getList(this.buildCondition());
+    //   // console.log('params', this.params);
+    //   return this.listParams;
+    // }
+    // private listTerms = new Subject<string>();
+    OpportunitiesComponent.prototype.ngOnInit = function () {
+        this.totalItems = 0;
+        this.totalPages = 1;
+        this.params = {
+            location: {
+                name: '不限',
+            },
+            industry: {
+                name: '不限',
+                category: 'industry',
+                id: 0,
+            },
+            keyword: '',
+            pageNum: 1,
+            itemsPerPage: 20,
+        };
+        this.scrollTop = 0;
+        // setTimeout(() => {
+        //   this.params.keyword = 'xxx';
+        //   console.log(2, this.params);
+        // }, 2000);
+        this.paramsObv = of_1.of(this.params);
+        this.activate();
+        this.paramsObv.subscribe(function (data) {
+            // this.params = data.value;
+            // this.getList(this.buildCondition());
+        });
+    };
+    OpportunitiesComponent.prototype.activate = function () {
+        var paramsSession = sessionStorage.getItem('allOppParams');
+        if (sessionStorage.getItem('danmuSwich')) {
+            this.swichStatus = sessionStorage.getItem('danmuSwich') === 'true';
+        }
+        else {
+            this.swichStatus = true;
+        }
+        if (paramsSession) {
+            this.params = JSON.parse(paramsSession);
+            this.scrollTop = this.params.scrollTop;
+            delete this.params.scrollTop;
+            sessionStorage.removeItem('allOppParams');
+        }
+        if (this.params.keyword) {
+            // $rootScope.keyword = this.params.keyword;
+            console.log(this.params.keyword);
+        }
+        this.getList(this.buildCondition());
+    };
+    OpportunitiesComponent.prototype.saveStatus = function () {
+        var params = Object.assign({}, this.params);
+        params.scrollTop = this.document.documentElement.scrollTop ||
+            window.pageYOffset || this.document.body.scrollTop;
+        sessionStorage.setItem('allOppParams', JSON.stringify(params));
+    };
+    OpportunitiesComponent.prototype.search = function () {
+        this.getList(this.buildCondition());
+    };
+    OpportunitiesComponent.prototype.scrollTo = function () {
+        if (!this.scrollTop)
+            return;
+        // $document.scrollTopAnimated(this.scrollTop, 500)
+        // .then(() => {
+        //   this.scrollTop = null;
+        // });
+    };
+    OpportunitiesComponent.prototype.buildCondition = function () {
+        var key;
+        var params = Object.assign({}, this.params);
+        for (key in params) {
+            if (!params[key]) {
+                delete params[key];
+            }
+        }
+        if (params.industry && params.industry.id) {
+            params.industryId = params.industry.id;
+            delete params.industry;
+        }
+        if (params.location && params.location.id) {
+            params.locationId = params.location.id;
+            delete params.location;
+        }
+        return params;
+    };
+    OpportunitiesComponent.prototype.getList = function (params) {
+        var _this = this;
+        this.opportunityService.getOpportunityList(params)
+            .then(function (result) {
+            _this.oppArray = result.opps.map(function (opp) {
+                if (/default/.test(opp.company.imageUrl)) {
+                    opp.company.imageUrl = '/images/default-logo.jpg';
+                }
+                return opp;
+            });
+            _this.totalItems = result.totalItems;
+            _this.totalPages = Math.ceil(_this.totalItems / _this.params.itemsPerPage);
+            _this.scrollTo();
+        });
+    };
+    OpportunitiesComponent.prototype.openLoginModal = function (urlParams) {
+        console.log('urlParams', urlParams);
+        // const modalInstance = $uibModal.open({
+        //   windowClass: 'small-modal login-modal',
+        //   animation: true,
+        //   backdrop: 'static',
+        //   templateUrl: '/gadgets/wechat-login-modal/template.html',
+        //   controller: 'wechatLoginCtrl',
+        //   controllerAs: 'vm',
+        //   resolve: {
+        //     urlParams: () => urlParams,
+        //   },
+        // });
+        //
+        // modalInstance.result
+        //   .then(() => {
+        //   })
+        //   .catch(() => {
+        //   });
+    };
+    OpportunitiesComponent.prototype.ngOnDestroy = function () {
+        this.paramsOb.unsubscribe();
+    };
+    OpportunitiesComponent.prototype.locationChange = function (event) {
+        this.params.location = event;
+        this.getList(this.buildCondition());
+    };
+    OpportunitiesComponent.prototype.industryChange = function (event) {
+        this.params.industry = event;
+        this.getList(this.buildCondition());
+    };
+    OpportunitiesComponent = __decorate([
+        core_1.Component({
+            selector: 'pc-opportunities',
+            templateUrl: '/components/pc/app-ng4/opportunities/all/template.html',
+            styleUrls: ['/components/pc/app-ng4/opportunities/all/style.less']
+        }),
+        __param(0, core_1.Inject(common_1.DOCUMENT)),
+        __metadata("design:paramtypes", [Object, opportunity_ng4_ts_1.OpportunityService,
+            windowService_ts_1.WindowRef])
+    ], OpportunitiesComponent);
+    return OpportunitiesComponent;
+}());
+exports.OpportunitiesComponent = OpportunitiesComponent;
 
 
 /***/ })
