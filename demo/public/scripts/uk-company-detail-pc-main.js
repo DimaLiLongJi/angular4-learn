@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/scripts/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 336);
+/******/ 	return __webpack_require__(__webpack_require__.s = 431);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -35101,14 +35101,14 @@ angular.module('duScroll.scrollspy', ['duScroll.spyAPI'])
 
 /***/ }),
 
-/***/ 164:
+/***/ 167:
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: Cannot find module 'less'\n    at Function.Module._resolveFilename (module.js:469:15)\n    at Function.Module._load (module.js:417:25)\n    at Module.require (module.js:497:17)\n    at require (internal/module.js:20:19)\n    at Object.<anonymous> (/Users/bin/Desktop/angular4-learn/demo/node_modules/_less-loader@4.0.5@less-loader/dist/index.js:7:13)\n    at Module._compile (module.js:570:32)\n    at Object.Module._extensions..js (module.js:579:10)\n    at Module.load (module.js:487:32)\n    at tryModuleLoad (module.js:446:12)\n    at Function.Module._load (module.js:438:3)\n    at Module.require (module.js:497:17)\n    at require (internal/module.js:20:19)\n    at Object.<anonymous> (/Users/bin/Desktop/angular4-learn/demo/node_modules/_less-loader@4.0.5@less-loader/dist/cjs.js:3:18)\n    at Module._compile (module.js:570:32)\n    at Object.Module._extensions..js (module.js:579:10)\n    at Module.load (module.js:487:32)\n    at tryModuleLoad (module.js:446:12)\n    at Function.Module._load (module.js:438:3)\n    at Module.require (module.js:497:17)\n    at require (internal/module.js:20:19)\n    at loadLoader (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModule.js:275:15)\n    at Compilation.buildModule (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/Compilation.js:151:10)\n    at runLoaders (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModule.js:195:19)\n    at /Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:364:11\n    at /Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:170:18\n    at loadLoader (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/loadLoader.js:27:11)\n    at iteratePitchingLoaders (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModule.js:275:15)\n    at Compilation.buildModule (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/Compilation.js:151:10)\n    at moduleFactory.create (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/Compilation.js:456:10)\n    at factory (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModuleFactory.js:241:5)\n    at applyPluginsAsyncWaterfall (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModuleFactory.js:94:13)\n    at /Users/bin/Desktop/angular4-learn/demo/node_modules/_tapable@0.2.8@tapable/lib/Tapable.js:268:11\n    at NormalModuleFactory.params.normalModuleFactory.plugin (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/CompatibilityPlugin.js:52:5)\n    at NormalModuleFactory.applyPluginsAsyncWaterfall (/Users/bin/Desktop/angular4-learn/demo/node_modules/_tapable@0.2.8@tapable/lib/Tapable.js:272:13)\n    at resolver (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModuleFactory.js:69:10)\n    at process.nextTick (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModuleFactory.js:194:7)\n    at _combinedTickCallback (internal/process/next_tick.js:73:7)\n    at process._tickCallback (internal/process/next_tick.js:104:9)");
+throw new Error("Module build failed: ModuleNotFoundError: Module not found: Error: Can't resolve 'url-loader' in '/Users/bin/Desktop/angular4-learn/demo'\n    at factoryCallback (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/Compilation.js:276:40)\n    at factory (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModuleFactory.js:235:20)\n    at resolver (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModuleFactory.js:60:20)\n    at asyncLib.parallel (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModuleFactory.js:191:21)\n    at /Users/bin/Desktop/angular4-learn/demo/node_modules/_async@2.6.0@async/dist/async.js:3874:9\n    at /Users/bin/Desktop/angular4-learn/demo/node_modules/_async@2.6.0@async/dist/async.js:473:16\n    at iteratorCallback (/Users/bin/Desktop/angular4-learn/demo/node_modules/_async@2.6.0@async/dist/async.js:1048:13)\n    at /Users/bin/Desktop/angular4-learn/demo/node_modules/_async@2.6.0@async/dist/async.js:958:16\n    at /Users/bin/Desktop/angular4-learn/demo/node_modules/_async@2.6.0@async/dist/async.js:3871:13\n    at /Users/bin/Desktop/angular4-learn/demo/node_modules/_async@2.6.0@async/dist/async.js:1126:9\n    at /Users/bin/Desktop/angular4-learn/demo/node_modules/_async@2.6.0@async/dist/async.js:473:16\n    at iteratorCallback (/Users/bin/Desktop/angular4-learn/demo/node_modules/_async@2.6.0@async/dist/async.js:1048:13)\n    at /Users/bin/Desktop/angular4-learn/demo/node_modules/_async@2.6.0@async/dist/async.js:958:16\n    at /Users/bin/Desktop/angular4-learn/demo/node_modules/_async@2.6.0@async/dist/async.js:1123:13\n    at resolver.resolve (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModuleFactory.js:261:20)\n    at onError (/Users/bin/Desktop/angular4-learn/demo/node_modules/_enhanced-resolve@3.4.1@enhanced-resolve/lib/Resolver.js:65:10)\n    at loggingCallbackWrapper (/Users/bin/Desktop/angular4-learn/demo/node_modules/_enhanced-resolve@3.4.1@enhanced-resolve/lib/createInnerCallback.js:31:19)\n    at runAfter (/Users/bin/Desktop/angular4-learn/demo/node_modules/_enhanced-resolve@3.4.1@enhanced-resolve/lib/Resolver.js:158:4)\n    at innerCallback (/Users/bin/Desktop/angular4-learn/demo/node_modules/_enhanced-resolve@3.4.1@enhanced-resolve/lib/Resolver.js:146:3)\n    at loggingCallbackWrapper (/Users/bin/Desktop/angular4-learn/demo/node_modules/_enhanced-resolve@3.4.1@enhanced-resolve/lib/createInnerCallback.js:31:19)\n    at next (/Users/bin/Desktop/angular4-learn/demo/node_modules/_tapable@0.2.8@tapable/lib/Tapable.js:252:11)\n    at /Users/bin/Desktop/angular4-learn/demo/node_modules/_enhanced-resolve@3.4.1@enhanced-resolve/lib/UnsafeCachePlugin.js:40:4\n    at loggingCallbackWrapper (/Users/bin/Desktop/angular4-learn/demo/node_modules/_enhanced-resolve@3.4.1@enhanced-resolve/lib/createInnerCallback.js:31:19)\n    at runAfter (/Users/bin/Desktop/angular4-learn/demo/node_modules/_enhanced-resolve@3.4.1@enhanced-resolve/lib/Resolver.js:158:4)\n    at innerCallback (/Users/bin/Desktop/angular4-learn/demo/node_modules/_enhanced-resolve@3.4.1@enhanced-resolve/lib/Resolver.js:146:3)\n    at loggingCallbackWrapper (/Users/bin/Desktop/angular4-learn/demo/node_modules/_enhanced-resolve@3.4.1@enhanced-resolve/lib/createInnerCallback.js:31:19)\n    at next (/Users/bin/Desktop/angular4-learn/demo/node_modules/_tapable@0.2.8@tapable/lib/Tapable.js:252:11)\n    at innerCallback (/Users/bin/Desktop/angular4-learn/demo/node_modules/_enhanced-resolve@3.4.1@enhanced-resolve/lib/Resolver.js:144:11)\n    at loggingCallbackWrapper (/Users/bin/Desktop/angular4-learn/demo/node_modules/_enhanced-resolve@3.4.1@enhanced-resolve/lib/createInnerCallback.js:31:19)\n    at next (/Users/bin/Desktop/angular4-learn/demo/node_modules/_tapable@0.2.8@tapable/lib/Tapable.js:249:35)");
 
 /***/ }),
 
-/***/ 167:
+/***/ 171:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35161,7 +35161,7 @@ throw new Error("Module build failed: ModuleBuildError: Module build failed: Err
 
 /***/ }),
 
-/***/ 176:
+/***/ 180:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42606,7 +42606,7 @@ angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInli
 
 /***/ }),
 
-/***/ 205:
+/***/ 210:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47940,15 +47940,15 @@ angular.module('ngCookies').provider('$$cookieWriter', /** @this */ function $$C
 
 /***/ }),
 
-/***/ 336:
+/***/ 431:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(164);
+__webpack_require__(167);
 
-__webpack_require__(337);
+__webpack_require__(432);
 
 __webpack_require__(7);
 
@@ -47964,28 +47964,28 @@ __webpack_require__(152);
 
 __webpack_require__(27);
 
-__webpack_require__(338);
+__webpack_require__(433);
 
 __webpack_require__(147);
 
-__webpack_require__(176);
+__webpack_require__(180);
 
-__webpack_require__(167);
+__webpack_require__(171);
 
-__webpack_require__(205);
+__webpack_require__(210);
 
 __webpack_require__(154);
 
 /***/ }),
 
-/***/ 337:
+/***/ 432:
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: Cannot find module 'less'\n    at Function.Module._resolveFilename (module.js:469:15)\n    at Function.Module._load (module.js:417:25)\n    at Module.require (module.js:497:17)\n    at require (internal/module.js:20:19)\n    at Object.<anonymous> (/Users/bin/Desktop/angular4-learn/demo/node_modules/_less-loader@4.0.5@less-loader/dist/index.js:7:13)\n    at Module._compile (module.js:570:32)\n    at Object.Module._extensions..js (module.js:579:10)\n    at Module.load (module.js:487:32)\n    at tryModuleLoad (module.js:446:12)\n    at Function.Module._load (module.js:438:3)\n    at Module.require (module.js:497:17)\n    at require (internal/module.js:20:19)\n    at Object.<anonymous> (/Users/bin/Desktop/angular4-learn/demo/node_modules/_less-loader@4.0.5@less-loader/dist/cjs.js:3:18)\n    at Module._compile (module.js:570:32)\n    at Object.Module._extensions..js (module.js:579:10)\n    at Module.load (module.js:487:32)\n    at tryModuleLoad (module.js:446:12)\n    at Function.Module._load (module.js:438:3)\n    at Module.require (module.js:497:17)\n    at require (internal/module.js:20:19)\n    at loadLoader (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModule.js:275:15)\n    at Compilation.buildModule (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/Compilation.js:151:10)\n    at runLoaders (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModule.js:195:19)\n    at /Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:364:11\n    at /Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:170:18\n    at loadLoader (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/loadLoader.js:27:11)\n    at iteratePitchingLoaders (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/bin/Desktop/angular4-learn/demo/node_modules/_loader-runner@2.3.0@loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModule.js:275:15)\n    at Compilation.buildModule (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/Compilation.js:151:10)\n    at moduleFactory.create (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/Compilation.js:456:10)\n    at factory (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModuleFactory.js:241:5)\n    at applyPluginsAsyncWaterfall (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModuleFactory.js:94:13)\n    at /Users/bin/Desktop/angular4-learn/demo/node_modules/_tapable@0.2.8@tapable/lib/Tapable.js:268:11\n    at NormalModuleFactory.params.normalModuleFactory.plugin (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/CompatibilityPlugin.js:52:5)\n    at NormalModuleFactory.applyPluginsAsyncWaterfall (/Users/bin/Desktop/angular4-learn/demo/node_modules/_tapable@0.2.8@tapable/lib/Tapable.js:272:13)\n    at resolver (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModuleFactory.js:69:10)\n    at process.nextTick (/Users/bin/Desktop/angular4-learn/demo/node_modules/_webpack@3.10.0@webpack/lib/NormalModuleFactory.js:194:7)\n    at _combinedTickCallback (internal/process/next_tick.js:73:7)\n    at process._tickCallback (internal/process/next_tick.js:104:9)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 338:
+/***/ 433:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

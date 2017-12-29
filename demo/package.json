@@ -113,6 +113,7 @@
     "through2": "^2.0.3",
     "typescript": "^2.6.2",
     "ua-parser-js": "^0.7.12",
+    "url-loader": "^0.5.9",
     "uuid": "^3.0.1",
     "velocity": "^0.7.2",
     "velocity-animate": "^1.5.0",
