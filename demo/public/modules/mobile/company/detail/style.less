@@ -1,0 +1,268 @@
+@import "../../../../styles/reset";
+@import "../../../../styles/mobile/global";
+// @import "../../../../styles/variable";
+@import "../../../../styles/mobile/mixin";
+@import "../../../../styles/mobile/layout";
+@import '../../../../gadgets/page_title/style';
+
+body {
+  line-height: 0.5rem;
+  font-size: 36px;
+  height: 100vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+   -webkit-overflow-scrolling: touch;
+}
+
+.company-main-info {
+  padding: 60/124rem;
+
+  .company-card {
+    display: flex;
+  }
+
+  .company-label-container {
+    margin-top: 0.27419355rem;
+
+    .company-label {
+      padding: 0.08064516rem 0.16129032rem;
+      border-radius: 4px;
+      background: @gold;
+      color: @white;
+      margin-top: 20/124rem;
+    }
+  }
+
+  img {
+    width: 200/124rem;
+    height: 200/124rem;
+  }
+
+  dl {
+    margin-left: 50/124rem;
+    width: 7.4rem;
+
+    dt {
+      // font-size:44px;
+      color: @primary-color;
+    }
+
+    dd {
+      // font-size:36px;
+      color: @text-color;
+
+      strong {
+        font-weight: normal;
+      }
+    }
+
+    .salary-location {
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        color: @border-color;
+      }
+    }
+  }
+}
+
+nav {
+  height: 146/124rem;
+  line-height: 136/124rem;
+  // font-size:42px;
+  color: @text-color;
+  display: flex;
+  border-bottom: 1px solid @border-color;
+  border-top: 1px solid @border-color;
+
+  a {
+    width: 50%;
+    text-align: center;
+    color: @text-color;
+    .font-dpr(14px);
+    &.active {
+      .tab-selected;
+    }
+  }
+}
+
+.column-header {
+  .font-dpr(16px);
+  color: @primary-text-color;
+  vertical-align: middle;
+
+  .iconfont {
+    color: @primary-color;
+    margin-right: 15/124rem;
+    .font-dpr(17px);
+  }
+}
+
+.scroll-container {
+  flex: 1;
+  overflow: auto;
+  background: @gray-bg;
+
+
+  .introduction {
+    padding: 70/124rem 60/124rem 0;
+    // font-size:36px;
+    color: @text-color;
+    background: @white;
+
+    .introduction-content {
+      padding: 60/124rem 0;
+      line-height: 0.5rem;
+    }
+  }
+
+  .campus-recruit {
+    .list-is-null {
+      img {
+        width: 582/124rem;
+        //height: 160/124rem;
+        display: block;
+        margin: 0 auto;
+        padding-bottom: 60/124rem;
+      }
+    }
+  }
+
+  .daily-recruit {
+    .list-is-null {
+      width: 482/124rem;
+      margin: 200/124rem auto 400/124rem;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .recruiting-position {
+    padding: 70/124rem 62/124rem 0;
+    min-height: 100%;
+    background: @white;
+    margin-top: 70/124rem;
+  }
+
+  .recruit-section {
+    background: @white;
+    padding-bottom: 36/124rem;
+    .title {
+      padding: 62/124rem 0 52/124rem;
+      color: @text-color;
+      span {
+        padding-left: 20/124rem;
+        border-left: 10/124rem solid @yellow;
+        font-size: 42px;
+      }
+    }
+
+    .position-detail {
+      padding: 50/124rem 40/124rem;
+      border: 1px solid @nav-default-color;
+      border-left: 20/124rem solid @primary-color;
+      margin-bottom: 36/124rem;
+
+      li {
+        color: @secondary-text-color;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        strong {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        &+li {
+          margin-top: 30/124rem;
+        }
+
+        .position-name {
+          // font-size:44px;
+          color: @primary-color;
+          flex: 1;
+          span {
+            color: @secondary-text-color;
+          }
+        }
+
+        .location {
+          color: @secondary-text-color;
+          .iconfont {
+            color: @tag-gray-bg;
+            .font-dpr(14px);
+          }
+        }
+
+        .category {
+          padding: 0.06451613rem 0.12903226rem;
+          background: @border-lightest-color;
+          color: @nav-default-color;
+          display: block;
+        }
+
+        span {
+          white-space: nowrap;
+          text-align: right;
+          margin-left: 10/124rem;
+        }
+      }
+    }
+  }
+}
+
+[data-dpr="1"] body {
+  .page-title {
+    font-size: 18px!important;
+  }
+
+  .company-main-info dt,
+  .position-name,
+  .similar-company-list dt,
+  .similar-company-name a {
+    font-size: 15px!important;
+  }
+
+  .introduction-position nav {
+    font-size: 14px!important;
+  }
+
+  .recruit-section {
+    .title {
+      span {
+        font-size: 14px!important;
+      }
+    }
+  }
+}
+
+[data-dpr="2"] body {
+  .page-title {
+    font-size: 36px!important;
+  }
+
+  .company-main-info dt,
+  .position-name,
+  .similar-company-list dt,
+  .similar-company-name a {
+    font-size: 30px!important;
+  }
+
+  .introduction-position nav {
+    font-size: 28px!important;
+  }
+
+  .recruit-section {
+    .title {
+      span {
+        font-size: 28px!important;
+      }
+    }
+  }
+}

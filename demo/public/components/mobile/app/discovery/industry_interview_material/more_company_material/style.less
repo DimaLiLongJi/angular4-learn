@@ -1,0 +1,50 @@
+.material-container {
+  .page-padding;
+  .section-sub-title {
+    line-height: 140/124rem;
+    color: @primary-text-color;
+    padding-left: 38/124rem;
+    &::after {
+      left: 0;
+    }
+  }
+  .material {
+    padding: 65/124rem 1.2rem 65/124rem 146/185rem;
+    background: @white;
+    color: @primary-text-color;
+    border: 1px solid @nav-default-color;
+    .radius-dpr(10px);
+    margin-bottom: 40/124rem;
+    position: relative;
+
+    dt {
+      .font-md-1;
+      font-weight: normal;
+      line-height: 0.8rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    dd {
+      color: @secondary-text-color;
+      .font-base;
+    }
+
+    .icon-pdf {
+      width: 46/124rem;
+      height: 53/124rem;
+      position: absolute;
+      top: 0.72rem;
+      left: 0.3rem;
+    }
+
+    .icon-arrow-right {
+      color: @border-color;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 68/124rem;
+    }
+  }
+}

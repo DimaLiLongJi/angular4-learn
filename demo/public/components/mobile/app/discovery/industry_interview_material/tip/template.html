@@ -1,0 +1,24 @@
+<!-- <div class="tip-container" id="tip"> -->
+<div class="tip-container" >
+  <div class="section-title">
+    <i class="iconfont icon-icon-jingyan-"></i>面试锦囊
+  </div>
+  <div ng-repeat="tip in vm.tipsArray" class="tip-wrap">
+    <dl class="tip">
+      <dt>
+        <img ng-src="{{tip.cover}}" alt="">
+      </dt>
+      <dd>
+        <h3 ng-bind="tip.fileName" class="multiline-nowrap"></h3>
+        <h4>作者：求职学堂团队</h4>
+        <h5>更新：{{tip.updatedAt | date: 'yyyy-MM-dd'}}</h5>
+      </dd>
+    </dl>
+    <div class="bar">
+      <p>
+        <i class="iconfont icon-icon-yulan-"></i>{{tip.viewCount}}位小伙伴刚刚看过
+      </p>
+      <a href="javascript:;" class="preview-btn" ng-click="vm.previewFile(tip)">立即预览</a>
+    </div>
+  </div>
+</div>

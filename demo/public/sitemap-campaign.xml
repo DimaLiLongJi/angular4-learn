@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+ <loc>http://college.careerfrog.com.cn/campaign</loc>
+ <priority>0.5</priority>
+ <changefreq>daily</changefreq>
+</url>
+<url>
+ <loc>http://college.careerfrog.com.cn/</loc>
+ <priority>0.5</priority>
+ <changefreq>daily</changefreq>
+</url>
+<url>
+ <loc>http://college.careerfrog.com.cn/opportunities</loc>
+ <priority>0.5</priority>
+ <changefreq>daily</changefreq>
+</url>
+<url>
+ <loc>http://college.careerfrog.com.cn/company</loc>
+ <priority>0.5</priority>
+ <changefreq>daily</changefreq>
+</url>
+<url>
+ <loc>http://college.careerfrog.com.cn/articles</loc>
+ <priority>0.5</priority>
+ <changefreq>daily</changefreq>
+</url>
+<url>
+ <loc>http://college.careerfrog.com.cn/</loc>
+ <priority>0.5</priority>
+ <changefreq>daily</changefreq>
+</url>
+<url>
+ <loc>http://college.careerfrog.com.cn/campaign/2</loc>
+ <priority>0.5</priority>
+ <changefreq>daily</changefreq>
+</url>
+<url>
+ <loc>http://college.careerfrog.com.cn/campaign/2</loc>
+ <priority>0.5</priority>
+ <changefreq>daily</changefreq>
+</url>
+<url>
+ <loc>http://college.careerfrog.com.cn/campaign/1</loc>
+ <priority>0.5</priority>
+
+ <changefreq>daily</changefreq>
+</url>
+<url>
+ <loc>http://college.careerfrog.com.cn/campaign/1</loc>
+ <priority>0.5</priority>
+
+ <changefreq>daily</changefreq>
+</url>
+<url>
+ <loc>http://college.careerfrog.com.cn/campaign/3</loc>
+ <priority>0.5</priority>
+ <changefreq>daily</changefreq>
+</url>
+<url>
+ <loc>http://college.careerfrog.com.cn/campaign/3</loc>
+ <priority>0.5</priority>
+ <changefreq>daily</changefreq>
+</url>
+<url>
+ <loc>http://college.careerfrog.com.cn/campaign/4</loc>
+ <priority>0.5</priority>
+ <changefreq>daily</changefreq>
+</url>
+<url>
+ <loc>http://college.careerfrog.com.cn/campaign/4</loc>
+ <priority>0.5</priority>
+ <changefreq>daily</changefreq>
+</url>
+</urlset>

@@ -1,0 +1,73 @@
+.tip-container {
+  .page-padding;
+  .tip-wrap {
+    border: 1px solid @nav-default-color;
+    background: @white;
+    padding: 70/124rem;
+    margin-bottom: 40/124rem;
+    padding-bottom: 30px;
+    .radius-dpr(10px);
+
+    .bar {
+      margin-top: 30/124rem;
+      line-height: 90/124rem;
+      color: @secondary-text-color;
+      .font-base;
+      display: flex;
+      justify-content: space-between;
+
+      .iconfont {
+        .font-md-2;
+        margin-right: 20/124rem;
+        color: @nav-default-color;
+      }
+
+      .preview-btn {
+        display: block;
+        background: @primary-color;
+        color: @white;
+        .radius-dpr(2px);
+        width: 270/124rem;
+        text-align: center;
+        height: 90/124rem;
+        line-height: 90/124rem;
+      }
+    }
+  }
+
+  .tip {
+    color: @primary-text-color;
+    display: flex;
+    justify-content: space-between;
+
+    dt {
+      width: 240/124rem;
+      height: 324/124rem;
+      box-shadow: 0 0 0.3rem 0 rgba(0, 0, 0, 0.3);
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    dd {
+      color: @primary-text-color;
+      width: 725/124rem;
+
+      h3 {
+        .font-md-1;
+        line-height: 0.5rem;
+        height: 1.5rem;
+        padding-bottom: 0.2rem;
+      }
+
+      h4,
+      h5 {
+        color: @secondary-text-color;
+        line-height: 0.5rem;
+        .font-md-3;
+      }
+    }
+  }
+}

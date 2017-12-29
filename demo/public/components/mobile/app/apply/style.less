@@ -1,0 +1,312 @@
+@import '../../../../styles/mobile/utils';
+.apply {
+  height: 100vh;
+  background: @gray-bg;
+  overflow: auto;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+
+  .apply-form {
+    color: @text-color;
+
+    .apply-entry {
+      padding: 0 60/124rem;
+
+      .apply-entry-title {
+        display: flex;
+        justify-content: space-between;
+        height: 150/124rem;
+        line-height: 150/124rem;
+
+        & > div {
+          display: flex;
+          align-items: center;
+        }
+
+        .apply-entry-caret {
+          color: @primary-color;
+          margin-right: 12/124rem;
+        }
+
+        span {
+          .font-md-1;
+        }
+
+        .error-msg {
+
+          color: @red;
+        }
+
+        @keyframes bounceIn {
+        from, 20%, 40%, 60%, 80%, to {
+          animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        }
+
+        0% {
+          opacity: 0;
+          // transform: scale3d(.3, .3, .3);
+        }
+
+        25% {
+          opacity: 0.5;
+          // transform: scale3d(2.2, 2.2, 2.2);
+        }
+
+        50% {
+          opacity: 1;
+        }
+
+        75% {
+          opacity: 0.5;
+        }
+
+        to {
+          opacity: 0;
+        }
+      }
+
+      .bounceIn {
+        animation: bounceIn 1s linear  3;
+      }
+      }
+    }
+
+    .mobile-entry {
+
+      .wrap {
+        display: flex;
+        .prefix {
+          line-height: 1.2;
+          padding: 35/124rem 34/124rem;
+          box-shadow: 0 4/124rem 6/124rem rgba(0,0,0,0.20);
+          border-radius: 8/124rem;
+          border: none;
+          .font-md-1;
+          display: flex;
+          align-items: center;
+          background: @white;
+          margin-bottom: 35/124rem;
+          width: 226/124rem;
+          margin-right: 42/124rem;
+          position: relative;
+          .iconfont {
+            position: absolute;
+            .font-md-1;
+            top: 50%;
+            right: 0.2rem;
+            transform: translateY(-50%);
+          }
+        }
+        input {
+          width: 8rem;
+        }
+      }
+
+    }
+
+    .apply-input {
+      width: 100%;
+      line-height: 1.2;
+      padding: 35/124rem 34/124rem;
+      box-shadow: 0 4/124rem 6/124rem rgba(0,0,0,0.20);
+      border-radius: 8/124rem;
+      border: none;
+      .font-md-1;
+      display: flex;
+      align-items: center;
+      background: @white;
+      margin-bottom: 35/124rem;
+
+      &.resume-entry {
+        padding: 60/124rem 34/124rem;
+      }
+
+      .radio {
+        // border: 1px solid @border-light-color;
+        // border-radius: 50%;
+        border: 18/124rem solid @border-light-color;
+        width: 57/124rem;
+        height: 57/124rem;
+        background: @border-color;
+        margin: 0 30/124rem 0 0;
+
+        .point {
+          background: @white;
+          width: 100%;
+          height: 100%;
+        }
+
+        &.checked {
+          border: 18/124rem solid @border-light-color;
+          .point {
+            background: @primary-color;
+          }
+        }
+      }
+
+      .resume-name {
+        flex: 1;
+        .font-md-3;
+         color: @primary-text-color;
+      }
+    }
+
+    textarea.apply-input {
+      resize: vertical;
+    }
+
+    .apply-tip {
+      color: @secondary-text-color;
+
+      &.email-tip {
+        color: @red;
+      }
+    }
+
+    .apply-btn {
+      display: block;
+      width: 1122/124rem;
+      height: 140/124rem;
+      line-height: 140/124rem;
+      text-align: center;
+      .font-md-1;
+      background: @primary-color;
+      border: none;
+      color: @white;
+      margin: 70/124rem auto;
+    }
+  }
+
+  .modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,.6);
+    z-index: 99;
+
+    .info-modal {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: 900/124rem;
+      height: 1162/124rem;
+      border-radius: 20/124rem;
+      padding: 90/124rem 80/124rem;
+      .font-md-1;
+      text-align: center;
+    }
+
+    .apply-success {
+      background: @white;
+
+      .title {
+        .font-dpr(22px);
+        color: @primary-color;
+      }
+
+      .apply-success-pic {
+        background: url('/images/success-bg.png') no-repeat;
+        background-size: 100%;
+        width: 100%;
+        height: 380/124rem;
+        margin: 85/124rem 0 45/124rem;
+      }
+
+      .apply-success-text {
+        width: 105%;
+        margin: 0 auto;
+        color: @text-color;
+        text-align: center;
+        line-height: 1.5;
+        // white-space: nowrap;
+      }
+
+      .apply-success-ok {
+        border-radius: 64/124rem;
+        width: 426/124rem;
+        height: 128/124rem;
+        color: @white;
+        background: @primary-color;
+        border: none;
+        margin: 45/124rem auto 0;
+      }
+    }
+
+    .no-resume {
+      color: @white;
+      display: block;
+      background: linear-gradient(-90deg, #53dff0  0%, #5da3ff 100%);
+      &.uk-tour {
+        background: @white;
+        .no-resume-text {
+          color: @primary-text-color;
+        }
+        .clipboard-paste {
+          input {
+            background: @primary-text-color;
+            color: @white;
+          }
+        }
+      }
+      .no-resume-pic {
+        background: url('/images/no-resume-notice.png') no-repeat;
+        background-size: auto 100%;
+        background-position: center;
+        height: 380/124rem;
+      }
+      .clipboard-paste {
+        width: 100%;
+        display: flex;
+        margin: 40/144rem 0;
+        button {
+          width: 200/144rem;
+          padding: 24/144rem 0;
+          border-radius:0 18/144rem 18/144rem 0;
+          border: none;
+          background-color: @border-light-color;
+          color: @text-color;
+          .font-base;
+        }
+        .enabled {
+          color: @white;
+          background: @light-yellow;
+        }
+        input {
+          flex: 1;
+          color: @primary-text-color;
+          padding: 24/144rem 20/124rem;
+          border-radius: 18/144rem 0 0 18/144rem;
+          border: none;
+          .font-base;
+        }
+      }
+      .no-resume-text {
+        text-align: center;
+        line-height: 1.5;
+        margin: 50/124rem 0 70/124rem;
+        .font-md-3;
+        white-space: nowrap;
+        span {
+          .font-md-1;
+          line-height: 1.5;
+        }
+      }
+      .no-resume-ok {
+        width: 420/124rem;
+        height: 128/124rem;
+        border-radius: 64/12rem;
+        background: @light-yellow;
+        line-height: 128/124rem;
+        margin: 0 auto;
+        border: none;
+      }
+    }
+  }
+}

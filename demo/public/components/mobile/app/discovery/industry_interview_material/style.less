@@ -1,0 +1,297 @@
+.industry-interview-material-container {
+  background: url("/images/interview_material_m/bg.jpg") no-repeat;
+  background-size: cover;
+  padding-bottom: 1.2rem;
+  height: 17rem;
+  overflow-y: scroll;
+
+  .section-title {
+    .font-dpr(18px);
+    text-align: center;
+    line-height: 170/124rem;
+    color: @primary-text-color;
+
+    .iconfont {
+      color: @primary-color;
+      .font-dpr(24px);
+      margin-right: 0.1rem;
+      position: relative;
+      top: -0.01rem;
+    }
+  }
+
+  .nav-fix-top {
+    position: fixed;
+    width: 100%;
+    background: @white;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .nav-wrap {
+    width: 10rem;
+    height: 2.7rem;
+  }
+  .min-nav-wrap {
+    height: 1.7rem;
+  }
+
+  .section-sub-title {
+    color: @white;
+    padding: 0 86/124rem;
+    .font-md-3;
+    line-height: 60/124rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 10/124rem;
+      height: 39/124rem;
+      background: @yellow;
+      top: 50%;
+      left: 48/124rem;
+      transform: translateY(-50%);
+    }
+  }
+
+  .banner {
+    width: 10rem;
+    height: 340/124rem;
+    background-size: cover;
+    position: relative;
+
+    .history-btn {
+      position: absolute;
+      color: @white;
+      .font-md-1;
+      line-height: 67/124rem;
+      top: 0;
+      left: 0;
+      padding: 48/124rem 64/124rem;
+
+      .iconfont {
+        position: relative;
+        top: -0.025rem;
+      }
+    }
+
+    h1 {
+      color: @white;
+      line-height: 312/124rem;
+      .font-lg-1;
+      text-align: center;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0.8rem;
+        transform: translateX(-50%);
+        background: @white;
+        width: 90/124rem;
+        height: 6/124rem;
+        border-radius: 3/124rem;
+      }
+    }
+  }
+}
+
+.industry-interview-material-container .serach-result.placeholder {
+  min-height: 70%;
+  background: url("/images/nothing.png") no-repeat 54% 45%;
+  background-size: 4rem;
+}
+
+.industry-interview-material-container .input-container-wrap {
+  .page-padding;
+  margin: 0;
+  width: 100%;
+  position: static;
+  background: @white;
+  padding-top: .4rem;
+  padding-bottom: .4rem;
+}
+
+.industry-interview-material-container .input-container {
+  .font-dpr(12px);
+  display: flex;
+  height: 90/124rem;
+  line-height: 90/124rem;
+  box-sizing: content-box;
+  border-radius: 45/124rem;
+  overflow: hidden;
+  color: @border-color;
+
+  .iconfont {
+    background: @border-lightest-color;
+    padding: 0 31/124rem 0 0.3rem;
+  }
+
+  input {
+    border: none;
+    flex-grow: 2;
+    color: @primary-text-color;
+    background: @border-lightest-color;
+
+    &::-webkit-input-placeholder {
+      /* WebKit browsers */
+      color: @border-color;
+    }
+
+    &:-moz-placeholder {
+      /* Mozilla Firefox 4 to 18 */
+      color: @border-color;
+    }
+
+    &::-moz-placeholder {
+      /* Mozilla Firefox 19+ */
+      color: @border-color;
+    }
+
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10+ */
+      color: @border-color;
+    }
+  }
+}
+
+.industry-interview-material-container .tab {
+  height: 136/124rem;
+  line-height: 136/124rem;
+  .font-md-3;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid @border-color;
+  background: @white;
+
+  a {
+    display: block;
+    color: @text-color;
+
+    &.active {
+      .tab-selected;
+    }
+  }
+  li.li-active {
+    a {
+      .tab-selected;
+    }
+  }
+}
+
+.industry-interview-material-container .serach-result {
+  .page-padding;
+
+  .tip-wrap {
+    border: 1px solid @nav-default-color;
+    background: @white;
+    padding: 70/124rem;
+    margin-bottom: 40/124rem;
+    padding-bottom: 30px;
+    .radius-dpr(10px);
+
+    .bar {
+      margin-top: 30/124rem;
+      line-height: 90/124rem;
+      color: @secondary-text-color;
+      .font-base;
+      display: flex;
+      justify-content: space-between;
+
+      .iconfont {
+        .font-md-2;
+        margin-right: 20/124rem;
+        color: @nav-default-color;
+      }
+
+      .preview-btn {
+        display: block;
+        background: @primary-color;
+        color: @white;
+        .radius-dpr(2px);
+        width: 270/124rem;
+        text-align: center;
+        height: 90/124rem;
+        line-height: 90/124rem;
+      }
+    }
+  }
+
+  .tip {
+    color: @primary-text-color;
+    display: flex;
+    justify-content: space-between;
+
+    dt {
+      width: 240/124rem;
+      height: 324/124rem;
+      box-shadow: 0 0 0.3rem 0 rgba(0, 0, 0, 0.3);
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    dd {
+      color: @primary-text-color;
+      width: 725/124rem;
+
+      h3 {
+        .font-md-1;
+        line-height: 0.5rem;
+        height: 1.5rem;
+        padding-bottom: 0.2rem;
+      }
+
+      h4,
+      h5 {
+        color: @placeholder-text-color;
+        line-height: 0.5rem;
+        .font-md-3;
+      }
+    }
+  }
+
+  .material {
+    padding: 65/124rem 185/124rem 65/124rem 146/185rem;
+    background: @white;
+    color: @primary-text-color;
+    border: 1px solid @nav-default-color;
+    .radius-dpr(10px);
+    margin-bottom: 40/124rem;
+    position: relative;
+
+    dt {
+      .font-md-1;
+      font-weight: normal;
+      line-height: 0.8rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    dd {
+      color: @secondary-text-color;
+      .font-base;
+    }
+
+    .icon-pdf {
+      width: 46/124rem;
+      height: 53/124rem;
+      position: absolute;
+      top: 0.72rem;
+      left: 0.3rem;
+    }
+
+    .icon-arrow-right {
+      color: @border-color;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 68/124rem;
+    }
+  }
+}

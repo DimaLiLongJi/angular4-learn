@@ -1,0 +1,119 @@
+.dan-container {
+  color: #fff;
+  position: relative;
+
+  .wrap {
+    padding: 20px 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .title {
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: normal;
+    margin-right: 50px;
+
+    svg {
+      float: left;
+      height: 30px;
+      width: 30px;
+      color: #eec98a;
+      margin-right: 16px;
+    }
+  }
+
+  .visited {
+    color: #eec98a;
+  }
+
+  .content {
+    position: absolute;
+    top: 50px;
+    left: 46px;
+    width: 400px;
+    background: #fff;
+    border-radius: 4px;
+    z-index: 100000;
+    white-space: normal;
+    box-shadow: 0 0 20px 0 rgba(132,146,156,0.40);
+
+    svg {
+      color: #b89963;
+      position: absolute;
+      top: -10px;
+      left: 20px;
+    }
+
+    h2 {
+      padding: 0 30px;
+      line-height: 22px;
+      padding: 15px;
+      font-size: 15px;
+      color: #ffffff;
+      background: #b89963;
+      border-radius: 4px 4px 0 0;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      padding: 0 30px;
+      font-size: 13px;
+      color: #b89963;
+      line-height: 22px;
+    }
+
+    p {
+      padding: 0 30px;
+      font-size: 13px;
+      color: #666666;
+      line-height: 22px;
+      margin-bottom: 20px;
+    }
+
+    .btn-line {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .tan-btn {
+      float: right;
+      width: 112px;
+      margin-right: 30px;
+      margin-bottom: 20px;
+      border: 1px solid #b89963;
+      border-radius: 2px;
+      width: 110px;
+      height: 26px;
+      line-height: 26px;
+      text-align: center;
+      color: #b89963;
+    }
+
+    .favorite-btn {
+      box-sizing: content-box;
+      border:1px solid #c2c2c2;
+      border-radius: 2px;
+      // width: 110px;
+      padding: 0 16px;
+      text-align: center;
+      height: 26px;
+      line-height: 26px;
+      margin-right: 14px;
+      color:#808080;
+      svg {
+        color:#808080;
+        position: static;
+      }
+    }
+
+    .is-favorite {
+
+      svg {
+        color: #ffc244;
+      }
+    }
+  }
+}

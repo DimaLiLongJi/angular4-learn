@@ -1,0 +1,47 @@
+<div class="location-selector-container">
+  <dl class="hot-location-list clearfix">
+    <dt>工作地点：</dt>
+    <dd *ngFor="let l of locationList" (click)="selectLocation(l)"
+    >
+      <a href="javascript:;">{{l.name}}</a>
+    </dd>
+    <dd class="more-btn" (click)="toggleMoreLocation()">
+      <a href="javascript:;">
+        更多
+        <svg class="icon" aria-hidden="true" *ngIf="!moreLocation"><use xlink:href="#icon-yuanxingsanjiaoxia-"></use></svg>
+        <svg class="icon" aria-hidden="true" *ngIf="moreLocation"><use xlink:href="#icon-yuanxingsanjiaoshang-"></use></svg>
+      </a>
+    </dd>
+  </dl>
+  <div class="more-location-wrap" *ngIf="moreLocation">
+    <dl class="country-list clearfix">
+      <dt>地区选择：</dt>
+      <dd (click)="selectCountry(c, $event)"
+        [ngClass]="{'selected': c.id === selectedCountry.id}"
+       *ngFor="let c of allLocationTag">
+        <a href="javascript:;">{{c.name}}</a>
+      </dd>
+    </dl>
+    <div class="province-wrap" *ngFor="let g of provinceList.cityGroup; let i = index">
+      <dl class="province-list clearfix">
+        <dt>{{g}}</dt>
+        <ng-container *ngIf="i <= 12">
+          <dd *ngFor="let p of provinceList.cityByGroup[i]"
+          (click)="selectProvince(p)">
+            <a href="javascript:;">{{p.name}}</a>
+          </dd>
+        </ng-container>
+      </dl>
+      <dl class="province-list clearfix" *ngIf="provinceList.cityByGroup[i].length > 13">
+        <dt>&nbsp;</dt>
+        <ng-container *ngIf="i > 12">
+          <dd *ngFor="let p of provinceList.cityByGroup[i]" (click)="selectProvince(p)"
+            >
+            <a href="javascript:;">{{p.name}}</a>
+          </dd>
+        </ng-container>
+      </dl>
+    </div>
+
+  </div>
+</div>
