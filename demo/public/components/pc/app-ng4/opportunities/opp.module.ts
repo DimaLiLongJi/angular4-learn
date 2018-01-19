@@ -8,7 +8,9 @@ import { OppRoutesModule } from './opp.routes.ts';
 import { GadgetsModule } from "../../../../gadgets/gadgets.module.ts";
 
 // component
+import { AllOpportunitiesComponent } from './opp.component.ts';
 import { OpportunitiesComponent } from './all/opportunities.component.ts';
+import { RecommendedOpportunitiesComponent } from "./recommended/recommended.components.ts";
 // import { LocationSelectorComponent } from '../../../gadgets/location-selector-ng4/location-selector.component.ts';
 
 
@@ -20,12 +22,17 @@ import { OpportunitiesComponent } from './all/opportunities.component.ts';
     GadgetsModule,
   ],
   declarations: [
+    AllOpportunitiesComponent,
     OpportunitiesComponent,
+    RecommendedOpportunitiesComponent,
     // LocationSelectorComponent,
   ],
   exports: [
     // OpportunitiesComponent,
     // LocationSelectorComponent,
-  ]
+  ],
+  // bootstrap: [ // 启动模块的component
+  //   AllOpportunitiesComponent,
+  // ],
 })
 export class OppModule { }

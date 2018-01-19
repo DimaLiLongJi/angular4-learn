@@ -2,11 +2,13 @@ export interface OppLocation {
   name?: string;
   id?: number;
 }
+
 export interface Industry {
   name?: string;
   category?: string;
   id?: number;
 }
+
 export interface Params {
   location?: OppLocation;
   industry?: Industry;
@@ -16,4 +18,17 @@ export interface Params {
   scrollTop?: number;
   industryId?: number;
   locationId?: number;
+  type?: number;
+}
+
+export interface CustomizationInfo {
+  industries?: any;
+  locations?: any;
+  positions?: any;
+  stages?: any;
+}
+
+export interface SwichLable {
+    on?: string;
+    off?: string;
 }

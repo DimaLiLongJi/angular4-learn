@@ -13,11 +13,11 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
 // service
-import { OpportunityService } from '../../../../../services/opportunity-ng4.ts';
-import { WindowRef } from '../../../../../services/windowService.ts';
+import { OpportunityService } from '../../../../../services/opportunity.service.ts';
+import { WindowRef } from '../../../../../services/window.service.ts';
 
 // interface
-import { Params } from './opportunities.class.ts';
+import { Params } from '../common/opp.class.ts';
 
 @Component({
   selector: 'pc-opportunities',
@@ -33,7 +33,6 @@ export class OpportunitiesComponent implements OnInit {
     @Inject(DOCUMENT) private document: any,
     private opportunityService: OpportunityService,
     private windowRef: WindowRef,
-    // params: Params,
   ) {}
 
   totalItems: number;
@@ -190,9 +189,10 @@ export class OpportunitiesComponent implements OnInit {
     //   .catch(() => {
     //   });
   }
-
+  //
   ngOnDestroy() {
-    this.paramsOb.unsubscribe();
+    // this.paramsOb.unsubscribe();
+    console.log('leave this page')
   }
 
   locationChange(event: any) {

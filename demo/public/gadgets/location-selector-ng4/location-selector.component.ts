@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { OpportunityService } from '../../services/opportunity-ng4.ts'
-import { LocationTagService } from '../../services/location-tag-ng4.ts';
-import { WindowRef } from '../../services/windowService.ts';
+import { OpportunityService } from '../../services/opportunity.service.ts'
+import { LocationTagService } from '../../services/location-tag.service.ts';
+import { WindowRef } from '../../services/window.service.ts';
 
 import { Location } from './locationList.class.ts';
 

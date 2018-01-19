@@ -11,11 +11,15 @@ const routes: Routes = [
     path: 'opportunities',
     loadChildren: '../../../components/pc/app-ng4/opportunities/opp.module.ts#OppModule'
   },
-  { path: '**', pathMatch: 'full', redirectTo: '' }
+  {
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: 'opportunities'
+  }
 ];
 
 const config: ExtraOptions = { // 使用hash 避免刷新消失
-    useHash: true,
+  useHash: true,
 };
 
 @NgModule({
@@ -23,4 +27,4 @@ const config: ExtraOptions = { // 使用hash 避免刷新消失
   exports: [RouterModule]
 })
 
-export class AppRoutingModule {};
+export class AppRoutingModule { };

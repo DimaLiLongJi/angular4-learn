@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/scripts/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 439);
+/******/ 	return __webpack_require__(__webpack_require__.s = 445);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -58726,17 +58726,18 @@ return zhTw;
 /* 149 */,
 /* 150 */,
 /* 151 */,
-/* 152 */
+/* 152 */,
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(7);
-__webpack_require__(153);
+__webpack_require__(154);
 
 module.exports = 'duScroll';
 
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {/**
@@ -59379,7 +59380,7 @@ angular.module('duScroll.scrollspy', ['duScroll.spyAPI'])
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)(module)))
 
 /***/ }),
-/* 154 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59443,7 +59444,6 @@ angular.module('duScroll.scrollspy', ['duScroll.spyAPI'])
 })();
 
 /***/ }),
-/* 155 */,
 /* 156 */,
 /* 157 */
 /***/ (function(module, exports) {
@@ -67886,7 +67886,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 /* 281 */,
 /* 282 */,
 /* 283 */,
-/* 284 */
+/* 284 */,
+/* 285 */,
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67956,8 +67958,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 })();
 
 /***/ }),
-/* 285 */,
-/* 286 */,
 /* 287 */,
 /* 288 */,
 /* 289 */,
@@ -68110,7 +68110,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 /* 436 */,
 /* 437 */,
 /* 438 */,
-/* 439 */
+/* 439 */,
+/* 440 */,
+/* 441 */,
+/* 442 */,
+/* 443 */,
+/* 444 */,
+/* 445 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -68118,7 +68124,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 __webpack_require__(167);
 
-__webpack_require__(440);
+__webpack_require__(446);
 
 __webpack_require__(7);
 
@@ -68134,13 +68140,13 @@ __webpack_require__(0);
 
 __webpack_require__(9);
 
-__webpack_require__(152);
+__webpack_require__(153);
 
 __webpack_require__(27);
 
 __webpack_require__(15);
 
-__webpack_require__(441);
+__webpack_require__(447);
 
 __webpack_require__(258);
 
@@ -68154,18 +68160,18 @@ __webpack_require__(158);
 
 __webpack_require__(256);
 
-__webpack_require__(284);
+__webpack_require__(286);
 
-__webpack_require__(154);
+__webpack_require__(155);
 
 /***/ }),
-/* 440 */
+/* 446 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 441 */
+/* 447 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

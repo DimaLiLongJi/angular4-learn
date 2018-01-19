@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
-import { WindowRef } from '../../services/windowService.ts';
-import { IndustryService } from '../../services/industry-ng4.ts';
+import { WindowRef } from '../../services/window.service.ts';
+import { IndustryService } from '../../services/industry.service.ts';
 
 import { Industry } from './industry.class.ts';
 

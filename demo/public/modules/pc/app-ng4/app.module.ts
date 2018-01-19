@@ -15,10 +15,11 @@ import { AppComponent } from './app.compontent.ts';
 // import { LocationSelectorComponent } from '../../..//gadgets/location-selector-ng4/location-selector.component.ts'
 
 // services
-import { OpportunityService } from '../../../services/opportunity-ng4.ts';
-import { LocationTagService } from '../../../services/location-tag-ng4.ts';
-import { WindowRef } from '../../../services/windowService.ts';
-import { IndustryService } from '../../../services/industry-ng4.ts'
+import { OpportunityService } from '../../../services/opportunity.service.ts';
+import { LocationTagService } from '../../../services/location-tag.service.ts';
+import { UserService } from '../../../services/user.service.ts';
+import { IndustryService } from '../../../services/industry.service.ts';
+import { WindowRef } from '../../../services/window.service.ts';
 
 @NgModule({
   declarations: [ // component
@@ -40,8 +41,9 @@ import { IndustryService } from '../../../services/industry-ng4.ts'
   providers: [ // service
     OpportunityService,
     LocationTagService,
-    WindowRef,
+    UserService,
     IndustryService,
+    WindowRef,
   ],
   bootstrap: [ // 启动模块的component
     AppComponent,

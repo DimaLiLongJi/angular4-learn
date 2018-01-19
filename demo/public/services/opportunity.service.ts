@@ -1,7 +1,7 @@
 // 依赖
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
-import { WindowRef } from './windowService.ts';
+import { WindowRef } from './window.service.ts';
 
 // rx 数据流
 import 'rxjs/add/operator/toPromise';
@@ -24,19 +24,26 @@ export class OpportunityService {
   ) { }
 
   getOpportunityList(params: any): Promise<any> {
-    return this.http.get(`${this.API_BASE_URL}/opportunities`, {params: params})
+    return this.http.get(`${this.API_BASE_URL}/opportunities`, { params: params })
       // .map(response => sresponse.json()); // rx写法
       .toPromise() // promise写法
       .then(response => response.json())
       .catch(this.handleError);
   }
   getLocationList(params?: any): Promise<any> {
-    return this.http.get(`${this.API_BASE_URL}/opportunities/location/list`, {params: params})
+    return this.http.get(`${this.API_BASE_URL}/opportunities/location/list`, { params: params })
       // .map(response => response.json()); // rx写法
       .toPromise() // promise写法
       .then(response => {
-      return response.json();
-    })
+        return response.json();
+      })
+      .catch(this.handleError);
+  }
+
+  getPrefOpportunityList(params: any): Promise<any> {
+    return this.http.get(`${this.API_BASE_URL}/opportunities/customize`, { params: params })
+      .toPromise()
+      .then(response => response.json())
       .catch(this.handleError);
   }
 

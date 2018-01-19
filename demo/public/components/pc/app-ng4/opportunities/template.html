@@ -1,0 +1,27 @@
+<div class="opp-container">
+  <section class="search-bar">
+    <h3 class="">
+      <span ng-bind="vm.oppCount"></span>
+      个名企职位
+    </h3>
+    <svg class="icon" aria-hidden="true"><use xlink:href="#icon-sousuo"></use></svg>
+    <input type="text" name="" value="" ng-model="$root.keyword" ng-change="vm.inputKeyword()" placeholder="搜索职位/公司/城市">
+    <a href="javascript:;" ng-click="vm.search()">搜索</a>
+  </section>
+  <nav class="nav-bar">
+    <a routerLink="recommended" routesrLinkActive="active">
+      <div class="border">
+      </div>
+      <div class="customized">
+        定制
+      </div>
+      <span>推荐职位</span>
+    </a>
+    <a routerLink="all" routerLinkActive="active">
+      <div class="border">
+      </div>
+      <span>全部职位</span>
+    </a>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

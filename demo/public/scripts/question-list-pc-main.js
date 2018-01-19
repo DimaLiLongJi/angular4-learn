@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/scripts/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 420);
+/******/ 	return __webpack_require__(__webpack_require__.s = 426);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -58720,17 +58720,18 @@ return zhTw;
 /* 149 */,
 /* 150 */,
 /* 151 */,
-/* 152 */
+/* 152 */,
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(7);
-__webpack_require__(153);
+__webpack_require__(154);
 
 module.exports = 'duScroll';
 
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {/**
@@ -59373,7 +59374,7 @@ angular.module('duScroll.scrollspy', ['duScroll.spyAPI'])
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)(module)))
 
 /***/ }),
-/* 154 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59437,7 +59438,6 @@ angular.module('duScroll.scrollspy', ['duScroll.spyAPI'])
 })();
 
 /***/ }),
-/* 155 */,
 /* 156 */,
 /* 157 */,
 /* 158 */
@@ -64561,7 +64561,9 @@ function(a){a=P(a);for(var c=v.length;c--;)for(var d=v[c],b=d.animations,f=b.len
 /* 219 */,
 /* 220 */,
 /* 221 */,
-/* 222 */
+/* 222 */,
+/* 223 */,
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64597,7 +64599,7 @@ function(a){a=P(a);for(var c=v.length;c--;)for(var d=v[c],b=d.animations,f=b.len
 })();
 
 /***/ }),
-/* 223 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -65107,7 +65109,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 })();
 
 /***/ }),
-/* 224 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -65179,8 +65181,6 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 })();
 
 /***/ }),
-/* 225 */,
-/* 226 */,
 /* 227 */,
 /* 228 */,
 /* 229 */,
@@ -65740,7 +65740,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 /* 417 */,
 /* 418 */,
 /* 419 */,
-/* 420 */
+/* 420 */,
+/* 421 */,
+/* 422 */,
+/* 423 */,
+/* 424 */,
+/* 425 */,
+/* 426 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -65748,7 +65754,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 __webpack_require__(167);
 
-__webpack_require__(421);
+__webpack_require__(427);
 
 __webpack_require__(7);
 
@@ -65766,9 +65772,9 @@ __webpack_require__(9);
 
 __webpack_require__(27);
 
-__webpack_require__(152);
+__webpack_require__(153);
 
-__webpack_require__(422);
+__webpack_require__(428);
 
 __webpack_require__(258);
 
@@ -65778,26 +65784,26 @@ __webpack_require__(147);
 
 __webpack_require__(158);
 
-__webpack_require__(222);
-
-__webpack_require__(154);
-
-__webpack_require__(223);
-
 __webpack_require__(224);
+
+__webpack_require__(155);
+
+__webpack_require__(225);
+
+__webpack_require__(226);
 
 __webpack_require__(160);
 
 __webpack_require__(183);
 
 /***/ }),
-/* 421 */
+/* 427 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 422 */
+/* 428 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
