@@ -13,12 +13,12 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
 // service
-import { OpportunityService } from '../../../../../services/opportunity.service.ts';
-import { UserService } from '../../../../../services/user.service.ts';
-import { WindowRef } from '../../../../../services/window.service.ts';
+import { OpportunityService } from '../../../../../services/opportunity.service';
+import { UserService } from '../../../../../services/user.service';
+import { WindowRef } from '../../../../../services/window.service';
 
 // interface
-import { Params, CustomizationInfo } from '../common/opp.class.ts';
+import { Params, CustomizationInfo } from '../common/opp.class';
 
 @Component({
   selector: 'pc-recommended',

@@ -6,20 +6,20 @@ import { HttpModule } from '@angular/http';
 import { FormsModule }    from '@angular/forms';  // input
 
 // module
-import { AppRoutingModule } from './app.routes.ts';
-import { OppModule } from '../../../components/pc/app-ng4/opportunities/opp.module.ts';
-import { GadgetsModule }  from "../../../gadgets/gadgets.module.ts";
+import { AppRoutingModule } from './app.routes';
+import { OppModule } from '../../../components/pc/app-ng4/opportunities/opp.module';
+import { GadgetsModule }  from "../../../gadgets/gadgets.module";
 // component
-import { AppComponent } from './app.compontent.ts';
+import { AppComponent } from './app.compontent';
 // import { OpportunitiesComponent } from '../../../components/pc/app-ng4/opportunities/opportunities.component.ts'
 // import { LocationSelectorComponent } from '../../..//gadgets/location-selector-ng4/location-selector.component.ts'
 
 // services
-import { OpportunityService } from '../../../services/opportunity.service.ts';
-import { LocationTagService } from '../../../services/location-tag.service.ts';
-import { UserService } from '../../../services/user.service.ts';
-import { IndustryService } from '../../../services/industry.service.ts';
-import { WindowRef } from '../../../services/window.service.ts';
+import { OpportunityService } from '../../../services/opportunity.service';
+import { LocationTagService } from '../../../services/location-tag.service';
+import { UserService } from '../../../services/user.service';
+import { IndustryService } from '../../../services/industry.service';
+import { WindowRef } from '../../../services/window.service';
 
 @NgModule({
   declarations: [ // component

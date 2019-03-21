@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
-import { WindowRef } from './window.service.ts';
+import { WindowRef } from './window.service';
 
 import 'rxjs/add/operator/toPromise';
 
